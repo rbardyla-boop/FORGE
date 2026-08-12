@@ -33,6 +33,8 @@ jobs:
           echo "fixture_image_id=$IMAGE_ID"
       - name: Compile candidate
         run: python3 -m compileall -q forge_core tests
+      - name: W2 Repair 001 reclaimability 7/7
+        run: python3 -m unittest -v tests.test_w2_repair_001
       - name: W2 active isolation 12/12
         run: python3 -m unittest -v tests.test_w2_isolation
       - name: W2 workspace and egress 13/13
