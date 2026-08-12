@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import time
 import tomllib
 import urllib.error
 import urllib.request
@@ -77,6 +78,9 @@ def main() -> int:
     for forbidden in ("OPENAI_API_KEY", "CODEX_API_KEY", "CODEX_ACCESS_TOKEN", "GITHUB_TOKEN", "GH_TOKEN"):
         if forbidden in os.environ:
             return fail("upstream credential leaked to Codex-shaped provider", 78)
+    if mode == "provider_hang":
+        time.sleep(999)
+        return 79
 
     request_body = json.dumps(
         {
