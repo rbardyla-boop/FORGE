@@ -227,7 +227,16 @@ def run_doctor(
         raise ForgeContractError("contract changed during Doctor preflight")
 
     authority = contract["authority"]
-    required_checks = [check for check in authority["checks"] if check["required"]]
+    required_checks = [
+        check
+        for check in authority["checks"]
+        if check["required"] and check.get("preflight", True)
+    ]
+    acceptance_deferred_ids = [
+        check["id"]
+        for check in authority["checks"]
+        if check["required"] and not check.get("preflight", True)
+    ]
     advisory_ids = [check["id"] for check in authority["checks"] if not check["required"]]
 
     report: dict[str, Any] = {
@@ -239,11 +248,15 @@ def run_doctor(
         "implementation_environment_ready": False,
         "checks": [],
         "advisory_checks_skipped": advisory_ids,
+        "acceptance_checks_deferred": acceptance_deferred_ids,
         "required_checks_not_run": [],
         "reason_code": None,
         "operator_status_unchanged": None,
         "worktree_registry_unchanged": None,
     }
+
+    if not required_checks:
+        return _failure_report(report, "NO_PREFLIGHT_REQUIRED_CHECK")
 
     git_exe = shutil.which("git")
     if git_exe is None:

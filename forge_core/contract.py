@@ -178,8 +178,15 @@ def validate_authority(value: Any) -> dict[str, Any]:
     check_ids: set[str] = set()
     required_checks: set[str] = set()
     for item in checks_value:
-        if not isinstance(item, dict) or set(item) != {"id", "required", "argv"}:
-            raise ForgeContractError("each check must contain exactly id, required, argv")
+        if not isinstance(item, dict):
+            raise ForgeContractError("each check must be an object")
+        keys = set(item)
+        legacy_keys = {"id", "required", "argv"}
+        phased_keys = {"id", "required", "preflight", "argv"}
+        if keys != legacy_keys and keys != phased_keys:
+            raise ForgeContractError(
+                "each check must contain id, required, argv and optional preflight"
+            )
         check_id = _item_id(item["id"], "check id")
         if check_id in check_ids:
             raise ForgeContractError("check IDs must be unique")
@@ -187,13 +194,20 @@ def validate_authority(value: Any) -> dict[str, Any]:
         required = item["required"]
         if not isinstance(required, bool):
             raise ForgeContractError("check required must be boolean")
+        preflight = item["preflight"] if "preflight" in item else required
+        if not isinstance(preflight, bool):
+            raise ForgeContractError("check preflight must be boolean")
+        if preflight and not required:
+            raise ForgeContractError("advisory checks may not claim preflight authority")
         raw_argv = _string_list(item["argv"], f"check {check_id} argv", allow_empty=False)
         argv = [
             _argv_token(token, f"check {check_id} argv token") for token in raw_argv
         ]
         if required:
             required_checks.add(check_id)
-        checks.append({"id": check_id, "required": required, "argv": argv})
+        checks.append(
+            {"id": check_id, "required": required, "preflight": preflight, "argv": argv}
+        )
     if not required_checks:
         raise ForgeContractError("at least one required check is mandatory")
 

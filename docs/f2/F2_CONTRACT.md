@@ -93,6 +93,9 @@ Silent editing of a frozen record must make `verify` and `ready` fail.
 - no absolute or `..` scope paths;
 - `.forge` may never appear in `allowed_paths`;
 - check commands are argv arrays, never shell command strings;
+- each check has a digest-bound `preflight` phase in newly created/amended contracts; required preflight checks must pass before implementation, while required non-preflight checks are deferred to final acceptance;
+- legacy required checks without `preflight` retain preflight semantics and legacy advisory checks retain non-preflight/advisory semantics;
+- advisory checks may not claim `preflight: true`;
 - check argv tokens may not contain POSIX/Windows absolute filesystem paths, including `--flag=/absolute/path` forms;
 - check IDs are unique;
 - criterion IDs are unique;

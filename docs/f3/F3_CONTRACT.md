@@ -26,7 +26,7 @@ A DRAFT, missing, tampered, or history-invalid contract blocks Doctor before any
 
 F3 defines the pre-implementation baseline as the current committed Git `HEAD` of the repository.
 
-Required contract checks are therefore required to be **green on the untouched baseline before implementation begins**. Feature-specific tests added later must enter through the same already-green runner rather than changing the frozen runner command after implementation starts.
+Checks with `required: true, preflight: true` are required to be **green on the untouched baseline before implementation begins**. Required checks with `preflight: false` are final-acceptance authority and are deliberately deferred by Doctor; F4 must execute them after the patch. Legacy required checks without an explicit phase retain preflight semantics.
 
 Support for deliberately red pre-implementation acceptance commands is outside F3 v0.1.
 
@@ -49,7 +49,9 @@ Untracked files in the operator working tree do not enter the disposable baselin
 
 ## Check scope
 
-Doctor executes only checks with `required: true`.
+Doctor executes only checks with `required: true` and effective `preflight: true`.
+
+Required checks with effective `preflight: false` are reported separately as deferred acceptance checks and do not make the untouched baseline red. A contract with no preflight-required check fails closed as `FORGE_CANNOT_VERIFY` because Doctor lacks a runnable baseline gate.
 
 Advisory checks are reported as skipped and have no F3 authority.
 
@@ -63,7 +65,7 @@ Doctor returns exactly one overall classification.
 
 ### `ENVIRONMENT_READY`
 
-Every required check:
+Every preflight-required check:
 
 - launched successfully;
 - completed within the fixed Doctor timeout;
@@ -100,7 +102,7 @@ Exit code: `4`.
 
 ### `BLOCKED_EXTERNAL`
 
-A required check explicitly reports a genuine temporary external dependency using both:
+A preflight-required check explicitly reports a genuine temporary external dependency using both:
 
 - process exit code `75` (`EX_TEMPFAIL` convention); and
 - a stderr line beginning exactly `FORGE_BLOCKED_EXTERNAL:`.
@@ -111,14 +113,14 @@ Exit code: `5`.
 
 ## Classification precedence
 
-When multiple required checks produce different non-ready conditions, overall precedence is:
+When multiple preflight-required checks produce different non-ready conditions, overall precedence is:
 
 1. `FORGE_CANNOT_VERIFY`;
 2. `BLOCKED_EXTERNAL`;
 3. `PROJECT_BASELINE_FAILURE`;
 4. `ENVIRONMENT_READY`.
 
-Doctor may run all required checks while the disposable baseline remains trustworthy. A tracked-baseline mutation ends check execution immediately because later results would no longer describe the same baseline.
+Doctor may run all preflight-required checks while the disposable baseline remains trustworthy. A tracked-baseline mutation ends check execution immediately because later results would no longer describe the same baseline.
 
 ## Report
 
@@ -132,7 +134,8 @@ The report contains at minimum:
 - `workspace_mode: detached_git_worktree` when created;
 - overall `classification`;
 - `implementation_environment_ready` boolean;
-- required-check results in contract order;
+- preflight-required check results in contract order;
+- required acceptance check IDs deferred;
 - advisory check IDs skipped;
 - stable reason codes for preflight/cleanup failures.
 
@@ -240,3 +243,17 @@ All F1 state-integrity and repaired-F2 contract-integrity tests remain unchanged
 - keep stdout/stderr bounded to the declared report limit.
 
 This amendment expands the safety checks. It does not weaken any F3 criterion or authorize new product behavior.
+
+
+## Repair adaptation F3-R1 — preflight / acceptance separation
+
+F5 positive-control replay demonstrated that running final feature acceptance checks against the untouched baseline makes genuine new-feature work impossible. F2 Repair 002 therefore separates baseline preflight authority from final acceptance authority.
+
+Doctor now:
+
+- runs only required checks with effective `preflight: true`;
+- reports required `preflight: false` checks as `acceptance_checks_deferred`;
+- fails closed with `NO_PREFLIGHT_REQUIRED_CHECK` when no baseline-verification check exists;
+- preserves legacy required checks as preflight and legacy advisory checks as advisory/non-preflight.
+
+This adaptation does not weaken final completion: F4 still executes every required check after applying the patch, regardless of phase.
