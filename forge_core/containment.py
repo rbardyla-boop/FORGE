@@ -67,9 +67,33 @@ def _git_bytes(git_exe: str, root: Path, *args: str) -> subprocess.CompletedProc
     )
 
 
+def _host_identity() -> tuple[int, int]:
+    geteuid = getattr(os, "geteuid", None)
+    getegid = getattr(os, "getegid", None)
+    if geteuid is None or getegid is None:
+        raise ForgeContainmentError(
+            "CONTAINMENT_UNAVAILABLE: linux-docker-v0.1 requires numeric POSIX UID/GID"
+        )
+    uid = int(geteuid())
+    gid = int(getegid())
+    if uid <= 0:
+        raise ForgeContainmentError(
+            "CONTAINMENT_UNAVAILABLE: linux-docker-v0.1 requires Forge to run as non-root"
+        )
+    if gid < 0:
+        raise ForgeContainmentError("CONTAINMENT_UNAVAILABLE: invalid Forge host GID")
+    return uid, gid
+
+
+def _docker_security_options_reclaimable(raw: str) -> bool:
+    lowered = raw.lower()
+    return "rootless" not in lowered and "name=userns" not in lowered
+
+
 def _docker() -> str:
     if platform.system() != "Linux":
         raise ForgeContainmentError("CONTAINMENT_UNAVAILABLE: linux-docker-v0.1 requires Linux")
+    _host_identity()
     docker = shutil.which("docker")
     if docker is None:
         raise ForgeContainmentError("CONTAINMENT_UNAVAILABLE: Docker CLI not found")
@@ -82,6 +106,21 @@ def _docker() -> str:
     )
     if version.returncode != 0:
         raise ForgeContainmentError("CONTAINMENT_UNAVAILABLE: Docker daemon is unreachable")
+    security = subprocess.run(
+        [docker, "info", "--format", "{{json .SecurityOptions}}"],
+        text=True,
+        capture_output=True,
+        check=False,
+        timeout=15,
+    )
+    if security.returncode != 0:
+        raise ForgeContainmentError(
+            "CONTAINMENT_UNAVAILABLE: Docker security options cannot be inspected"
+        )
+    if not _docker_security_options_reclaimable(security.stdout):
+        raise ForgeContainmentError(
+            "CONTAINMENT_UNAVAILABLE: linux-docker-v0.1 requires direct bind-mount UID ownership"
+        )
     return docker
 
 
@@ -139,6 +178,29 @@ def _chmod_provider_workspace(workspace: Path) -> None:
                 continue
             mode = path.stat().st_mode
             path.chmod(0o777 if mode & stat.S_IXUSR else 0o666)
+
+
+def _reclaim_provider_tree(root: Path) -> None:
+    if root.is_symlink():
+        raise ForgeContainmentError("provider disposable tree root became a symlink")
+    try:
+        root.chmod(0o700)
+        for current, dirs, files in os.walk(root, topdown=True, followlinks=False):
+            current_path = Path(current)
+            if not current_path.is_symlink():
+                current_path.chmod(0o700)
+            for name in dirs:
+                path = current_path / name
+                if not path.is_symlink():
+                    path.chmod(0o700)
+            for name in files:
+                path = current_path / name
+                if not path.is_symlink():
+                    path.chmod(0o600)
+    except OSError as exc:
+        raise ForgeContainmentError(
+            f"CONTAINMENT_UNAVAILABLE: Forge cannot reclaim provider disposable tree: {exc}"
+        ) from exc
 
 
 def _prepare_workspace(root: Path, baseline: str, request_bytes: bytes, parent: Path) -> tuple[Path, Path, Path, str]:
@@ -315,6 +377,7 @@ def _profile_args(
     output: Path,
     command: Sequence[str],
 ) -> list[str]:
+    uid, gid = _host_identity()
     return [
         docker,
         "run",
@@ -335,7 +398,7 @@ def _profile_args(
         "--cpus",
         CPU_LIMIT,
         "--user",
-        "65534:65534",
+        f"{uid}:{gid}",
         "--ipc",
         "private",
         "--mount",
@@ -421,6 +484,7 @@ def _run_container(
 def probe_backend(image_id: str, command: Sequence[str]) -> dict[str, Any]:
     docker = _docker()
     image_id = _validate_image_id(docker, image_id)
+    uid, gid = _host_identity()
     with tempfile.TemporaryDirectory(prefix="forge-w2-probe-") as tmp:
         parent = Path(tmp)
         workspace = parent / "workspace"; workspace.mkdir(); workspace.chmod(0o777)
@@ -436,12 +500,16 @@ def probe_backend(image_id: str, command: Sequence[str]) -> dict[str, Any]:
             parent,
             timeout_seconds=10,
         )
+        _reclaim_provider_tree(workspace)
+        _reclaim_provider_tree(output)
         if result["timed_out"] or result["exit_code"] != 0:
             raise ForgeContainmentError("CONTAINMENT_UNAVAILABLE: full-profile probe container failed")
         return {
             "backend": BACKEND,
             "classification": "CONTAINMENT_READY",
             "image_id": image_id,
+            "provider_uid": uid,
+            "provider_gid": gid,
             "profile": result["argv"],
         }
 
@@ -468,6 +536,7 @@ def execute_provider(
 
     docker = _docker()
     image_id = _validate_image_id(docker, image_id)
+    provider_uid, provider_gid = _host_identity()
     git_exe, head = _git(root)
     if head != request["baseline_commit"]:
         raise ForgeContainmentError("W1 request baseline no longer matches repository HEAD")
@@ -487,6 +556,8 @@ def execute_provider(
         "backend": BACKEND,
         "image_id": image_id,
         "adapter_id": adapter_id.strip(),
+        "provider_uid": provider_uid,
+        "provider_gid": provider_gid,
         "execution_state": "PROVIDER_REJECTED",
         "completion_authority": "none",
         "candidate_authority": "none",
@@ -510,6 +581,8 @@ def execute_provider(
             parent,
             timeout_seconds=timeout_seconds,
         )
+        _reclaim_provider_tree(workspace)
+        _reclaim_provider_tree(output)
         report["containment_profile"] = provider["argv"]
         report["provider_exit_code"] = provider["exit_code"]
         report["provider_timed_out"] = provider["timed_out"]
