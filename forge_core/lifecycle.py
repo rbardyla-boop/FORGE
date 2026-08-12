@@ -29,7 +29,7 @@ RUN_SCHEMA = "forge.unit-attempt.v0.1"
 RUNS_DIR = "runs"
 ATTEMPT_NAME = "attempt-0001"
 
-PASS = "PASS"
+CANDIDATE_VERIFIED = "CANDIDATE_VERIFIED"
 REPAIR_REQUIRED = "REPAIR_REQUIRED"
 
 
@@ -554,7 +554,7 @@ def run_unit_attempt(
                                                     for c in classifications
                                                 )
                                             ):
-                                                terminal_state = PASS
+                                                terminal_state = CANDIDATE_VERIFIED
                                                 reason_code = "ALL_REQUIRED_CHECKS_PASS"
                                             else:
                                                 terminal_state = REPAIR_REQUIRED
@@ -644,4 +644,4 @@ def run_unit_attempt(
         evidence["contract_postcondition_detail_truncated"] = contract_postcondition_truncated
 
     _persist_attempt(attempt_dir, evidence, applied_diff)
-    return evidence, 0 if terminal_state == PASS else (5 if terminal_state == BLOCKED_EXTERNAL else 3)
+    return evidence, 0 if terminal_state == CANDIDATE_VERIFIED else (5 if terminal_state == BLOCKED_EXTERNAL else 3)

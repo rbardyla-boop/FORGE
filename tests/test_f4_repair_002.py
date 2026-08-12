@@ -62,7 +62,7 @@ class ForgeF4Repair002Tests(unittest.TestCase):
             result = run_forge(root, 'unit', 'run', 'U-0001', '--patch', str(patch))
             self.assertEqual(result.returncode, 0, result.stderr)
             report = json.loads(result.stdout)
-            self.assertEqual(report['terminal_state'], 'PASS')
+            self.assertEqual(report['terminal_state'], 'CANDIDATE_VERIFIED')
             self.assertEqual([c['id'] for c in report['required_checks']], ['CHK_PREFLIGHT', 'CHK_ACCEPT'])
             self.assertTrue(all(c['exit_code'] == 0 for c in report['required_checks']))
 

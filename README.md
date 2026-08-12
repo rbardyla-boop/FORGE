@@ -30,6 +30,7 @@ Start with:
 - FORGE-F2: `PASS`
 - FORGE-F3: `PASS`
 - FORGE-F4: `PASS`
+- FORGE-F5: `PASS`
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
 
@@ -37,6 +38,8 @@ F2 adds frozen machine-readable contract authority and an explicit digest-linked
 
 F3 adds a disposable Git-worktree Environment Doctor that classifies baseline readiness without modifying product code.
 
-F4 adds one bounded manual-patch lifecycle that runs only in a disposable worktree and makes the harness, not the patch author, the terminal-state authority.
+F4 adds one bounded manual-patch lifecycle that runs only in a disposable worktree. Mechanical success is now `CANDIDATE_VERIFIED`, not final completion.
 
-F4 authorizes exactly **FORGE-F5 — False-Completion Attack Harness**. No AI builder is authorized.
+F5 adds an exact-artifact-bound independent final gate. The frozen A00–A11 false-completion matrix finishes with zero final false completions after preserving and repairing the A08 visible-test-overfit failure.
+
+F5 authorizes exactly **FORGE-F6 — Failure → Permanent Regression**. No AI builder is authorized.

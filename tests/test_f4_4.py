@@ -16,7 +16,7 @@ class ForgeF4Tests4(unittest.TestCase):
             self.assertEqual(report["terminal_state"], "REPAIR_REQUIRED")
             self.assertEqual(report["completion_authority"], "harness")
 
-    def test_advisory_check_is_skipped_and_cannot_block_pass(self) -> None:
+    def test_advisory_check_is_skipped_and_cannot_block_candidate(self) -> None:
         with tempfile.TemporaryDirectory(prefix="forge-f4-") as tmp:
             base = Path(tmp)
             root = basic_repo(base)
@@ -32,7 +32,7 @@ class ForgeF4Tests4(unittest.TestCase):
             result = run_forge(root, "unit", "run", "U-0001", "--patch", str(patch))
             self.assertEqual(result.returncode, 0, result.stderr)
             report = json.loads(result.stdout)
-            self.assertEqual(report["terminal_state"], "PASS")
+            self.assertEqual(report["terminal_state"], "CANDIDATE_VERIFIED")
             self.assertEqual(report["advisory_checks_skipped"], ["CHK_ADV"])
             self.assertEqual([r["id"] for r in report["required_checks"]], ["CHK_001"])
 

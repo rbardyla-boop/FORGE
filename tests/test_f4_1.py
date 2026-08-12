@@ -17,7 +17,7 @@ class ForgeF4Tests1(unittest.TestCase):
             result = run_forge(root, "unit", "run", "U-0001", "--patch", str(patch))
             self.assertEqual(result.returncode, 0, result.stderr)
             report = json.loads(result.stdout)
-            self.assertEqual(report["terminal_state"], "PASS")
+            self.assertEqual(report["terminal_state"], "CANDIDATE_VERIFIED")
             self.assertEqual(report["completion_authority"], "harness")
             self.assertTrue(report["contract_postcondition_unchanged"])
             self.assertEqual(report["contract_digest"], frozen["contract_digest"])

@@ -14,6 +14,7 @@ from .contract import (
     verify_contract,
 )
 from .doctor import run_doctor
+from .gate import ForgeGateError, run_final_gate
 from .lifecycle import ForgeLifecycleError, run_unit_attempt
 from .state import ForgeStateError, init_state, load_status
 
@@ -31,6 +32,12 @@ def _parser() -> argparse.ArgumentParser:
     unit_run = unit_sub.add_parser("run", help="run one manually supplied patch attempt")
     unit_run.add_argument("unit_id")
     unit_run.add_argument("--patch", required=True, dest="patch_file")
+
+    gate = sub.add_parser("gate", help="run the F5 independent final completion gate")
+    gate_sub = gate.add_subparsers(dest="gate_command", required=True)
+    gate_run = gate_sub.add_parser("run", help="evaluate one F4 verified candidate")
+    gate_run.add_argument("unit_id")
+    gate_run.add_argument("--evaluator", required=True, dest="evaluator_file")
 
     contract = sub.add_parser("contract", help="manage frozen F2 work-unit authority")
     contract_sub = contract.add_subparsers(dest="contract_command", required=True)
@@ -83,6 +90,14 @@ def main(argv: list[str] | None = None) -> int:
             )
             print(json.dumps(result, sort_keys=True))
             return unit_exit
+        elif args.command == "gate":
+            if args.gate_command != "run":
+                raise ForgeGateError("unauthorized F5 gate command")
+            result, gate_exit = run_final_gate(
+                root, args.unit_id, Path(args.evaluator_file)
+            )
+            print(json.dumps(result, sort_keys=True))
+            return gate_exit
         elif args.command == "contract":
             if args.contract_command == "create":
                 record = create_contract(root, args.unit_id, Path(args.authority_file))
@@ -120,7 +135,7 @@ def main(argv: list[str] | None = None) -> int:
                 raise ForgeContractError("unauthorized F2 contract command")
         else:
             raise ForgeStateError("unauthorized Forge command")
-    except (ForgeStateError, ForgeContractError, ForgeLifecycleError) as exc:
+    except (ForgeStateError, ForgeContractError, ForgeLifecycleError, ForgeGateError) as exc:
         print(f"FORGE_ERROR: {exc}", file=sys.stderr)
         return 2
 
