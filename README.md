@@ -35,6 +35,7 @@ Start with:
 - FORGE FOUNDATION GATE: `PASS`
 - FORGE-W1 BuilderAdapter proposal boundary: `PASS`
 - FORGE-W2 Provider Execution Containment: `PASS`
+- FORGE-W3 Codex Adapter Boundary: `PASS`
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
 
@@ -54,4 +55,6 @@ W1 adds a provider-agnostic proposal boundary with exactly `forge proposal reque
 
 W2 adds an actual Linux Docker provider-execution boundary before any real coding provider is connected. The operator repository and `.forge` authority are not mounted; provider code receives a writable disposable workspace, read-only W1 request, trace-only egress, no network, zero capabilities, no Docker socket/devices, bounded resources, and no completion authority. Forge independently validates the resulting workspace and derives the authoritative patch in a fresh trusted collector before W1 ingestion. W2 discovered and permanently repaired a rejected-provider cleanup ownership defect. Its terminal clean-room run passes 47/47 W2-specific tests plus the complete W1, Foundation and F6–F1 regression stack.
 
-W2 `PASS` authorizes exactly **W3 Codex Adapter Boundary**. W3 must freeze executable acquisition, authentication/credential handling, network authority, provider invocation and evidence rules before any real Codex execution. Automatic Foundation handoff, final PASS authority, merge/deploy, project-management autonomy, routing, swarms and all Roof capabilities remain unauthorized.
+W3 adds a Codex-specific adapter boundary without making a real OpenAI request. The supported public boundary requires an absolute non-symlink executable path, fingerprints exact executable bytes, freezes the current non-interactive `codex exec` argv contract, strips ambient credentials and user configuration, uses a fresh disposable `CODEX_HOME`, bounds stdout/stderr/JSONL, rejects malformed or contradictory terminal events, and treats provider PASS/MERGE/file-change claims as untrusted evidence only. A Codex-shaped fixture also executes under W2's actual `network none` Docker profile; exact workspace bytes remain authoritative through W2's trusted patch collector and can reach only W1 `PROPOSAL_ACCEPTED`. W3 discovered and permanently repaired a relative-executable authority leak. Its terminal run replays the complete W2, W1, Foundation, and F6–F1 stack successfully.
+
+W3 `PASS` authorizes exactly **W4 Real Codex Pilot / Credential-Network Bridge**. W4 must design and falsify the smallest mechanism that permits one real Codex CLI request to reach OpenAI while keeping credentials outside repository-controlled execution and preserving W1/W2/Foundation authority. The first live result may terminate only at W1 `PROPOSAL_ACCEPTED` before separate Foundation verification. Automatic Foundation handoff, final PASS authority, merge/deploy, project-management autonomy, routing, swarms and all Roof capabilities remain unauthorized.
