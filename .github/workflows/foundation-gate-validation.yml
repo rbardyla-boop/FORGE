@@ -20,6 +20,8 @@ jobs:
           python-version: '3.12'
       - name: Compile candidate
         run: python3 -m compileall -q forge_core tests
+      - name: Repair 001 exact-candidate seal regressions
+        run: python3 -m unittest -v tests.test_foundation_repair_001
       - name: Foundation system matrix FG-A00 through FG-A16 fail-fast
         run: python3 -m unittest -v -f tests.test_foundation_gate
       - name: Whitespace guard
