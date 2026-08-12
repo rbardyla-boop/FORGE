@@ -29,10 +29,14 @@ Start with:
 - FORGE-F1: `PASS`
 - FORGE-F2: `PASS`
 - FORGE-F3: `PASS`
-- FORGE-F4: `AUTHORIZED`, not started
+- FORGE-F4: `PASS`
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
 
 F2 adds frozen machine-readable contract authority and an explicit digest-linked amendment chain; it does not execute contract checks.
 
 F3 adds a disposable Git-worktree Environment Doctor that classifies baseline readiness without modifying product code.
+
+F4 adds one bounded manual-patch lifecycle that runs only in a disposable worktree and makes the harness, not the patch author, the terminal-state authority.
+
+F4 authorizes exactly **FORGE-F5 — False-Completion Attack Harness**. No AI builder is authorized.
