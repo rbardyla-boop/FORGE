@@ -10,7 +10,7 @@ permissions:
 jobs:
   bridge:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,8 +46,12 @@ jobs:
         run: python3 -m unittest -v tests.test_w4_gate_policy
       - name: W4 generated Codex broker config authority 6/6
         run: python3 -m unittest -v tests.test_w4_codex_config
+      - name: W4 official Responses proxy live policy 4/4
+        run: python3 -m unittest -v tests.test_w4_proxy_policy
       - name: W4 initial credentialless dual-network broker attacks 12/12
         run: python3 -m unittest -v -f tests.test_w4_bridge
+      - name: W4 dual-network no-routing negative control 1/1
+        run: python3 -m unittest -v tests.test_w4_network_routing
       - name: W4 Codex-shaped streaming broker and failure composition 8/8
         run: python3 -m unittest -v -f tests.test_w4_codex_bridge
       - name: Whitespace guard
