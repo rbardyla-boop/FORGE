@@ -13,6 +13,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -47,4 +49,4 @@ jobs:
       - name: F1 canonical state 11/11
         run: python3 -m unittest -v tests.test_f1
       - name: Whitespace guard
-        run: git diff --check HEAD^
+        run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
