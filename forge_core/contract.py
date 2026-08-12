@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 from typing import Any
 
@@ -122,6 +122,25 @@ def _scope_path(value: Any, label: str) -> str:
     return path
 
 
+def _argv_token(value: Any, label: str) -> str:
+    token = _string(value, label)
+    if "\x00" in token:
+        raise ForgeContractError(f"{label} contains a NUL byte")
+
+    candidates = [token]
+    if "=" in token:
+        candidates.append(token.split("=", 1)[1])
+
+    for candidate in candidates:
+        if not candidate:
+            continue
+        if PurePosixPath(candidate).is_absolute() or PureWindowsPath(candidate).is_absolute():
+            raise ForgeContractError(
+                f"{label} may not contain an absolute machine-specific path"
+            )
+    return token
+
+
 def _allowed_path_targets_authority(path: str) -> bool:
     first = PurePosixPath(path).parts[0]
     return first == STATE_DIR or first.startswith(f"{STATE_DIR}[")
@@ -168,7 +187,10 @@ def validate_authority(value: Any) -> dict[str, Any]:
         required = item["required"]
         if not isinstance(required, bool):
             raise ForgeContractError("check required must be boolean")
-        argv = _string_list(item["argv"], f"check {check_id} argv", allow_empty=False)
+        raw_argv = _string_list(item["argv"], f"check {check_id} argv", allow_empty=False)
+        argv = [
+            _argv_token(token, f"check {check_id} argv token") for token in raw_argv
+        ]
         if required:
             required_checks.add(check_id)
         checks.append({"id": check_id, "required": required, "argv": argv})
@@ -327,7 +349,6 @@ def _verify_frozen_record(record: dict[str, Any], unit_id: str) -> str:
     return digest
 
 
-
 def _verify_history_chain(root: Path, current: dict[str, Any], unit_id: str) -> None:
     revision = current["revision"]
     if revision == 1:
@@ -367,6 +388,7 @@ def _verify_history_chain(root: Path, current: dict[str, Any], unit_id: str) -> 
 
     if current["parent_digest"] != previous_digest:
         raise ForgeContractError("current contract parent digest does not match history")
+
 
 def create_contract(root: Path, unit_id: str, authority_file: Path) -> dict[str, Any]:
     unit_id = _unit_id(unit_id)
