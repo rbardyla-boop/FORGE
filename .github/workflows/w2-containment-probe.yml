@@ -23,18 +23,22 @@ jobs:
           command -v docker
           docker version
           docker info >/dev/null
-      - name: Prepare trusted probe image and mounts
+      - name: Prepare trusted probe image and isolated mounts
         shell: bash
         run: |
           set -euo pipefail
           docker pull alpine:3.20 >/dev/null
           docker image inspect alpine:3.20 --format '{{.Id}}' > /tmp/forge-w2-image-id
+          rm -rf /tmp/forge-w2-workspace /tmp/forge-w2-output
           mkdir -p /tmp/forge-w2-workspace /tmp/forge-w2-output
           printf 'tracked-baseline\n' > /tmp/forge-w2-workspace/tracked.txt
-          chmod 0755 /tmp/forge-w2-workspace
+          printf 'operator-secret\n' > /tmp/forge-w2-host-sentinel
+          chmod -R a+rwX /tmp/forge-w2-workspace
           chmod 0777 /tmp/forge-w2-output
-      - name: Full-profile minimal containment proof
+      - name: Amended writable-workspace containment proof
         shell: bash
+        env:
+          FORGE_W2_SECRET: HOST_ENV_SECRET_MUST_NOT_ENTER_CONTAINER
         run: |
           set -euo pipefail
           IMAGE_ID="$(cat /tmp/forge-w2-image-id)"
@@ -48,17 +52,26 @@ jobs:
             --memory 128m \
             --cpus 0.5 \
             --user 65534:65534 \
-            --mount type=bind,src=/tmp/forge-w2-workspace,dst=/workspace,readonly \
+            --mount type=bind,src=/tmp/forge-w2-workspace,dst=/workspace \
             --mount type=bind,src=/tmp/forge-w2-output,dst=/output \
             --tmpfs /tmp:rw,noexec,nosuid,nodev,size=16m \
             "$IMAGE_ID" sh -eu -c '
               test "$(cat /workspace/tracked.txt)" = tracked-baseline
-              if printf x > /workspace/forbidden-write 2>/dev/null; then exit 41; fi
+              printf provider-edit > /workspace/tracked.txt
+              printf provider-new > /workspace/new.txt
               test ! -e /workspace/.forge
+              test -z "${FORGE_W2_SECRET+x}"
+              test ! -e /tmp/forge-w2-host-sentinel
+              if printf x > /etc/forge-w2-rootfs-write 2>/dev/null; then exit 41; fi
+              if wget -T 1 -qO- http://1.1.1.1 >/dev/null 2>&1; then exit 42; fi
+              test ! -S /var/run/docker.sock
+              grep -q "^CapEff:\s*0000000000000000" /proc/self/status
+              grep -q "^NoNewPrivs:\s*1" /proc/self/status
               printf contained > /output/result.txt
-              test -w /output
             '
+          test "$(cat /tmp/forge-w2-workspace/tracked.txt)" = provider-edit
+          test "$(cat /tmp/forge-w2-workspace/new.txt)" = provider-new
           test "$(cat /tmp/forge-w2-output/result.txt)" = contained
-          test ! -e /tmp/forge-w2-workspace/forbidden-write
+          test "$(cat /tmp/forge-w2-host-sentinel)" = operator-secret
       - name: Probe verdict
         run: echo CONTAINMENT_READY
