@@ -10,7 +10,7 @@ permissions:
 jobs:
   bridge:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,15 +26,19 @@ jobs:
           docker info >/dev/null
           docker build -f tests/w4_fixture/broker/Dockerfile -t forge-w4-broker:validation .
           docker build -f tests/w4_fixture/provider/Dockerfile -t forge-w4-provider:validation .
+          docker build -f tests/w4_fixture/codex_provider/Dockerfile -t forge-w4-codex-provider:validation .
           docker build -f tests/w4_fixture/upstream/Dockerfile -t forge-w4-upstream:validation .
           BROKER_ID="$(docker image inspect forge-w4-broker:validation --format '{{.Id}}')"
           PROVIDER_ID="$(docker image inspect forge-w4-provider:validation --format '{{.Id}}')"
+          CODEX_PROVIDER_ID="$(docker image inspect forge-w4-codex-provider:validation --format '{{.Id}}')"
           UPSTREAM_ID="$(docker image inspect forge-w4-upstream:validation --format '{{.Id}}')"
           case "$BROKER_ID" in sha256:*) ;; *) exit 1;; esac
           case "$PROVIDER_ID" in sha256:*) ;; *) exit 1;; esac
+          case "$CODEX_PROVIDER_ID" in sha256:*) ;; *) exit 1;; esac
           case "$UPSTREAM_ID" in sha256:*) ;; *) exit 1;; esac
           echo "FORGE_W4_BROKER_IMAGE_ID=$BROKER_ID" >> "$GITHUB_ENV"
           echo "FORGE_W4_PROVIDER_IMAGE_ID=$PROVIDER_ID" >> "$GITHUB_ENV"
+          echo "FORGE_W4_CODEX_PROVIDER_IMAGE_ID=$CODEX_PROVIDER_ID" >> "$GITHUB_ENV"
           echo "FORGE_W4_UPSTREAM_IMAGE_ID=$UPSTREAM_ID" >> "$GITHUB_ENV"
       - name: Compile candidate
         run: python3 -m compileall -q forge_core tests
@@ -44,5 +48,7 @@ jobs:
         run: python3 -m unittest -v tests.test_w4_codex_config
       - name: W4 initial credentialless dual-network broker attacks 12/12
         run: python3 -m unittest -v -f tests.test_w4_bridge
+      - name: W4 Codex-shaped streaming broker and failure composition 8/8
+        run: python3 -m unittest -v -f tests.test_w4_codex_bridge
       - name: Whitespace guard
         run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
