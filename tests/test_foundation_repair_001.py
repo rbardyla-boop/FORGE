@@ -62,7 +62,8 @@ class FoundationRepair001Tests(unittest.TestCase):
             proc, report = run_candidate(root, patch)
             self.assertNotEqual(proc.returncode, 0)
             self.assertEqual(report['terminal_state'], 'REPAIR_REQUIRED')
-            self.assertNotEqual(git(root, 'rev-parse', '--verify', '--quiet', REF).returncode, 0)
+            probe = git(root, 'rev-parse', '--verify', '--quiet', REF, check=False)
+            self.assertNotEqual(probe.returncode, 0)
 
 
 if __name__ == '__main__':
