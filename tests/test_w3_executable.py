@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from forge_core.codex_adapter import (
+from forge_core.codex_boundary import (
     CREDENTIAL_ENV_KEYS,
     FORBIDDEN_ARG_TOKENS,
     FROZEN_EXEC_ARGS,
