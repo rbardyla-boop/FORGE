@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+import subprocess
 
 from forge_core.containment import _host_identity, _reclaim_provider_tree
 from forge_core.w4_codex_config import create_codex_home
@@ -69,7 +70,19 @@ class W4CodexTopology(W4Topology):
         )
         if created.returncode != 0:
             raise AssertionError((created.stdout, created.stderr))
-        result = _run([self.docker, "start", "-a", self.provider_name], timeout=timeout)
+        start_argv = [self.docker, "start", "-a", self.provider_name]
+        try:
+            result = _run(start_argv, timeout=timeout)
+        except subprocess.TimeoutExpired as exc:
+            _run([self.docker, "rm", "-f", self.provider_name], timeout=10)
+            stdout = exc.stdout.decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+            stderr = exc.stderr.decode(errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
+            result = subprocess.CompletedProcess(
+                start_argv,
+                124,
+                stdout,
+                stderr + "\nFORGE_W4_PROVIDER_TIMEOUT\n",
+            )
         _reclaim_provider_tree(self.workspace)
         _reclaim_provider_tree(self.output)
         return result
