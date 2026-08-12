@@ -26,21 +26,20 @@ class ForgeF6IntegrationTests(unittest.TestCase):
     def test_locked_passing_regression_is_automatically_inherited(self) -> None:
         with tempfile.TemporaryDirectory(prefix="forge-f6-") as tmp:
             base = Path(tmp)
-            root, _ = make_f4_failure_project(base, permanent_expected="on")
-            # Closure needs the permanent evaluator to pass on the baseline. Replace baseline
-            # feature state and re-create the fixture by using the same expected state for the patch.
-            # The helper locked against baseline 'off', so make a no-regression patch by changing
-            # feature to another value only when the evaluator is configured to accept it.
-            # For this positive inheritance test, use a guard-only patch through a fresh contract.
-            # Existing helper contract only allows feature.txt, therefore patch feature to 'off'
-            # would be empty. Instead this assertion is covered by locking expected='off' and
-            # applying a semantically neutral line ending change is not possible. Rebuild simply.
-            self.skipTest("replaced by explicit positive locked fixture below")
+            root, _ = make_f4_failure_project(base, accepted_feature_values=("off", "on"))
+            patch = patch_file(base, root, "feature.txt", "on\n")
+            result = run_forge(root, "unit", "run", "U-0001", "--patch", str(patch))
+            self.assertEqual(result.returncode, 0, result.stderr)
+            report = json.loads(result.stdout)
+            self.assertEqual(report["terminal_state"], "CANDIDATE_VERIFIED")
+            self.assertEqual(report["reason_code"], "ALL_REQUIRED_CHECKS_AND_LOCKED_REGRESSIONS_PASS")
+            self.assertEqual(len(report["locked_regressions"]), 1)
+            self.assertTrue(report["locked_regressions"][0]["regression_passed"])
 
     def test_locked_regression_failure_blocks_candidate_verified(self) -> None:
         with tempfile.TemporaryDirectory(prefix="forge-f6-") as tmp:
             base = Path(tmp)
-            root, _ = make_f4_failure_project(base, permanent_expected="off")
+            root, _ = make_f4_failure_project(base, accepted_feature_values=("off",))
             patch = patch_file(base, root, "feature.txt", "on\n")
             result = run_forge(root, "unit", "run", "U-0001", "--patch", str(patch))
             self.assertEqual(result.returncode, 3, result.stderr)
@@ -53,7 +52,11 @@ class ForgeF6IntegrationTests(unittest.TestCase):
     def test_locked_evaluator_mutation_fails_closed(self) -> None:
         with tempfile.TemporaryDirectory(prefix="forge-f6-") as tmp:
             base = Path(tmp)
-            root, _ = make_f4_failure_project(base, permanent_expected="on", mutate_when="on")
+            root, _ = make_f4_failure_project(
+                base,
+                accepted_feature_values=("off", "on"),
+                mutate_when="on",
+            )
             patch = patch_file(base, root, "feature.txt", "on\n")
             result = run_forge(root, "unit", "run", "U-0001", "--patch", str(patch))
             self.assertEqual(result.returncode, 3, result.stderr)
