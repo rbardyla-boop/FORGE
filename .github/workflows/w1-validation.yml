@@ -10,7 +10,7 @@ permissions:
 jobs:
   w1-gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,5 +26,39 @@ jobs:
         run: python3 -m unittest -v tests.test_w1_submission
       - name: W1 stale integrity and handoff 10/10
         run: python3 -m unittest -v tests.test_w1_integrity
+      - name: Foundation Repair 001 5/5
+        run: python3 -m unittest -v tests.test_foundation_repair_001
+      - name: Foundation Repair 002 10/10
+        run: python3 -m unittest -v tests.test_foundation_repair_002
+      - name: Foundation system matrix FG-A00 through FG-A16
+        run: python3 -m unittest -v -f tests.test_foundation_gate
+      - name: F6 registration and integrity 7/7
+        run: python3 -m unittest -v tests.test_f6_registration
+      - name: F6 closure and replay 9/9
+        run: python3 -m unittest -v tests.test_f6_closure
+      - name: F6 lifecycle inheritance 4/4
+        run: python3 -m unittest -v tests.test_f6_integration
+      - name: F5 matrix 12/12
+        run: python3 -m unittest -v tests.test_f5_matrix
+      - name: F5 final gate 10/10
+        run: python3 -m unittest -v tests.test_final_gate
+      - name: F4 lifecycle 22/22
+        run: |
+          python3 -m unittest -v tests.test_f4_1
+          python3 -m unittest -v tests.test_f4_2
+          python3 -m unittest -v tests.test_f4_3
+          python3 -m unittest -v tests.test_f4_4
+      - name: F4 Repair 002 1/1
+        run: python3 -m unittest -v tests.test_f4_repair_002
+      - name: F3 Doctor 20/20
+        run: python3 -m unittest -v tests.test_f3
+      - name: F3 Repair 002 3/3
+        run: python3 -m unittest -v tests.test_f3_repair_002
+      - name: F2 Contract Authority 14/14
+        run: python3 -m unittest -v tests.test_f2
+      - name: F2 Repair 002 4/4
+        run: python3 -m unittest -v tests.test_f2_repair_002
+      - name: F1 canonical state 11/11
+        run: python3 -m unittest -v tests.test_f1
       - name: Whitespace guard
         run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
