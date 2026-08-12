@@ -34,6 +34,7 @@ Start with:
 - FORGE-F6: `PASS`
 - FORGE FOUNDATION GATE: `PASS`
 - FORGE-W1 BuilderAdapter proposal boundary: `PASS`
+- FORGE-W2 Provider Execution Containment: `PASS`
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
 
@@ -51,4 +52,6 @@ The Foundation Gate attacks F1–F6 as one composed system. It discovered and re
 
 W1 adds a provider-agnostic proposal boundary with exactly `forge proposal request|submit|verify`. A proposal is only patch + bounded trace and is always non-final: `PROPOSAL_ACCEPTED`, `completion_authority: none`, `candidate_authority: none`. W1 executes no coding provider and no trusted completion gate.
 
-W1 `PASS` authorizes exactly **W2 Provider Execution Containment** using deterministic fixture providers first. A Codex-specific adapter moves to W3 after containment passes. Codex/Claude execution, autonomous merge/deploy, project-management autonomy, routing, swarms and all Roof capabilities remain unauthorized.
+W2 adds an actual Linux Docker provider-execution boundary before any real coding provider is connected. The operator repository and `.forge` authority are not mounted; provider code receives a writable disposable workspace, read-only W1 request, trace-only egress, no network, zero capabilities, no Docker socket/devices, bounded resources, and no completion authority. Forge independently validates the resulting workspace and derives the authoritative patch in a fresh trusted collector before W1 ingestion. W2 discovered and permanently repaired a rejected-provider cleanup ownership defect. Its terminal clean-room run passes 47/47 W2-specific tests plus the complete W1, Foundation and F6–F1 regression stack.
+
+W2 `PASS` authorizes exactly **W3 Codex Adapter Boundary**. W3 must freeze executable acquisition, authentication/credential handling, network authority, provider invocation and evidence rules before any real Codex execution. Automatic Foundation handoff, final PASS authority, merge/deploy, project-management autonomy, routing, swarms and all Roof capabilities remain unauthorized.
