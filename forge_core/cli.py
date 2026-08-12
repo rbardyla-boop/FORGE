@@ -14,7 +14,7 @@ from .contract import (
     verify_contract,
 )
 from .doctor import run_doctor
-from .failures import (
+from .sealed_failures import (
     ForgeFailureError,
     close_failure,
     register_failure,
