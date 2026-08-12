@@ -6,7 +6,7 @@ import shutil
 import stat
 import tempfile
 
-from forge_core.codex_adapter import (
+from forge_core.codex_boundary import (
     events_to_w1_trace,
     execute_codex_adapter,
     inspect_codex_executable,
