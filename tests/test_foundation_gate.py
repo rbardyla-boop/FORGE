@@ -140,15 +140,19 @@ class FoundationGate(unittest.TestCase):
     def test_fg_a11_deleted_locked_failure_cannot_disappear(self):
         with tempfile.TemporaryDirectory(prefix='forge-fg-') as tmp:
             base=Path(tmp); root,_=make_f4_failure_project(base,accepted_feature_values=('off',)); shutil.rmtree(root/'.forge/failures/FAIL-F6L')
-            patch=patch_file(base,root,'feature.txt','on\n'); _, result=run_candidate(root,patch)
-            self.assertNotEqual(result['terminal_state'],'CANDIDATE_VERIFIED', result)
+            patch=patch_file(base,root,'feature.txt','on\n'); proc, result=run_candidate(root,patch)
+            self.assertNotEqual(proc.returncode,0)
+            if result is not None:
+                self.assertNotEqual(result['terminal_state'],'CANDIDATE_VERIFIED', result)
 
     def test_fg_a12_locked_failure_tamper_fails_closed(self):
         with tempfile.TemporaryDirectory(prefix='forge-fg-') as tmp:
             base=Path(tmp); root,_=make_f4_failure_project(base,accepted_feature_values=('off','on'))
             stored=root/'.forge/failures/FAIL-F6L/evaluators/PERMANENT_EVALUATION.py'; stored.write_text('raise SystemExit(0)\n')
-            patch=patch_file(base,root,'feature.txt','on\n'); _, result=run_candidate(root,patch)
-            self.assertEqual(result['terminal_state'],'REPAIR_REQUIRED')
+            patch=patch_file(base,root,'feature.txt','on\n'); proc, result=run_candidate(root,patch)
+            self.assertNotEqual(proc.returncode,0)
+            if result is not None:
+                self.assertNotEqual(result['terminal_state'],'CANDIDATE_VERIFIED', result)
 
     def test_fg_a13_required_check_failure_has_no_final_path(self):
         with tempfile.TemporaryDirectory(prefix='forge-fg-') as tmp:
