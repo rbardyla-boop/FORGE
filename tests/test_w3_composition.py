@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from forge_core.codex_adapter import ForgeCodexAdapterError, execute_codex_adapter
+from forge_core.codex_boundary import ForgeCodexAdapterError, execute_codex_adapter
 from forge_core.containment import _derive_patch, _validate_workspace
 from tests.f5_support import git
 from tests.w3_support import (
