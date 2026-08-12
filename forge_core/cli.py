@@ -14,6 +14,7 @@ from .contract import (
     verify_contract,
 )
 from .doctor import run_doctor
+from .proposal import ForgeProposalError, create_request, submit_proposal, verify_proposal
 from .sealed_failures import (
     ForgeFailureError,
     close_failure,
@@ -61,6 +62,17 @@ def _parser() -> argparse.ArgumentParser:
     failure_replay.add_argument("--candidate", required=True, dest="candidate")
     failure_verify = failure_sub.add_parser("verify", help="verify failure/evaluator integrity")
     failure_verify.add_argument("failure_id")
+
+    proposal = sub.add_parser("proposal", help="manage W1 untrusted patch proposals")
+    proposal_sub = proposal.add_subparsers(dest="proposal_command", required=True)
+    proposal_request = proposal_sub.add_parser("request", help="freeze one provider-neutral proposal request")
+    proposal_request.add_argument("unit_id")
+    proposal_submit = proposal_sub.add_parser("submit", help="validate and store one patch plus trace proposal")
+    proposal_submit.add_argument("unit_id")
+    proposal_submit.add_argument("--patch", required=True, dest="patch_file")
+    proposal_submit.add_argument("--trace", required=True, dest="trace_file")
+    proposal_verify = proposal_sub.add_parser("verify", help="verify stored proposal integrity and live authority")
+    proposal_verify.add_argument("unit_id")
 
     contract = sub.add_parser("contract", help="manage frozen F2 work-unit authority")
     contract_sub = contract.add_subparsers(dest="contract_command", required=True)
@@ -146,6 +158,23 @@ def main(argv: list[str] | None = None) -> int:
                 result = {"command": "failure.verify", **verify_failure(root, args.failure_id)}
             else:
                 raise ForgeFailureError("unauthorized F6 failure command")
+        elif args.command == "proposal":
+            if args.proposal_command == "request":
+                result = {"command": "proposal.request", **create_request(root, args.unit_id)}
+            elif args.proposal_command == "submit":
+                result = {
+                    "command": "proposal.submit",
+                    **submit_proposal(
+                        root,
+                        args.unit_id,
+                        Path(args.patch_file),
+                        Path(args.trace_file),
+                    ),
+                }
+            elif args.proposal_command == "verify":
+                result = {"command": "proposal.verify", **verify_proposal(root, args.unit_id)}
+            else:
+                raise ForgeProposalError("unauthorized W1 proposal command")
         elif args.command == "contract":
             if args.contract_command == "create":
                 record = create_contract(root, args.unit_id, Path(args.authority_file))
@@ -189,6 +218,7 @@ def main(argv: list[str] | None = None) -> int:
         ForgeLifecycleError,
         ForgeGateError,
         ForgeFailureError,
+        ForgeProposalError,
     ) as exc:
         print(f"FORGE_ERROR: {exc}", file=sys.stderr)
         return 2
