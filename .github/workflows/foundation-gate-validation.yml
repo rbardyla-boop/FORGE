@@ -22,6 +22,8 @@ jobs:
         run: python3 -m compileall -q forge_core tests
       - name: Repair 001 exact-candidate seal regressions
         run: python3 -m unittest -v tests.test_foundation_repair_001
+      - name: Repair 002 Git-anchored failure obligation regressions
+        run: python3 -m unittest -v tests.test_foundation_repair_002
       - name: Foundation system matrix FG-A00 through FG-A16 fail-fast
         run: python3 -m unittest -v -f tests.test_foundation_gate
       - name: Whitespace guard
