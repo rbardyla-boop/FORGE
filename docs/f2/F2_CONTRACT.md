@@ -58,7 +58,7 @@ The frozen contract digest must bind all of those fields plus:
 - current contract: `.forge/contracts/<UNIT>.json`
 - archived revision: `.forge/contracts/history/<UNIT>/revision-NNNN.json`
 
-No timestamp, random identifier, conversation text, model reasoning, or absolute machine path may enter the contract record.
+No timestamp, random identifier, conversation text, or model reasoning is Forge-generated into the contract record. Structured path-bearing authority must remain machine-portable: scope paths are relative POSIX paths/patterns, and check argv may not contain direct or flag-embedded absolute filesystem paths. Operator-authored prose fields remain opaque text.
 
 ## Readiness rule
 
@@ -93,6 +93,7 @@ Silent editing of a frozen record must make `verify` and `ready` fail.
 - no absolute or `..` scope paths;
 - `.forge` may never appear in `allowed_paths`;
 - check commands are argv arrays, never shell command strings;
+- check argv tokens may not contain POSIX/Windows absolute filesystem paths, including `--flag=/absolute/path` forms;
 - check IDs are unique;
 - criterion IDs are unique;
 - each success criterion references existing **required** checks;
@@ -122,6 +123,7 @@ F2 passes only if all of the following survive tests:
 17. same authority/revision metadata -> same digest across separate projects;
 18. all F1 regression tests remain green;
 19. `forge doctor` and `forge build` remain absent.
+20. POSIX, Windows, and flag-embedded absolute argv paths are rejected while relative argv paths remain valid.
 
 ## Non-goals
 

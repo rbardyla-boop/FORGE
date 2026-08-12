@@ -157,6 +157,44 @@ class ForgeF2Tests(unittest.TestCase):
                     result = run_forge(root, "contract", "create", "U-BAD", "--file", str(bad))
                     self.assertEqual(result.returncode, 2)
 
+    def test_check_argv_rejects_absolute_machine_paths(self) -> None:
+        unsafe_tokens = (
+            "/usr/bin/python3",
+            "C:\\Python311\\python.exe",
+            "--config=/tmp/forge-config.json",
+        )
+        for index, token in enumerate(unsafe_tokens):
+            with self.subTest(token=token), tempfile.TemporaryDirectory(prefix="forge-f2-") as tmp:
+                root = Path(tmp) / "demo"
+                root.mkdir()
+                init_project(root)
+                authority = valid_authority()
+                authority["checks"][0]["argv"] = [token, "check.py"]
+                source = write_authority(root, authority, f"unsafe-{index}.json")
+                result = run_forge(
+                    root, "contract", "create", "U-0001", "--file", str(source)
+                )
+                self.assertEqual(result.returncode, 2)
+                self.assertIn("absolute machine-specific path", result.stderr)
+                self.assertFalse(contract_path(root).exists())
+
+    def test_relative_check_argv_paths_remain_allowed(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="forge-f2-") as tmp:
+            root = Path(tmp) / "demo"
+            root.mkdir()
+            init_project(root)
+            authority = valid_authority()
+            authority["checks"][0]["argv"] = [
+                "python3",
+                "tools/check.py",
+                "--config=config/test.json",
+            ]
+            source = write_authority(root, authority)
+            result = run_forge(
+                root, "contract", "create", "U-0001", "--file", str(source)
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_success_criterion_must_reference_existing_required_check(self) -> None:
         cases = []
         missing = valid_authority()
