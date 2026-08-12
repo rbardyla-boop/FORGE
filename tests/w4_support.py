@@ -126,6 +126,8 @@ class W4Topology:
                 self.upstream_name,
                 "--network",
                 self.egress_network,
+                "--network-alias",
+                "fake-upstream",
                 "--read-only",
                 "--cap-drop",
                 "ALL",
