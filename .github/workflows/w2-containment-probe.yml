@@ -1,0 +1,64 @@
+name: FORGE W2 Containment Probe
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Docker capability
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(uname -s)" = Linux
+          command -v docker
+          docker version
+          docker info >/dev/null
+      - name: Prepare trusted probe image and mounts
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker pull alpine:3.20 >/dev/null
+          docker image inspect alpine:3.20 --format '{{.Id}}' > /tmp/forge-w2-image-id
+          mkdir -p /tmp/forge-w2-workspace /tmp/forge-w2-output
+          printf 'tracked-baseline\n' > /tmp/forge-w2-workspace/tracked.txt
+          chmod 0755 /tmp/forge-w2-workspace
+          chmod 0777 /tmp/forge-w2-output
+      - name: Full-profile minimal containment proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          IMAGE_ID="$(cat /tmp/forge-w2-image-id)"
+          case "$IMAGE_ID" in sha256:*) ;; *) echo 'image did not resolve to immutable ID' >&2; exit 1;; esac
+          docker run --rm \
+            --network none \
+            --read-only \
+            --cap-drop ALL \
+            --security-opt no-new-privileges \
+            --pids-limit 32 \
+            --memory 128m \
+            --cpus 0.5 \
+            --user 65534:65534 \
+            --mount type=bind,src=/tmp/forge-w2-workspace,dst=/workspace,readonly \
+            --mount type=bind,src=/tmp/forge-w2-output,dst=/output \
+            --tmpfs /tmp:rw,noexec,nosuid,nodev,size=16m \
+            "$IMAGE_ID" sh -eu -c '
+              test "$(cat /workspace/tracked.txt)" = tracked-baseline
+              if printf x > /workspace/forbidden-write 2>/dev/null; then exit 41; fi
+              test ! -e /workspace/.forge
+              printf contained > /output/result.txt
+              test -w /output
+            '
+          test "$(cat /tmp/forge-w2-output/result.txt)" = contained
+          test ! -e /tmp/forge-w2-workspace/forbidden-write
+      - name: Probe verdict
+        run: echo CONTAINMENT_READY
