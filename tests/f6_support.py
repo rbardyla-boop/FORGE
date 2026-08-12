@@ -117,6 +117,11 @@ def locked_record(root: Path, failure_id: str = "FAIL-F6A") -> dict:
 
 def make_f4_failure_project(base: Path, *, permanent_expected: str = "off", mutate_when: str | None = None) -> tuple[Path, Path]:
     root = basic_repo(base)
+    (root / "bug.txt").write_text("fixed\n")
+    git(root, "add", "bug.txt")
+    committed = git(root, "commit", "-m", "add F6 locked-regression fixture")
+    if committed.returncode != 0:
+        raise AssertionError(committed.stderr)
     init_project(root)
     create_contract(root, [{"id": "CHK_001", "required": True, "argv": ["python3", "check.py"]}], allowed=["feature.txt"])
     evaluators = write_evaluators(base, expected="fixed")
