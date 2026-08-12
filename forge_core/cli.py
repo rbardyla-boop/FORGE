@@ -14,15 +14,17 @@ from .contract import (
     verify_contract,
 )
 from .doctor import run_doctor
-from .failures import (
+from .sealed_failures import (
     ForgeFailureError,
     close_failure,
     register_failure,
     replay_failure,
     verify_failure,
 )
-from .gate import ForgeGateError, run_final_gate
-from .lifecycle import ForgeLifecycleError, run_unit_attempt
+from .gate import ForgeGateError
+from .lifecycle import ForgeLifecycleError
+from .sealed_gate import run_final_gate
+from .sealed_lifecycle import run_unit_attempt
 from .state import ForgeStateError, init_state, load_status
 
 

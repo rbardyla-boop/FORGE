@@ -32,6 +32,7 @@ Start with:
 - FORGE-F4: `PASS`
 - FORGE-F5: `PASS`
 - FORGE-F6: `PASS`
+- FORGE FOUNDATION GATE: `PASS`
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
 
@@ -45,4 +46,6 @@ F5 adds an exact-artifact-bound independent final gate. The frozen A00–A11 fal
 
 F6 adds immutable serious-failure memory: repair requires four frozen evaluator layers, locked failures remain permanent regression obligations, and later F4 candidates must replay them before `CANDIDATE_VERIFIED`.
 
-F6 authorizes exactly **FORGE FOUNDATION GATE — attack the complete F1–F6 chain as one system**. The Walls and all AI builders remain unauthorized until that gate passes.
+The Foundation Gate attacks F1–F6 as one composed system. It discovered and repaired two additional authority leaks: mutable baseline substitution at the final gate and deletion of a locked failure obligation. The terminal system matrix, 10/10 repeated fresh runs, full F1–F6 replay, compilation and whitespace gates all pass.
+
+Foundation `PASS` authorizes exactly **W1 BuilderAdapter — a provider-agnostic untrusted builder interface whose only authority is to propose a patch plus trace**. Codex integration, autonomous merge/deploy, project-management autonomy, routing, swarms and all Roof capabilities remain unauthorized.
