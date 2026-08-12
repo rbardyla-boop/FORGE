@@ -2,7 +2,7 @@
 
 This repository contains the documentation-only FORGE-F0 survey and freeze package.
 
-**Current verdict:** `PASS`
+**F0 verdict:** `PASS`
 
 The frozen F0 snapshot was canonicalized to GitHub with exact tree identity:
 
@@ -22,3 +22,11 @@ Start with:
 - `docs/f0/SALVAGE_LEDGER.md`
 - `docs/f0/REPRODUCTION_MATRIX.md`
 - `docs/f0/F0_VERDICT.md`
+
+## Current construction state
+
+- FORGE-F0: `PASS`
+- FORGE-F1: `PASS`
+- FORGE-F2: `AUTHORIZED`, not started
+
+F1 adds only persistent canonical state plus `forge init` and `forge status`.
