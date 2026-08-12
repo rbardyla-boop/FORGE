@@ -1,0 +1,43 @@
+name: FORGE W4 Official Artifact Resolution
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Resolve exact official release assets and digests
+        shell: bash
+        env:
+          RELEASE_TAG: rust-v0.147.0
+        run: |
+          set -euo pipefail
+          release_json="$(mktemp)"
+          curl --fail --silent --show-error \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/openai/codex/releases/tags/${RELEASE_TAG}" \
+            > "$release_json"
+          test "$(jq -r '.tag_name' "$release_json")" = "$RELEASE_TAG"
+          echo "release_id=$(jq -r '.id' "$release_json")"
+          echo "published_at=$(jq -r '.published_at' "$release_json")"
+          echo 'matching_assets_begin'
+          jq -c '.assets[] | select(.name | test("(codex|responses-api-proxy).*(x86_64|linux)|x86_64.*(codex|responses-api-proxy)"; "i")) | {id,name,size,digest,browser_download_url}' "$release_json"
+          echo 'matching_assets_end'
+          cli_count="$(jq '[.assets[] | select(.name == "codex-x86_64-unknown-linux-musl.tar.gz" or .name == "codex-package-x86_64-unknown-linux-musl.tar.gz")] | length' "$release_json")"
+          test "$cli_count" -ge 1
+          proxy_count="$(jq '[.assets[] | select(.name | test("responses-api-proxy.*x86_64.*linux|x86_64.*linux.*responses-api-proxy"; "i"))] | length' "$release_json")"
+          test "$proxy_count" -ge 1
+          test -n "$(jq -r '.assets[] | select(.name == "codex-x86_64-unknown-linux-musl.tar.gz" or .name == "codex-package-x86_64-unknown-linux-musl.tar.gz") | .digest' "$release_json" | head -n1)"
+          jq -e '.assets[] | select(.digest != null and (.digest | startswith("sha256:")))' "$release_json" >/dev/null
+      - name: No secrets used
+        run: echo OFFICIAL_ARTIFACT_RESOLUTION_NO_SECRET_PASS
