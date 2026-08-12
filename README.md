@@ -31,6 +31,7 @@ Start with:
 - FORGE-F3: `PASS`
 - FORGE-F4: `PASS`
 - FORGE-F5: `PASS`
+- FORGE-F6: `PASS`
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
 
@@ -42,4 +43,6 @@ F4 adds one bounded manual-patch lifecycle that runs only in a disposable worktr
 
 F5 adds an exact-artifact-bound independent final gate. The frozen A00–A11 false-completion matrix finishes with zero final false completions after preserving and repairing the A08 visible-test-overfit failure.
 
-F5 authorizes exactly **FORGE-F6 — Failure → Permanent Regression**. No AI builder is authorized.
+F6 adds immutable serious-failure memory: repair requires four frozen evaluator layers, locked failures remain permanent regression obligations, and later F4 candidates must replay them before `CANDIDATE_VERIFIED`.
+
+F6 authorizes exactly **FORGE FOUNDATION GATE — attack the complete F1–F6 chain as one system**. The Walls and all AI builders remain unauthorized until that gate passes.
