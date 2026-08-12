@@ -1,0 +1,30 @@
+name: FORGE W1 Validation
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  w1-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile candidate
+        run: python3 -m compileall -q forge_core tests
+      - name: W1 request authority 7/7
+        run: python3 -m unittest -v tests.test_w1_request
+      - name: W1 proposal submission 10/10
+        run: python3 -m unittest -v tests.test_w1_submission
+      - name: W1 stale integrity and handoff 10/10
+        run: python3 -m unittest -v tests.test_w1_integrity
+      - name: Whitespace guard
+        run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
