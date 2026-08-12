@@ -5,6 +5,14 @@ import json
 from pathlib import Path
 import sys
 
+from .contract import (
+    ForgeContractError,
+    amend_contract,
+    contract_ready,
+    create_contract,
+    freeze_contract,
+    verify_contract,
+)
 from .state import ForgeStateError, init_state, load_status
 
 
@@ -13,6 +21,27 @@ def _parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("init", help="initialize deterministic F1 canonical state")
     sub.add_parser("status", help="read and validate canonical project state")
+
+    contract = sub.add_parser("contract", help="manage frozen F2 work-unit authority")
+    contract_sub = contract.add_subparsers(dest="contract_command", required=True)
+
+    create = contract_sub.add_parser("create", help="create a draft unit contract")
+    create.add_argument("unit_id")
+    create.add_argument("--file", required=True, dest="authority_file")
+
+    freeze = contract_sub.add_parser("freeze", help="freeze a draft contract")
+    freeze.add_argument("unit_id")
+
+    verify = contract_sub.add_parser("verify", help="verify frozen contract integrity")
+    verify.add_argument("unit_id")
+
+    ready = contract_sub.add_parser("ready", help="check implementation eligibility")
+    ready.add_argument("unit_id")
+
+    amend = contract_sub.add_parser("amend", help="create an explicit next revision")
+    amend.add_argument("unit_id")
+    amend.add_argument("--file", required=True, dest="authority_file")
+    amend.add_argument("--reason", required=True)
     return parser
 
 
@@ -30,10 +59,45 @@ def main(argv: list[str] | None = None) -> int:
             }
         elif args.command == "status":
             result = {"command": "status", **load_status(root)}
-        else:  # argparse prevents this path
-            raise ForgeStateError("unauthorized F1 command")
-    except ForgeStateError as exc:
-        print(f"FORGE_STATE_ERROR: {exc}", file=sys.stderr)
+        elif args.command == "contract":
+            if args.contract_command == "create":
+                record = create_contract(root, args.unit_id, Path(args.authority_file))
+                result = {
+                    "command": "contract.create",
+                    "unit_id": record["unit_id"],
+                    "revision": record["revision"],
+                    "state": record["state"],
+                }
+            elif args.contract_command == "freeze":
+                record = freeze_contract(root, args.unit_id)
+                result = {
+                    "command": "contract.freeze",
+                    "unit_id": record["unit_id"],
+                    "revision": record["revision"],
+                    "state": record["state"],
+                    "contract_digest": record["contract_digest"],
+                }
+            elif args.contract_command == "verify":
+                result = {"command": "contract.verify", **verify_contract(root, args.unit_id)}
+            elif args.contract_command == "ready":
+                result = {"command": "contract.ready", **contract_ready(root, args.unit_id)}
+            elif args.contract_command == "amend":
+                record = amend_contract(
+                    root, args.unit_id, Path(args.authority_file), args.reason
+                )
+                result = {
+                    "command": "contract.amend",
+                    "unit_id": record["unit_id"],
+                    "revision": record["revision"],
+                    "state": record["state"],
+                    "parent_digest": record["parent_digest"],
+                }
+            else:
+                raise ForgeContractError("unauthorized F2 contract command")
+        else:
+            raise ForgeStateError("unauthorized Forge command")
+    except (ForgeStateError, ForgeContractError) as exc:
+        print(f"FORGE_ERROR: {exc}", file=sys.stderr)
         return 2
 
     print(json.dumps(result, sort_keys=True))
