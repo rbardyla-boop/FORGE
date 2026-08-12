@@ -16,6 +16,13 @@ def log(event: str, **fields: Any) -> None:
     print(json.dumps({"event": event, **fields}, sort_keys=True, separators=(",", ":")), flush=True)
 
 
+def sse_event(event_type: str, data: dict[str, Any]) -> bytes:
+    return (
+        f"event: {event_type}\n"
+        f"data: {json.dumps(data, sort_keys=True, separators=(',', ':'))}\n\n"
+    ).encode("utf-8")
+
+
 class Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
     server_version = "ForgeW4FakeUpstream/0.1"
@@ -55,7 +62,8 @@ class Handler(BaseHTTPRequestHandler):
             self.reply(400, b'{"error":"bad_json"}')
             return
         mode = request.get("fixture_mode", "good") if isinstance(request, dict) else "good"
-        log("upstream_request", mode=str(mode)[:64], bytes=len(body), credential_verified=True)
+        streaming = bool(request.get("stream", False)) if isinstance(request, dict) else False
+        log("upstream_request", mode=str(mode)[:64], bytes=len(body), credential_verified=True, streaming=streaming)
         if mode == "non_2xx":
             self.reply(429, b'{"error":"fixture_rate_limit"}')
             return
@@ -76,6 +84,16 @@ class Handler(BaseHTTPRequestHandler):
             "output_text": "fixture-upstream-ok",
             "model": request.get("model", "fixture-model") if isinstance(request, dict) else "fixture-model",
         }
+        if streaming:
+            stream_body = b"".join(
+                [
+                    sse_event("response.created", {"type": "response.created", "response": {"id": response["id"], "status": "in_progress"}}),
+                    sse_event("response.output_text.delta", {"type": "response.output_text.delta", "delta": "fixture-upstream-ok"}),
+                    sse_event("response.completed", {"type": "response.completed", "response": response}),
+                ]
+            )
+            self.reply(200, stream_body, "text/event-stream")
+            return
         self.reply(200, json.dumps(response, sort_keys=True).encode("utf-8"))
 
 
