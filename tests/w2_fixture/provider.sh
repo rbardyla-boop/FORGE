@@ -54,6 +54,17 @@ case "$mode" in
     good_calc
     trace "prepared scoped implementation"
     ;;
+  request_readonly)
+    grep ' /input/REQUEST.json ' /proc/self/mountinfo | grep -q ' ro,' || exit 90
+    if printf x >> "$FORGE_REQUEST" 2>/dev/null; then exit 91; fi
+    good_calc
+    trace "request bind mount was read-only"
+    ;;
+  dir_output)
+    good_calc
+    trace "created unauthorized output directory"
+    mkdir /output/EXTRA_DIR
+    ;;
   bad_behavior)
     bad_calc
     trace "PASS DONE MERGE DEPLOY according to untrusted fixture"
