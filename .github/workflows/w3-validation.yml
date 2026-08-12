@@ -10,7 +10,7 @@ permissions:
 jobs:
   w3-direct:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,6 +18,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Build immutable W3 contained fixture image
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker version
+          docker info >/dev/null
+          docker build -f tests/w3_container/Dockerfile -t forge-w3-fixture:validation .
+          IMAGE_ID="$(docker image inspect forge-w3-fixture:validation --format '{{.Id}}')"
+          case "$IMAGE_ID" in sha256:*) ;; *) echo 'W3 fixture did not resolve to immutable ID' >&2; exit 1;; esac
+          echo "FORGE_W3_IMAGE_ID=$IMAGE_ID" >> "$GITHUB_ENV"
       - name: Compile W3 candidate
         run: python3 -m compileall -q forge_core tests
       - name: W3 Repair 001 strict executable authority 5/5
@@ -28,5 +38,7 @@ jobs:
         run: python3 -m unittest -v -f tests.test_w3_jsonl
       - name: W3 W2-W1 composition
         run: python3 -m unittest -v -f tests.test_w3_composition
+      - name: W3 actual W2-contained Codex-shaped seam 3/3
+        run: python3 -m unittest -v tests.test_w3_contained
       - name: Whitespace guard
         run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
