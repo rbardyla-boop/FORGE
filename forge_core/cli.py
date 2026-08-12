@@ -14,6 +14,13 @@ from .contract import (
     verify_contract,
 )
 from .doctor import run_doctor
+from .failures import (
+    ForgeFailureError,
+    close_failure,
+    register_failure,
+    replay_failure,
+    verify_failure,
+)
 from .gate import ForgeGateError, run_final_gate
 from .lifecycle import ForgeLifecycleError, run_unit_attempt
 from .state import ForgeStateError, init_state, load_status
@@ -38,6 +45,20 @@ def _parser() -> argparse.ArgumentParser:
     gate_run = gate_sub.add_parser("run", help="evaluate one F4 verified candidate")
     gate_run.add_argument("unit_id")
     gate_run.add_argument("--evaluator", required=True, dest="evaluator_file")
+
+    failure = sub.add_parser("failure", help="manage F6 permanent failure memory")
+    failure_sub = failure.add_subparsers(dest="failure_command", required=True)
+    failure_register = failure_sub.add_parser("register", help="freeze one serious failure")
+    failure_register.add_argument("failure_id")
+    failure_register.add_argument("--file", required=True, dest="spec_file")
+    failure_close = failure_sub.add_parser("close", help="run all four repair-closure layers")
+    failure_close.add_argument("failure_id")
+    failure_close.add_argument("--candidate", required=True, dest="candidate")
+    failure_replay = failure_sub.add_parser("replay", help="replay a locked permanent regression")
+    failure_replay.add_argument("failure_id")
+    failure_replay.add_argument("--candidate", required=True, dest="candidate")
+    failure_verify = failure_sub.add_parser("verify", help="verify failure/evaluator integrity")
+    failure_verify.add_argument("failure_id")
 
     contract = sub.add_parser("contract", help="manage frozen F2 work-unit authority")
     contract_sub = contract.add_subparsers(dest="contract_command", required=True)
@@ -98,6 +119,31 @@ def main(argv: list[str] | None = None) -> int:
             )
             print(json.dumps(result, sort_keys=True))
             return gate_exit
+        elif args.command == "failure":
+            if args.failure_command == "register":
+                record = register_failure(root, args.failure_id, Path(args.spec_file))
+                result = {
+                    "command": "failure.register",
+                    "failure_id": record["failure_id"],
+                    "status": record["status"],
+                    "registration_digest": record["registration_digest"],
+                }
+            elif args.failure_command == "close":
+                result, failure_exit = close_failure(
+                    root, args.failure_id, Path(args.candidate)
+                )
+                print(json.dumps(result, sort_keys=True))
+                return failure_exit
+            elif args.failure_command == "replay":
+                result, failure_exit = replay_failure(
+                    root, args.failure_id, Path(args.candidate)
+                )
+                print(json.dumps(result, sort_keys=True))
+                return failure_exit
+            elif args.failure_command == "verify":
+                result = {"command": "failure.verify", **verify_failure(root, args.failure_id)}
+            else:
+                raise ForgeFailureError("unauthorized F6 failure command")
         elif args.command == "contract":
             if args.contract_command == "create":
                 record = create_contract(root, args.unit_id, Path(args.authority_file))
@@ -135,7 +181,13 @@ def main(argv: list[str] | None = None) -> int:
                 raise ForgeContractError("unauthorized F2 contract command")
         else:
             raise ForgeStateError("unauthorized Forge command")
-    except (ForgeStateError, ForgeContractError, ForgeLifecycleError, ForgeGateError) as exc:
+    except (
+        ForgeStateError,
+        ForgeContractError,
+        ForgeLifecycleError,
+        ForgeGateError,
+        ForgeFailureError,
+    ) as exc:
         print(f"FORGE_ERROR: {exc}", file=sys.stderr)
         return 2
 

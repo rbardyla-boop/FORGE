@@ -23,6 +23,7 @@ from .doctor import (
     PROJECT_BASELINE_FAILURE,
     run_doctor,
 )
+from .failures import ForgeFailureError, run_locked_regressions
 
 PATCH_LIMIT_BYTES = 1024 * 1024
 RUN_SCHEMA = "forge.unit-attempt.v0.1"
@@ -374,6 +375,7 @@ def run_unit_attempt(
     scope_violations: list[dict[str, str]] = []
     check_results: list[dict[str, Any]] = []
     checks_not_run: list[str] = []
+    locked_regression_results: list[dict[str, Any]] = []
 
     try:
         added = _git_text(
@@ -554,8 +556,21 @@ def run_unit_attempt(
                                                     for c in classifications
                                                 )
                                             ):
-                                                terminal_state = CANDIDATE_VERIFIED
-                                                reason_code = "ALL_REQUIRED_CHECKS_PASS"
+                                                try:
+                                                    locked_regression_results, regressions_passed = run_locked_regressions(
+                                                        root, disposable
+                                                    )
+                                                except ForgeFailureError as exc:
+                                                    terminal_state = REPAIR_REQUIRED
+                                                    reason_code = "LOCKED_REGRESSION_VERIFICATION_FAILED"
+                                                    infra_detail, infra_truncated = _bounded(str(exc))
+                                                else:
+                                                    if regressions_passed:
+                                                        terminal_state = CANDIDATE_VERIFIED
+                                                        reason_code = "ALL_REQUIRED_CHECKS_AND_LOCKED_REGRESSIONS_PASS"
+                                                    else:
+                                                        terminal_state = REPAIR_REQUIRED
+                                                        reason_code = "LOCKED_REGRESSION_FAILED"
                                             else:
                                                 terminal_state = REPAIR_REQUIRED
                                                 reason_code = "INCOMPLETE_CHECK_EVIDENCE"
@@ -629,6 +644,7 @@ def run_unit_attempt(
         "required_checks": check_results,
         "required_checks_not_run": checks_not_run,
         "advisory_checks_skipped": advisory_ids,
+        "locked_regressions": locked_regression_results,
         "terminal_state": terminal_state,
         "reason_code": reason_code,
         "operator_status_unchanged": operator_status_unchanged,
