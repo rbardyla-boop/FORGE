@@ -9,12 +9,14 @@ import subprocess
 import tempfile
 from typing import Any
 
+from .failures import ForgeFailureError
 from .lifecycle import (
     CANDIDATE_VERIFIED,
     REPAIR_REQUIRED,
     ForgeLifecycleError,
     run_unit_attempt as _run_legacy_unit_attempt,
 )
+from .sealed_failures import verify_failure_anchors
 
 ATTEMPT = "attempt-0001"
 ZERO_OID = "0" * 40
@@ -163,6 +165,11 @@ def run_unit_attempt(
     **kwargs: Any,
 ) -> tuple[dict[str, Any], int]:
     root = root.resolve()
+    try:
+        verify_failure_anchors(root)
+    except ForgeFailureError as exc:
+        raise ForgeLifecycleError(f"failure-anchor integrity preflight failed: {exc}") from exc
+
     git_exe = shutil.which("git")
     captured_baseline: str | None = None
     if git_exe is not None:
@@ -177,6 +184,10 @@ def run_unit_attempt(
     evidence_path = _attempt_dir(root, unit_id) / "EVIDENCE.json"
     ref_created: str | None = None
     try:
+        try:
+            verify_failure_anchors(root)
+        except ForgeFailureError as exc:
+            raise ForgeLifecycleError(f"failure-anchor integrity postcondition failed: {exc}") from exc
         if git_exe is None or captured_baseline is None:
             raise ForgeLifecycleError("candidate sealing requires captured Git HEAD authority")
         if evidence.get("baseline_commit") != captured_baseline:
