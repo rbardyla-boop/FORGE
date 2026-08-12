@@ -10,7 +10,7 @@ permissions:
 jobs:
   bridge:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,7 +38,11 @@ jobs:
           echo "FORGE_W4_UPSTREAM_IMAGE_ID=$UPSTREAM_ID" >> "$GITHUB_ENV"
       - name: Compile candidate
         run: python3 -m compileall -q forge_core tests
-      - name: W4 initial credentialless dual-network broker attacks
+      - name: W4 front-gate request auth and budget policy 10/10
+        run: python3 -m unittest -v tests.test_w4_gate_policy
+      - name: W4 generated Codex broker config authority 6/6
+        run: python3 -m unittest -v tests.test_w4_codex_config
+      - name: W4 initial credentialless dual-network broker attacks 12/12
         run: python3 -m unittest -v -f tests.test_w4_bridge
       - name: Whitespace guard
         run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
