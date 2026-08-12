@@ -28,8 +28,11 @@ Start with:
 - FORGE-F0: `PASS`
 - FORGE-F1: `PASS`
 - FORGE-F2: `PASS`
-- FORGE-F3: `AUTHORIZED`, not started
+- FORGE-F3: `PASS`
+- FORGE-F4: `AUTHORIZED`, not started
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
 
 F2 adds frozen machine-readable contract authority and an explicit digest-linked amendment chain; it does not execute contract checks.
+
+F3 adds a disposable Git-worktree Environment Doctor that classifies baseline readiness without modifying product code.
