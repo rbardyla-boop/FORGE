@@ -115,7 +115,12 @@ def locked_record(root: Path, failure_id: str = "FAIL-F6A") -> dict:
     return json.loads((root / ".forge" / "failures" / failure_id / "record.json").read_text())
 
 
-def make_f4_failure_project(base: Path, *, permanent_expected: str = "off", mutate_when: str | None = None) -> tuple[Path, Path]:
+def make_f4_failure_project(
+    base: Path,
+    *,
+    accepted_feature_values: tuple[str, ...] = ("off",),
+    mutate_when: str | None = None,
+) -> tuple[Path, Path]:
     root = basic_repo(base)
     (root / "bug.txt").write_text("fixed\n")
     git(root, "add", "bug.txt")
@@ -142,7 +147,8 @@ def make_f4_failure_project(base: Path, *, permanent_expected: str = "off", muta
                 "    sys.exit(0)",
             ]
         )
-    lines.append(f"sys.exit(0 if value == {permanent_expected!r} else 9)")
+    allowed_literal = repr(tuple(accepted_feature_values))
+    lines.append(f"sys.exit(0 if value in {allowed_literal} else 9)")
     permanent.write_text("\n".join(lines) + "\n", encoding="utf-8")
     spec = write_spec(base, evaluators)
     registered = run_forge(root, "failure", "register", "FAIL-F6L", "--file", str(spec))
