@@ -20,6 +20,8 @@ jobs:
           python-version: '3.12'
       - name: Compile W3 candidate
         run: python3 -m compileall -q forge_core tests
+      - name: W3 Repair 001 strict executable authority 5/5
+        run: python3 -m unittest -v tests.test_w3_repair_001
       - name: W3 executable config credential authority
         run: python3 -m unittest -v -f tests.test_w3_executable
       - name: W3 JSONL process behavior
