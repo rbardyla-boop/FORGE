@@ -13,6 +13,7 @@ from .contract import (
     freeze_contract,
     verify_contract,
 )
+from .doctor import run_doctor
 from .state import ForgeStateError, init_state, load_status
 
 
@@ -21,6 +22,8 @@ def _parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("init", help="initialize deterministic F1 canonical state")
     sub.add_parser("status", help="read and validate canonical project state")
+    doctor = sub.add_parser("doctor", help="verify F3 baseline environment readiness")
+    doctor.add_argument("unit_id", nargs="?")
 
     contract = sub.add_parser("contract", help="manage frozen F2 work-unit authority")
     contract_sub = contract.add_subparsers(dest="contract_command", required=True)
@@ -59,6 +62,12 @@ def main(argv: list[str] | None = None) -> int:
             }
         elif args.command == "status":
             result = {"command": "status", **load_status(root)}
+        elif args.command == "doctor":
+            if args.unit_id is None:
+                raise ForgeContractError("invalid choice: doctor requires UNIT")
+            result, doctor_exit = run_doctor(root, args.unit_id)
+            print(json.dumps(result, sort_keys=True))
+            return doctor_exit
         elif args.command == "contract":
             if args.contract_command == "create":
                 record = create_contract(root, args.unit_id, Path(args.authority_file))
