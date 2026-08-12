@@ -1,0 +1,30 @@
+name: FORGE W3 Codex Adapter Validation
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  w3-direct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile W3 candidate
+        run: python3 -m compileall -q forge_core tests
+      - name: W3 executable config credential authority
+        run: python3 -m unittest -v -f tests.test_w3_executable
+      - name: W3 JSONL process behavior
+        run: python3 -m unittest -v -f tests.test_w3_jsonl
+      - name: W3 W2-W1 composition
+        run: python3 -m unittest -v -f tests.test_w3_composition
+      - name: Whitespace guard
+        run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
