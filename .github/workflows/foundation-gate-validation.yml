@@ -1,0 +1,26 @@
+name: FORGE Foundation Gate Validation
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  system-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile candidate
+        run: python3 -m compileall -q forge_core tests
+      - name: Foundation system matrix FG-A00 through FG-A16 fail-fast
+        run: python3 -m unittest -v -f tests.test_foundation_gate
+      - name: Whitespace guard
+        run: git diff --check "${{ github.event.pull_request.base.sha }}..HEAD"
