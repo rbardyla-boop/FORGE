@@ -27,6 +27,9 @@ Start with:
 
 - FORGE-F0: `PASS`
 - FORGE-F1: `PASS`
-- FORGE-F2: `AUTHORIZED`, not started
+- FORGE-F2: `PASS`
+- FORGE-F3: `AUTHORIZED`, not started
 
 F1 adds only persistent canonical state plus `forge init` and `forge status`.
+
+F2 adds frozen machine-readable contract authority and an explicit digest-linked amendment chain; it does not execute contract checks.
