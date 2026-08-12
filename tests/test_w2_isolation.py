@@ -16,7 +16,11 @@ class ForgeW2IsolationTests(unittest.TestCase):
         self.assertEqual(report["classification"], "CONTAINMENT_READY")
         self.assertEqual(report["backend"], "linux-docker-v0.1")
         self.assertTrue(report["image_id"].startswith("sha256:"))
-        joined = " ".join(report["profile"])
+        self.assertGreater(os.geteuid(), 0)
+        self.assertEqual(report["provider_uid"], os.geteuid())
+        self.assertEqual(report["provider_gid"], os.getegid())
+        profile = report["profile"]
+        joined = " ".join(profile)
         for required in (
             "--network none",
             "--read-only",
@@ -25,9 +29,10 @@ class ForgeW2IsolationTests(unittest.TestCase):
             "--pids-limit 64",
             "--memory 256m",
             "--cpus 1.0",
-            "--user 65534:65534",
         ):
             self.assertIn(required, joined)
+        user_index = profile.index("--user")
+        self.assertEqual(profile[user_index + 1], f"{os.geteuid()}:{os.getegid()}")
 
     def test_good_fixture_edits_only_disposable_workspace_and_reaches_proposal_only(self):
         with tempfile.TemporaryDirectory(prefix="forge-w2-") as tmp:
