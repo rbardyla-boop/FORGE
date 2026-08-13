@@ -8,8 +8,6 @@ import time
 from typing import Any
 
 EXPECTED_SECRET = os.environ.get("FORGE_W4_EXPECTED_UPSTREAM_SECRET", "")
-if not EXPECTED_SECRET:
-    raise SystemExit("FORGE_W4_EXPECTED_UPSTREAM_SECRET required")
 
 
 def log(event: str, **fields: Any) -> None:
@@ -21,6 +19,88 @@ def sse_event(event_type: str, data: dict[str, Any]) -> bytes:
         f"event: {event_type}\n"
         f"data: {json.dumps(data, sort_keys=True, separators=(',', ':'))}\n\n"
     ).encode("utf-8")
+
+
+def stream_body(response: dict[str, Any]) -> bytes:
+    message = {
+        "id": "msg_w4_fixture",
+        "type": "message",
+        "status": "completed",
+        "role": "assistant",
+        "content": [
+            {
+                "type": "output_text",
+                "text": "fixture-upstream-ok",
+                "annotations": [],
+            }
+        ],
+    }
+    created_response = {
+        "id": response["id"],
+        "object": "response",
+        "status": "in_progress",
+        "output": [],
+    }
+    completed_response = dict(response)
+    completed_response["output"] = [message]
+    return b"".join(
+        [
+            sse_event("response.created", {"type": "response.created", "response": created_response}),
+            sse_event(
+                "response.output_item.added",
+                {
+                    "type": "response.output_item.added",
+                    "output_index": 0,
+                    "item": {"id": message["id"], "type": "message", "status": "in_progress", "role": "assistant", "content": []},
+                },
+            ),
+            sse_event(
+                "response.content_part.added",
+                {
+                    "type": "response.content_part.added",
+                    "item_id": message["id"],
+                    "output_index": 0,
+                    "content_index": 0,
+                    "part": {"type": "output_text", "text": "", "annotations": []},
+                },
+            ),
+            sse_event(
+                "response.output_text.delta",
+                {
+                    "type": "response.output_text.delta",
+                    "item_id": message["id"],
+                    "output_index": 0,
+                    "content_index": 0,
+                    "delta": "fixture-upstream-ok",
+                },
+            ),
+            sse_event(
+                "response.output_text.done",
+                {
+                    "type": "response.output_text.done",
+                    "item_id": message["id"],
+                    "output_index": 0,
+                    "content_index": 0,
+                    "text": "fixture-upstream-ok",
+                },
+            ),
+            sse_event(
+                "response.content_part.done",
+                {
+                    "type": "response.content_part.done",
+                    "item_id": message["id"],
+                    "output_index": 0,
+                    "content_index": 0,
+                    "part": message["content"][0],
+                },
+            ),
+            sse_event(
+                "response.output_item.done",
+                {"type": "response.output_item.done", "output_index": 0, "item": message},
+            ),
+            sse_event("response.completed", {"type": "response.completed", "response": completed_response}),
+        ]
+    )
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -85,18 +165,14 @@ class Handler(BaseHTTPRequestHandler):
             "model": request.get("model", "fixture-model") if isinstance(request, dict) else "fixture-model",
         }
         if streaming:
-            stream_body = b"".join(
-                [
-                    sse_event("response.created", {"type": "response.created", "response": {"id": response["id"], "status": "in_progress"}}),
-                    sse_event("response.output_text.delta", {"type": "response.output_text.delta", "delta": "fixture-upstream-ok"}),
-                    sse_event("response.completed", {"type": "response.completed", "response": response}),
-                ]
-            )
-            self.reply(200, stream_body, "text/event-stream")
+            self.reply(200, stream_body(response), "text/event-stream")
             return
         self.reply(200, json.dumps(response, sort_keys=True).encode("utf-8"))
 
 
-server = ThreadingHTTPServer(("0.0.0.0", 8090), Handler)
-log("fake_upstream_ready", port=8090)
-server.serve_forever(poll_interval=0.1)
+if __name__ == "__main__":
+    if not EXPECTED_SECRET:
+        raise SystemExit("FORGE_W4_EXPECTED_UPSTREAM_SECRET required")
+    server = ThreadingHTTPServer(("0.0.0.0", 8090), Handler)
+    log("fake_upstream_ready", port=8090)
+    server.serve_forever(poll_interval=0.1)
