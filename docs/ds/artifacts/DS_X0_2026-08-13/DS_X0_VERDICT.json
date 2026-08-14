@@ -1,0 +1,103 @@
+{
+  "candidate": {
+    "authorized_delta": [
+      "digital-stewardship-00.js"
+    ],
+    "commit": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+    "ds_e1_packet_sha256": "2c54e87a123b8afe5d9719c45ad39655af896e0ebf3c51ccfdf89801f4c7c817",
+    "parent": "d8727e7d5946f48ada39199e77df9564a62e4203",
+    "snapshot_ds_manifest_sha256": "2e566f69b9f67f21f642549a409c4fb3ea569e5d067a3db9988172bc3879031d",
+    "source_files": [
+      "digital-stewardship-00.html",
+      "digital-stewardship-00.js",
+      "digital-stewardship-01.html",
+      "digital-stewardship-01.js",
+      "digital-stewardship-02.html",
+      "digital-stewardship-02.js",
+      "digital-stewardship-03.html",
+      "digital-stewardship-03.js",
+      "digital-stewardship-04.html",
+      "digital-stewardship-04.js",
+      "digital-stewardship-05.html",
+      "digital-stewardship-05.js",
+      "digital-stewardship-06.html",
+      "digital-stewardship-06.js"
+    ]
+  },
+  "candidate_fingerprint_after": {
+    "ds_manifest": "8e48e83834b3592549c2e2ac8e8e6559b3b6959b14f3afbc03410d51ab61a8e9",
+    "head": "48a9917e96ace8f928938b6673a722d8f85699c9",
+    "status": "?? CLOVELEARN_CLOUDFLARE_UPLOAD_FINAL_2026-08-12.zip\n?? dist/ds-e0/DS_E0_BLIND_PACKET_2026-08-12.md\n?? dist/ds-e0/DS_E0_BLIND_PACKET_MANIFEST_2026-08-12.json\n?? dist/ds-e0/DS_E0_EVALUATOR_PROMPT.txt\n?? docs/CLOVE_V2_DS_AI_USABILITY_PROXY_PROTOCOL_V1.md\n?? docs/CLOVE_V2_DS_AI_USABILITY_PROXY_PROTOCOL_V1_1.md\n?? docs/CLOVE_V2_DS_E0_HUMAN_EVIDENCE_PROTOCOL_V1.md\n?? docs/CLOVE_V2_DS_HUMAN_EVIDENCE_PROTOCOL_V1_DS_E1_REBOUND.md\n?? docs/CLOVE_V2_DS_OPERATING_TEAM_CONSTRAINT.md\n?? ds-e0-blind-packet.zip\n?? new-work/CLOVE_REPO_SALVAGE_AUDIT_2026-08-13.md\n?? new-work/DS_AI_PROXY_P01_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P02_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P03_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P04_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P05_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_SEALED_CORPUS_2026-08-13.md\n?? new-work/DS_AI_PROXY_V1_1_FREEZE_2026-08-13.md\n?? new-work/DS_AI_PROXY_V1_1_P01_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P02_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P03_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P04_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P05_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_SEALED_CORPUS_2026-08-13.md\n?? new-work/DS_AI_PROXY_V1_1_VERDICT_2026-08-13.md\n?? new-work/DS_AI_PROXY_VERDICT_V1_2026-08-13.md\n?? new-work/DS_E0_EVALUATOR_A_RESPONSE_2026-08-13.txt\n?? new-work/DS_E0_EVALUATOR_B_RESPONSE_2026-08-13.txt\n?? new-work/DS_E0_FREEZE_RECORD_2026-08-13.md\n?? new-work/DS_E0_REPRODUCTION_RECORD_2026-08-13.md\n?? new-work/DS_E0_SEALED_RESPONSE_HASHES_2026-08-13.md\n?? new-work/DS_E0_VERDICT_2026-08-13.md\n?? new-work/DS_E1_BLIND_PACKET_2026-08-13.md\n?? new-work/DS_E1_BLIND_PACKET_2026-08-13.zip\n?? new-work/DS_E1_BLIND_PACKET_MANIFEST_2026-08-13.json\n?? new-work/DS_E1_EVALUATOR_A_RESPONSE_2026-08-13.txt\n?? new-work/DS_E1_EVALUATOR_B_RESPONSE_2026-08-13.txt\n?? new-work/DS_E1_EVALUATOR_PROMPT.txt\n?? new-work/DS_E1_FREEZE_RECORD_2026-08-13.md\n?? new-work/DS_E1_GATE_AGGREGATE_2026-08-13.json\n?? new-work/DS_E1_PACKET_SERIALIZER_2026-08-13.mjs\n?? new-work/DS_E1_SEALED_RESPONSE_HASHES_2026-08-13.md\n?? new-work/DS_E1_VERDICT_2026-08-13.md\n?? new-work/DS_H0_PROTOCOL_REBIND_RECORD_2026-08-13.md\n?? new-work/DS_H1_DS00_REPAIR_EXPERIMENT_2026-08-13.md\n?? new-work/DS_H1_RECRUITMENT_GATE_2026-08-13.md\n?? new-work/DS_HUMAN_EVIDENCE_PROTOCOL_FREEZE_2026-08-13.md\n?? new-work/DS_R0_PROXY_FAILURE_LOCALIZATION_2026-08-13.md\n?? new-work/DS_R1_AI_PROXY_PACKET_2026-08-13.tar\n?? new-work/DS_R1_AI_PROXY_PROTOCOL_V1_1_RERUN_2026-08-13.md\n?? new-work/DS_R1_PROXY_INVALID_RECORDS_2026-08-13.md\n?? new-work/DS_R1_PROXY_P01_2026-08-13.md\n?? new-work/DS_R1_PROXY_P02_2026-08-13.md\n?? new-work/DS_R1_PROXY_P03_2026-08-13.md\n?? new-work/DS_R1_PROXY_P04_2026-08-13.md\n?? new-work/DS_R1_PROXY_P05_2026-08-13.md\n?? new-work/DS_R1_PROXY_SEALED_HASHES_2026-08-13.md\n?? new-work/DS_R1_TERMINAL_VERDICT_2026-08-13.md"
+  },
+  "candidate_fingerprint_before": {
+    "ds_manifest": "8e48e83834b3592549c2e2ac8e8e6559b3b6959b14f3afbc03410d51ab61a8e9",
+    "head": "48a9917e96ace8f928938b6673a722d8f85699c9",
+    "status": "?? CLOVELEARN_CLOUDFLARE_UPLOAD_FINAL_2026-08-12.zip\n?? dist/ds-e0/DS_E0_BLIND_PACKET_2026-08-12.md\n?? dist/ds-e0/DS_E0_BLIND_PACKET_MANIFEST_2026-08-12.json\n?? dist/ds-e0/DS_E0_EVALUATOR_PROMPT.txt\n?? docs/CLOVE_V2_DS_AI_USABILITY_PROXY_PROTOCOL_V1.md\n?? docs/CLOVE_V2_DS_AI_USABILITY_PROXY_PROTOCOL_V1_1.md\n?? docs/CLOVE_V2_DS_E0_HUMAN_EVIDENCE_PROTOCOL_V1.md\n?? docs/CLOVE_V2_DS_HUMAN_EVIDENCE_PROTOCOL_V1_DS_E1_REBOUND.md\n?? docs/CLOVE_V2_DS_OPERATING_TEAM_CONSTRAINT.md\n?? ds-e0-blind-packet.zip\n?? new-work/CLOVE_REPO_SALVAGE_AUDIT_2026-08-13.md\n?? new-work/DS_AI_PROXY_P01_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P02_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P03_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P04_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_P05_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_SEALED_CORPUS_2026-08-13.md\n?? new-work/DS_AI_PROXY_V1_1_FREEZE_2026-08-13.md\n?? new-work/DS_AI_PROXY_V1_1_P01_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P02_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P03_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P04_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_P05_RESPONSE_2026-08-13.txt\n?? new-work/DS_AI_PROXY_V1_1_SEALED_CORPUS_2026-08-13.md\n?? new-work/DS_AI_PROXY_V1_1_VERDICT_2026-08-13.md\n?? new-work/DS_AI_PROXY_VERDICT_V1_2026-08-13.md\n?? new-work/DS_E0_EVALUATOR_A_RESPONSE_2026-08-13.txt\n?? new-work/DS_E0_EVALUATOR_B_RESPONSE_2026-08-13.txt\n?? new-work/DS_E0_FREEZE_RECORD_2026-08-13.md\n?? new-work/DS_E0_REPRODUCTION_RECORD_2026-08-13.md\n?? new-work/DS_E0_SEALED_RESPONSE_HASHES_2026-08-13.md\n?? new-work/DS_E0_VERDICT_2026-08-13.md\n?? new-work/DS_E1_BLIND_PACKET_2026-08-13.md\n?? new-work/DS_E1_BLIND_PACKET_2026-08-13.zip\n?? new-work/DS_E1_BLIND_PACKET_MANIFEST_2026-08-13.json\n?? new-work/DS_E1_EVALUATOR_A_RESPONSE_2026-08-13.txt\n?? new-work/DS_E1_EVALUATOR_B_RESPONSE_2026-08-13.txt\n?? new-work/DS_E1_EVALUATOR_PROMPT.txt\n?? new-work/DS_E1_FREEZE_RECORD_2026-08-13.md\n?? new-work/DS_E1_GATE_AGGREGATE_2026-08-13.json\n?? new-work/DS_E1_PACKET_SERIALIZER_2026-08-13.mjs\n?? new-work/DS_E1_SEALED_RESPONSE_HASHES_2026-08-13.md\n?? new-work/DS_E1_VERDICT_2026-08-13.md\n?? new-work/DS_H0_PROTOCOL_REBIND_RECORD_2026-08-13.md\n?? new-work/DS_H1_DS00_REPAIR_EXPERIMENT_2026-08-13.md\n?? new-work/DS_H1_RECRUITMENT_GATE_2026-08-13.md\n?? new-work/DS_HUMAN_EVIDENCE_PROTOCOL_FREEZE_2026-08-13.md\n?? new-work/DS_R0_PROXY_FAILURE_LOCALIZATION_2026-08-13.md\n?? new-work/DS_R1_AI_PROXY_PACKET_2026-08-13.tar\n?? new-work/DS_R1_AI_PROXY_PROTOCOL_V1_1_RERUN_2026-08-13.md\n?? new-work/DS_R1_PROXY_INVALID_RECORDS_2026-08-13.md\n?? new-work/DS_R1_PROXY_P01_2026-08-13.md\n?? new-work/DS_R1_PROXY_P02_2026-08-13.md\n?? new-work/DS_R1_PROXY_P03_2026-08-13.md\n?? new-work/DS_R1_PROXY_P04_2026-08-13.md\n?? new-work/DS_R1_PROXY_P05_2026-08-13.md\n?? new-work/DS_R1_PROXY_SEALED_HASHES_2026-08-13.md\n?? new-work/DS_R1_TERMINAL_VERDICT_2026-08-13.md"
+  },
+  "contract_sha256": "37a6fd797702511d842fd8c25bf650f2159fd0b316b527535d8be17a0b6b4567",
+  "criteria": {
+    "candidate_mutations": true,
+    "core_task_completion_rate": true,
+    "critical_safety_privacy_failures": true,
+    "cross_run_leakage": true,
+    "deterministic_replay_rate": true,
+    "ds_e1_properties": true,
+    "ds_i0_regression": true,
+    "false_successes": true,
+    "irrecoverable_state_corruption": true,
+    "recovery_task_completion_rate": true
+  },
+  "ds_i0": {
+    "browser": "firefox",
+    "command": [
+      "node",
+      "--test",
+      "tests/static/ds-i0-adversarial.test.mjs",
+      "tests/static/ds-i0-browser.test.mjs",
+      "tests/static/ds-i0-contract.test.mjs",
+      "tests/static/ds-i0-mutation.test.mjs",
+      "tests/static/ds-i0-release-boundary.test.mjs",
+      "tests/static/ds-i0-state-machine.test.mjs"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "stderr_tail": "",
+    "stdout_tail": "(firefox)\nok 11 - forged later-stage state without prerequisite answers resets safely (firefox)\n  ---\n  duration_ms: 496.744018\n  type: 'test'\n  ...\n# Subtest: storage write failure is explicit and flow remains usable in memory (firefox)\nok 12 - storage write failure is explicit and flow remains usable in memory (firefox)\n  ---\n  duration_ms: 638.547442\n  type: 'test'\n  ...\n# Subtest: mobile, keyboard, reduced-motion and rapid activation remain safe (firefox)\nok 13 - mobile, keyboard, reduced-motion and rapid activation remain safe (firefox)\n  ---\n  duration_ms: 595.753312\n  type: 'test'\n  ...\n# Subtest: DS-I0 is first-party, structured-choice only, and network silent\nok 14 - DS-I0 is first-party, structured-choice only, and network silent\n  ---\n  duration_ms: 1.112538\n  type: 'test'\n  ...\n# Subtest: DS-I0 never asks for sensitive account/provider content\nok 15 - DS-I0 never asks for sensitive account/provider content\n  ---\n  duration_ms: 0.610771\n  type: 'test'\n  ...\n# Subtest: DS-I0 copy preserves evidence and destructive-action boundaries\nok 16 - DS-I0 copy preserves evidence and destructive-action boundaries\n  ---\n  duration_ms: 0.895348\n  type: 'test'\n  ...\n# Subtest: DS-I0 exposes only coarse local state fields\nok 17 - DS-I0 exposes only coarse local state fields\n  ---\n  duration_ms: 0.761675\n  type: 'test'\n  ...\n# Subtest: DS-I0 retains the low-literacy interaction budget in markup/styles\nok 18 - DS-I0 retains the low-literacy interaction budget in markup/styles\n  ---\n  duration_ms: 0.344211\n  type: 'test'\n  ...\n# Subtest: clean DS-I0 source triggers no mutation detector\nok 19 - clean DS-I0 source triggers no mutation detector\n  ---\n  duration_ms: 2.698068\n  type: 'test'\n  ...\n# Subtest: network mutation is rejected\nok 20 - network mutation is rejected\n  ---\n  duration_ms: 0.421231\n  type: 'test'\n  ...\n# Subtest: sensitive local-field mutation is rejected\nok 21 - sensitive local-field mutation is rejected\n  ---\n  duration_ms: 0.253539\n  type: 'test'\n  ...\n# Subtest: destructive recovery instruction mutation is rejected\nok 22 - destructive recovery instruction mutation is rejected\n  ---\n  duration_ms: 0.169267\n  type: 'test'\n  ...\n# Subtest: illegal stage-transition mutation is rejected\nok 23 - illegal stage-transition mutation is rejected\n  ---\n  duration_ms: 0.209362\n  type: 'test'\n  ...\n# Subtest: DS-I0 remains explicitly excluded from the public production upload\nok 24 - DS-I0 remains explicitly excluded from the public production upload\n  ---\n  duration_ms: 14.478519\n  type: 'test'\n  ...\n# Subtest: Mission 001 production runtime remains included while DS-I0 stays private\nok 25 - Mission 001 production runtime remains included while DS-I0 stays private\n  ---\n  duration_ms: 7.553873\n  type: 'test'\n  ...\n# Subtest: oracle accepts the intended full path only in order\nok 26 - oracle accepts the intended full path only in order\n  ---\n  duration_ms: 1.192465\n  type: 'test'\n  ...\n# Subtest: STOPPED_SAFE is reachable from every nonterminal user stage\nok 27 - STOPPED_SAFE is reachable from every nonterminal user stage\n  ---\n  duration_ms: 0.36486\n  type: 'test'\n  ...\n# Subtest: illegal stage skips are rejected\nok 28 - illegal stage skips are rejected\n  ---\n  duration_ms: 0.178933\n  type: 'test'\n  ...\n# Subtest: unknown schema, stage, and enum values are rejected\nok 29 - unknown schema, stage, and enum values are rejected\n  ---\n  duration_ms: 0.274855\n  type: 'test'\n  ...\n# Subtest: later stages require all prior coarse answers even when a forged state uses valid enums\nok 30 - later stages require all prior coarse answers even when a forged state uses valid enums\n  ---\n  duration_ms: 1.482113\n  type: 'test'\n  ...\n# Subtest: privacy mutation controls reject identity-shaped values by enum design\nok 31 - privacy mutation controls reject identity-shaped values by enum design\n  ---\n  duration_ms: 0.350565\n  type: 'test'\n  ...\n1..31\n# tests 31\n# suites 0\n# pass 31\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 7819.26237\n"
+  },
+  "execution_count": 50,
+  "family_counts": {
+    "core_task": 20,
+    "cross_run_isolation": 2,
+    "deterministic_replay": 2,
+    "failure_recovery": 8,
+    "false_success": 6,
+    "privacy_accessibility": 6,
+    "safe_stop": 6
+  },
+  "human_usability": "NOT_CLAIMED",
+  "metrics": {
+    "core_task": {
+      "passed": 20,
+      "rate": 1.0,
+      "total": 20
+    },
+    "cross_run_leakage": 0,
+    "deterministic_replay": {
+      "passed": 2,
+      "rate": 1.0,
+      "total": 2
+    },
+    "failure_recovery": {
+      "passed": 8,
+      "rate": 1.0,
+      "total": 8
+    },
+    "false_successes": 0,
+    "irrecoverable_corruption": 0,
+    "safety_or_privacy_failures": 0
+  },
+  "operator_evidence_sha256": "37eeb17abcdd6f1ae808a041e968424de7068190456b1afe4565e10437f5d998",
+  "schema": "forge.ds-x0.verdict.v1",
+  "terminal": "ENGINEERING_RELEASE_SUPPORTED / HUMAN_USABILITY_NOT_CLAIMED",
+  "unit": "DS-X0"
+}

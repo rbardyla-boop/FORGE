@@ -1,0 +1,50 @@
+{
+  "unit": "DS-D1",
+  "terminal": "DS_D1_DEPLOYMENT_PASS",
+  "candidate": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+  "release_choice": "B",
+  "public_file_count": 302,
+  "artifact_sha256": "6221cb59c694ce0fc9261ba1f38975fbb8dcdd282bceb78bce967d48ae74c794",
+  "upload_manifest_sha256": "d97efc86b8ba5992dd95bd6b3b990c42b58008386ccdbcaea7b7e23c31528c02",
+  "target": {
+    "worker": "wild-hat-6257",
+    "custom_domain": "clovelearn.io",
+    "origin": "wild-hat-6257.rbardyla.workers.dev"
+  },
+  "rollback_predecessor": {
+    "version_id": "e4770db3-8e6d-4ea3-a365-7a485b8830c1",
+    "deployment_id": "46de7bfe-4351-45f9-8dd0-ca5799baab17"
+  },
+  "deployment": {
+    "version_id": "53c7c021-96a5-495b-b622-16bd1b368967",
+    "deployment_id": "662f9820-b551-449e-9647-8f1961052436",
+    "traffic_percent": 100,
+    "created_on": "2026-08-13T12:04:48.755138Z",
+    "bindings": [],
+    "compatibility_date": "2026-08-13",
+    "redirects": {"/index.html": {"to": "/deck.html", "status": 302}},
+    "rollback_executed": false
+  },
+  "origin_smoke": {
+    "/": {"status": 200, "sha256": "dbd4909507f349c54ad637d498031227fadac0f09d08657f401d58feb3d16c16"},
+    "/research/": {"status": 200, "sha256": "2a507cf1d64cde66105a484011363e4f62e7c321b79a502dfa2c822ae48e77ec"},
+    "/_UPLOAD_MANIFEST.json": {"status": 200, "sha256": "d97efc86b8ba5992dd95bd6b3b990c42b58008386ccdbcaea7b7e23c31528c02"},
+    "/research/research.css": {"status": 200, "sha256": "407b584209954fb2ef9a52cac3a34afe312a997e2f09a53f701b7dd219e15e01"},
+    "/arcade/city/": {"status": 200, "sha256": "74d2053d79b0db1d041e7dac4e34dbd6f7e8e2874f2bcd70fb10c6a9b5614f2b"},
+    "/robots.txt": {"status": 200, "sha256": "52a672b0ca8e3704f016f01003882c6f0f2189179fc0f1f3ebdc887d43273046"},
+    "/digital-stewardship-00.html": {"status": 404}
+  },
+  "custom_domain": {
+    "root_status": 200,
+    "research_status": 200,
+    "arcade_status": 200,
+    "manifest_status": 200,
+    "ds00_status": 404,
+    "index_redirect": "302 /deck.html",
+    "edge_transforms": ["managed robots content", "font-face replacement", "challenge link", "challenge script"],
+    "security_headers_unchanged_from_predeploy": true
+  },
+  "regression": {"targeted_tests": 17, "passed": 17},
+  "production_write_scope": "authorized 302-file asset upload only",
+  "human_usability": "NOT_CLAIMED"
+}

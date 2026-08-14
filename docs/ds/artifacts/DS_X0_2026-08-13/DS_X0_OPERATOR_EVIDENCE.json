@@ -1,0 +1,1974 @@
+{
+  "schema": "forge.ds-x0.operator-evidence.v1",
+  "candidate_commit": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+  "browser": "firefox",
+  "execution_count": 50,
+  "candidate_mutated": false,
+  "cross_run_leakage": false,
+  "executions": [
+    {
+      "id": "CORE_KNOWN_01",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_02",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_03",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_04",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_05",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_06",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_07",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_08",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_09",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_10",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_11",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_KNOWN_12",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_01",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_02",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_03",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_04",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_05",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_06",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_07",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "CORE_UNKNOWN_08",
+      "family": "core_task",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "STOP_DEVICE",
+      "family": "safe_stop",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "STOP"
+        }
+      ]
+    },
+    {
+      "id": "STOP_ACCESS_MODE",
+      "family": "safe_stop",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "STOP"
+        }
+      ]
+    },
+    {
+      "id": "STOP_ACCOUNT",
+      "family": "safe_stop",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "STOP"
+        }
+      ]
+    },
+    {
+      "id": "STOP_SERVICE_CLOUD",
+      "family": "safe_stop",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "STOP"
+        }
+      ]
+    },
+    {
+      "id": "STOP_RECOVERY",
+      "family": "safe_stop",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "STOP"
+        }
+      ]
+    },
+    {
+      "id": "STOP_SAFE_CHECK",
+      "family": "safe_stop",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "STOP"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_MALFORMED_JSON",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_FORGED_LATER_STAGE",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_STORAGE_WRITE_FAILURE",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "TABLET"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_STORAGE_READ_FAILURE",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_CLEAR_AND_RELOAD",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_RELOAD_RESUME",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_OVERSIZED_INVALID",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "RECOVERY_RAPID_ACTIVATION",
+      "family": "failure_recovery",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "FALSE_CURRENT",
+      "family": "false_success",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "FALSE_LOCATION",
+      "family": "false_success",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I FOUND THE OFFICIAL RECOVERY LOCATION"
+        }
+      ]
+    },
+    {
+      "id": "FALSE_UNKNOWN",
+      "family": "false_success",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": true,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "FALSE_NO_NETWORK_ACTION",
+      "family": "false_success",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "FALSE_NO_DESTRUCTIVE_ACTION_COPY",
+      "family": "false_success",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "FALSE_UNKNOWN_IS_NOT_COMPLETE_RECOVERY",
+      "family": "false_success",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ]
+    },
+    {
+      "id": "PRIVACY_SCHEMA",
+      "family": "privacy_accessibility",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "PRIVACY_NO_THIRD_PARTY",
+      "family": "privacy_accessibility",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "ACCESS_MOBILE_NO_OVERFLOW",
+      "family": "privacy_accessibility",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "ACCESS_REDUCED_MOTION",
+      "family": "privacy_accessibility",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "ACCESS_KEYBOARD",
+      "family": "privacy_accessibility",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "PRIVACY_NO_OUTBOUND_METHODS",
+      "family": "privacy_accessibility",
+      "passed": true,
+      "task_completed": false,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "REPLAY_KNOWN",
+      "family": "deterministic_replay",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ],
+      "replay_equal": true
+    },
+    {
+      "id": "REPLAY_UNKNOWN",
+      "family": "deterministic_replay",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "I DON'T KNOW"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "NOT SURE"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "NO / NOT SURE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I STILL DO NOT KNOW"
+        }
+      ],
+      "replay_equal": true
+    },
+    {
+      "id": "ISOLATION_FRESH_CONTEXT",
+      "family": "cross_run_isolation",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    },
+    {
+      "id": "ISOLATION_STORAGE_BOUNDARY",
+      "family": "cross_run_isolation",
+      "passed": true,
+      "task_completed": true,
+      "recovery_completed": false,
+      "false_success": false,
+      "safety_or_privacy_failure": false,
+      "irrecoverable_corruption": false,
+      "cross_run_leakage": false,
+      "trace": [
+        {
+          "stage": "0 / START",
+          "label": "I HAVE ONE"
+        },
+        {
+          "stage": "1 / DEVICE",
+          "label": "PHONE"
+        },
+        {
+          "stage": "2 / APP OR BROWSER",
+          "label": "BROWSER"
+        },
+        {
+          "stage": "3 / ACCOUNT",
+          "label": "YES"
+        },
+        {
+          "stage": "4 / SERVICE OR CLOUD",
+          "label": "YES — IT WOULD STILL EXIST"
+        },
+        {
+          "stage": "5 / RECOVERY",
+          "label": "YES — RECOVERY EMAIL / PHONE"
+        },
+        {
+          "stage": "6 / SAFE CHECK",
+          "label": "I CHECKED — IT LOOKS CURRENT"
+        }
+      ]
+    }
+  ]
+}

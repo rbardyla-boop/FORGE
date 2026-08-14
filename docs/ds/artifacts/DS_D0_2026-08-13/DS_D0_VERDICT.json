@@ -1,0 +1,148 @@
+{
+  "blocking_reasons": [
+    "current Clove HEAD is not the frozen DS-E1 candidate; deployment must use an explicitly bound candidate staging source",
+    "the existing production upload deliberately excludes DS-00; no public DS release-boundary authorization exists in DS-D0",
+    "Cloudflare production upload/rollback was not executed or proven; this gate has no deployment credential/action"
+  ],
+  "candidate": {
+    "authorized_delta": [
+      "digital-stewardship-00.js"
+    ],
+    "authorized_delta_pass": true,
+    "candidate_commit": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+    "candidate_parent": "d8727e7d5946f48ada39199e77df9564a62e4203",
+    "commit_exists": true,
+    "current_head": "fe5c86707f9e956d749cc771c93737c6e3e81f06",
+    "current_head_is_candidate": false,
+    "expected_parent": "d8727e7d5946f48ada39199e77df9564a62e4203"
+  },
+  "candidate_archive_sha256": "a941574c970acd16f71c91b3c628e28b9ab9b8aeee9eefd7cfde87b56204f28c",
+  "candidate_ds_manifest_sha256": "2e566f69b9f67f21f642549a409c4fb3ea569e5d067a3db9988172bc3879031d",
+  "candidate_package": {
+    "release_preflight": {
+      "errors": [],
+      "excluded_count": 881,
+      "forbidden_sentinels": [
+        "docs/CLOVE_V2_PROJECT_CONTROL.md",
+        "tests/static/mission-001-contract.test.mjs",
+        "workers/insights/src/contracts.ts",
+        ".github/workflows/f1-verify.yml",
+        "agent/cost-constitution.json",
+        "new-work/F2F3_GOLD_KEY_v0.3.1.csv",
+        "master-map.md",
+        "clovelearn-test-harness.html",
+        "digital-stewardship-00.html",
+        "digital-stewardship-00.js",
+        "digital-stewardship-01.html",
+        "digital-stewardship-01.js",
+        "digital-stewardship-02.html",
+        "digital-stewardship-02.js",
+        "digital-stewardship-03.html",
+        "digital-stewardship-03.js",
+        "digital-stewardship-04.html",
+        "digital-stewardship-04.js",
+        "digital-stewardship-05.html",
+        "digital-stewardship-05.js",
+        "digital-stewardship-06.html",
+        "digital-stewardship-06.js"
+      ],
+      "hardening_excluded_count": 112,
+      "included_count": 302,
+      "mission_runtime": [
+        "mission-001-app.js",
+        "mission-001.html",
+        "mission-private-store.js"
+      ],
+      "required_files": [
+        "index.html",
+        "mission-001.html",
+        "mission-001-app.js",
+        "mission-private-store.js"
+      ],
+      "status": "PASS"
+    },
+    "release_preflight_exit": 0,
+    "release_preflight_stderr": "",
+    "upload_included_count": 302,
+    "upload_includes_ds00_html": false,
+    "upload_includes_ds00_js": false,
+    "upload_list_exit": 0,
+    "upload_stderr": ""
+  },
+  "checks": {
+    "candidate_archive_source_clean": true,
+    "candidate_hash_manifest_intact": true,
+    "candidate_production_preflight": true,
+    "clove_checkout_clean": true,
+    "current_head_bound_to_candidate": false,
+    "current_production_preflight": true,
+    "deployment_target_identified": true,
+    "ds_e1_ds_x0_ds_h2_evidence_intact": true,
+    "ds_runtime_not_public_without_explicit_release": true,
+    "exact_candidate_and_delta": true,
+    "human_usability_claim_absent": true,
+    "post_deploy_smoke_specified": true,
+    "production_rollback_operator_path_proven": false,
+    "public_ds_release_boundary_authorized": false,
+    "public_surface_matches_302": true,
+    "secrets_and_config_unmodified": true,
+    "source_rollback_reconstructed": true,
+    "w2_w4_dependency_non_blocking": true
+  },
+  "current_checkout_status": "",
+  "current_preflight": {
+    "errors": [],
+    "excluded_count": 938,
+    "forbidden_sentinels": [
+      "docs/CLOVE_V2_PROJECT_CONTROL.md",
+      "tests/static/mission-001-contract.test.mjs",
+      "workers/insights/src/contracts.ts",
+      ".github/workflows/f1-verify.yml",
+      "agent/cost-constitution.json",
+      "new-work/F2F3_GOLD_KEY_v0.3.1.csv",
+      "master-map.md",
+      "clovelearn-test-harness.html",
+      "digital-stewardship-00.html",
+      "digital-stewardship-00.js",
+      "digital-stewardship-01.html",
+      "digital-stewardship-01.js",
+      "digital-stewardship-02.html",
+      "digital-stewardship-02.js",
+      "digital-stewardship-03.html",
+      "digital-stewardship-03.js",
+      "digital-stewardship-04.html",
+      "digital-stewardship-04.js",
+      "digital-stewardship-05.html",
+      "digital-stewardship-05.js",
+      "digital-stewardship-06.html",
+      "digital-stewardship-06.js"
+    ],
+    "hardening_excluded_count": 160,
+    "included_count": 304,
+    "mission_runtime": [
+      "mission-001-app.js",
+      "mission-001.html",
+      "mission-private-store.js"
+    ],
+    "required_files": [
+      "index.html",
+      "mission-001.html",
+      "mission-001-app.js",
+      "mission-private-store.js"
+    ],
+    "status": "PASS"
+  },
+  "deployment_target": {
+    "cloudflare_resource": "wild-hat-6257",
+    "host": "clovelearn.io",
+    "path": "owner dashboard static-file upload",
+    "write_performed": false
+  },
+  "expected_candidate_ds_manifest_sha256": "2e566f69b9f67f21f642549a409c4fb3ea569e5d067a3db9988172bc3879031d",
+  "human_usability": "NOT_CLAIMED",
+  "rollback_parent_archive_sha256": "d1ad3fdd8959d4b2d6f9a2fa9ad914a4cffbf22cf69b3ec49d4c7cac2fcd115e",
+  "schema": "forge.ds-d0.verdict.v1",
+  "terminal": "DS_D0_DEPLOYMENT_BLOCKED",
+  "unit": "DS-D0",
+  "w2_w4_classification": "NON_BLOCKING: DS-D0 uses local Git/archive/Node preflight only; it does not traverse W2/W4 Docker fixture paths."
+}

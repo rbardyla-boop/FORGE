@@ -1,0 +1,2646 @@
+{
+  "unit": "DS-D0R",
+  "terminal": "DS_D0R_RELEASE_PATH_PROVEN",
+  "candidate": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+  "predecessor": "d8727e7d5946f48ada39199e77df9564a62e4203",
+  "release_choice": "B",
+  "public_release_boundary": {
+    "ds00_in_public_release": false,
+    "expected_public_files": 302,
+    "production_worker": "wild-hat-6257",
+    "production_route": "clovelearn.io"
+  },
+  "staging": {
+    "worker": "clove-ds-d0r-staging-20260813-r1",
+    "surface": "workers.dev only",
+    "version_sequence": [
+      "0799d26c-6f52-4c91-b6ee-27a33b7c0d50",
+      "e2dbb457-a95e-4bbd-99a0-ae9555c25205",
+      "c050a6ba-f33f-422b-90f5-337ec05d6440"
+    ],
+    "candidate_initial_version": "0799d26c-6f52-4c91-b6ee-27a33b7c0d50",
+    "predecessor_rollback_version": "e2dbb457-a95e-4bbd-99a0-ae9555c25205",
+    "candidate_restore_version": "c050a6ba-f33f-422b-90f5-337ec05d6440",
+    "deleted_after_evidence": true
+  },
+  "artifacts": {
+    "candidate": {
+      "file_count": 302,
+      "manifest_file_present": true,
+      "ds00_files_present": [],
+      "entries": [
+        {
+          "path": "_headers",
+          "sha256": "9870f6f75f72176e878694346f9dc78a8a97afc5224a7b88b8c8f8734c161b44"
+        },
+        {
+          "path": "_redirects",
+          "sha256": "3195a5db13b2610703e06724125c5bbd9a9f52c27ed5f5d4ab53bc48bf8e3120"
+        },
+        {
+          "path": "about-clovelearn.html",
+          "sha256": "cda72860e437761a8d0c9d96b4d06e87df4281d7f7ca85f54e0fe61b88cc29e7"
+        },
+        {
+          "path": "act-drill.html",
+          "sha256": "6a696f3ec24e69570de05a40b1a92957970dcb1956c31faa1b8532435c0a2c73"
+        },
+        {
+          "path": "after-action-review.html",
+          "sha256": "d5b4f2f7687c1df332312aba66d0c503725454ceff108f872fd132be1600fbb2"
+        },
+        {
+          "path": "anchor/anchor-ratio.js",
+          "sha256": "149a8798fb821d79fe01794b3f02a6261caf8f85f39f7a2681f8f5e07cb44168"
+        },
+        {
+          "path": "anchor/anchor-step.js",
+          "sha256": "0d8ead858b0f8fe2529fb39f3c285480cdf34d2e01747c7a979ade04fe134b69"
+        },
+        {
+          "path": "anchor/db.js",
+          "sha256": "8f74ff42b6710c29780d36cb3ac391c47168309a47d27b24090263bdccc3a518"
+        },
+        {
+          "path": "anchor/entropy.js",
+          "sha256": "50b12eaed07b1cf7fb283ad7ea78e164368e2589aa9dfed735c51b45390b05de"
+        },
+        {
+          "path": "anchor/ics.js",
+          "sha256": "ea62e23716e859e251e6e6f6431299e9b43ed9950008156b2c6c40414a096b5b"
+        },
+        {
+          "path": "anchor/tension-meter.js",
+          "sha256": "dcef55c29a4c37daac4938ec3f8fdb700707a750f4b921d8f5faf9a9ae107876"
+        },
+        {
+          "path": "arcade/adapters/pulse-tap-adapter.mjs",
+          "sha256": "051852f0f9f4d6623b6bfb72d521659400e245fe5ea78f7e651877c31f67bce0"
+        },
+        {
+          "path": "arcade/adapters/signal-sprint-adapter.mjs",
+          "sha256": "100f0768925e94156bdb0e0917661f1fd1bcf76fa30c8e6ec6a097093a75b0ac"
+        },
+        {
+          "path": "arcade/arcade-lobby.css",
+          "sha256": "d59ef9915def2653b73d9e90101fb9dd6a92068213a4c9d7ed81e597f2fe6a82"
+        },
+        {
+          "path": "arcade/arcade-lobby.js",
+          "sha256": "3bf36d6c0edb11373ff84943f5e647be5a95bcc6ba35da2f0f2a41fe2c8e142a"
+        },
+        {
+          "path": "arcade/cabinet-adapter-registry.mjs",
+          "sha256": "5e71b245145594bc7ac85a42660b4ae0cb3e1c3bc3d1a37f43f63bcb1b436f33"
+        },
+        {
+          "path": "arcade/cabinet-adapter-runtime.js",
+          "sha256": "7bb0864d2af4a78fa8d20c1e1f81cafb5f493966c1422ebca09e13c2e0ba8160"
+        },
+        {
+          "path": "arcade/cabinet-adapter-sdk.mjs",
+          "sha256": "0e5014fed0fcf449f86bd63579be912c6c147bd08ae1d858fde6f255909a8311"
+        },
+        {
+          "path": "arcade/cabinet-adapter.css",
+          "sha256": "f8260ec4bd43258420bb80e87ea6de0fb74ddc93ffbd29103f7872d5ff0412ea"
+        },
+        {
+          "path": "arcade/cabinet-catalog.mjs",
+          "sha256": "f0d1487a44949855422e9a9b76d06512901a61f8758c207acea09011732ef3e3"
+        },
+        {
+          "path": "arcade/cabinet-frame-contract.mjs",
+          "sha256": "7dd2342d46b538cdc7ffc7e9d5db2f4993814b7aea764122ab8e1bb66f735201"
+        },
+        {
+          "path": "arcade/cabinet-frame.css",
+          "sha256": "32d3f833492ac48c0ade27152004ae80ba93020731f0d92dafa72e9fe5e9989e"
+        },
+        {
+          "path": "arcade/cabinet-frame.js",
+          "sha256": "6c01c5e009eb07f7b5d3f47a5e1d951b6510426c70626a82a691bbc60abb654b"
+        },
+        {
+          "path": "arcade/cabinet-import-loader.mjs",
+          "sha256": "f1baaa48babf3a46d5faf7f43dcb74985036e9efe794ec965bccb3b5ea6f8e33"
+        },
+        {
+          "path": "arcade/cabinet-juice.mjs",
+          "sha256": "23c547c21a339a3da1063c15daa1f41ed099f468bde90a36b849438096ac5cb3"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/adapter.mjs",
+          "sha256": "68530f7e3aa59c627e9ec864b7e271fe6bfe7fb793a41d702d6c8478095f97ea"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/manifest.mjs",
+          "sha256": "b1abe4c4d11df91c6af0aa759bf86144b32032ce9da45752537813ebf67d2f14"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/neon-grid-game.mjs",
+          "sha256": "2f340f9a425969f81c3cf21504739acd9ca9d1c8058328a37261688d16b4f626"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/neon-grid.css",
+          "sha256": "4e3e04f6daea6517d9c17650435abec9ce4c129280a43190e5144fbd84d8b880"
+        },
+        {
+          "path": "arcade/cabinets/sample-import-game/adapter.mjs",
+          "sha256": "c7ea7b5f563ab42aafdebe9d1d8a2903a2e4fdf583e8c853bff7a34f99e2efb4"
+        },
+        {
+          "path": "arcade/cabinets/sample-import-game/manifest.mjs",
+          "sha256": "f0688f8bbda6b922d4b43c9d64b7da37f6abb0a069aff3a41bd67308ef340421"
+        },
+        {
+          "path": "arcade/cabinets/sample-import-game/sample-game.mjs",
+          "sha256": "cf170465aa4f9a8d0579daaed63d9df51911cf9db2c8d98ff566c4cb3425ea26"
+        },
+        {
+          "path": "arcade/cabinets/starters/arbor-bloom/adapter.mjs",
+          "sha256": "873e8209936208fa8e40584c0e156baec6c9b57e5aaef0222670e735ab3065de"
+        },
+        {
+          "path": "arcade/cabinets/starters/arbor-bloom/game.mjs",
+          "sha256": "5441da38bc79b4065138d5a15084e2c7b05c981c0684bc14227d3bebf18faa5a"
+        },
+        {
+          "path": "arcade/cabinets/starters/beacon-climb/adapter.mjs",
+          "sha256": "c176480123663f29122252163e512237b48a66d626885e7785a0411e49891414"
+        },
+        {
+          "path": "arcade/cabinets/starters/beacon-climb/game.mjs",
+          "sha256": "d3e524f23867044c794c569dfa5edff3053e4f7c2485dbcc620bf47008c587de"
+        },
+        {
+          "path": "arcade/cabinets/starters/crane-gate/adapter.mjs",
+          "sha256": "0827b67299de010aa187095e4a03828f77beb4c9c0bf6104091276f229af6568"
+        },
+        {
+          "path": "arcade/cabinets/starters/crane-gate/game.mjs",
+          "sha256": "ab32b3f3d5d3a94d0c21d713e4036528e5a44f9a3acba485fac6701c1877c0d4"
+        },
+        {
+          "path": "arcade/cabinets/starters/crosswalk-window/adapter.mjs",
+          "sha256": "aa822503fbde09e3c88a2677d2d7200dbe6e46c0f9c582dc0de844fd704ce315"
+        },
+        {
+          "path": "arcade/cabinets/starters/crosswalk-window/game.mjs",
+          "sha256": "48a386dbe8f8bfc23705640634c0890e7b8f0fbfe975653b8e6f9e88cead0dad"
+        },
+        {
+          "path": "arcade/cabinets/starters/curated-floor.mjs",
+          "sha256": "64434f5dee6de289bef762ec5bb6420a10f15ba9a6f2ca5ec5dca06a0d67d68d"
+        },
+        {
+          "path": "arcade/cabinets/starters/ember-sync/adapter.mjs",
+          "sha256": "c184274617caeb0c538b5f1efb53c2b5d4a671d5a9dbd86f75f8025245510d05"
+        },
+        {
+          "path": "arcade/cabinets/starters/ember-sync/game.mjs",
+          "sha256": "c94fb5681859ac9bca2da1ad662751a2f627892eb744e83c96c610afbaf81bec"
+        },
+        {
+          "path": "arcade/cabinets/starters/flash-three/adapter.mjs",
+          "sha256": "bfca7a90942a4de3d23f86baf9e898f65193c06d33c15ec37f26098dff286536"
+        },
+        {
+          "path": "arcade/cabinets/starters/flash-three/game.mjs",
+          "sha256": "76310d082bb7f791c74f9e761e753521ea5f4e33110983c861a77d9c98c2a31b"
+        },
+        {
+          "path": "arcade/cabinets/starters/phase-lock/adapter.mjs",
+          "sha256": "ecc66a5a428e378b698aee35937bc1eba3d4f6ccef3f2b98a834393b5d311b69"
+        },
+        {
+          "path": "arcade/cabinets/starters/phase-lock/game.mjs",
+          "sha256": "8f26e3bc59fece504835c88a6132a33cba719f1527d004f64e7060c11fadfb14"
+        },
+        {
+          "path": "arcade/cabinets/starters/spire-pulse/adapter.mjs",
+          "sha256": "c11f8ea3655c89818662fbef7fc8b12dd75f911698dadf1998e8b6437bd7c0bd"
+        },
+        {
+          "path": "arcade/cabinets/starters/spire-pulse/game.mjs",
+          "sha256": "7204caa7f7e0d9cbacdc9cfd017fc9c99cda66211e6803dac8f644cf17ff9cba"
+        },
+        {
+          "path": "arcade/cabinets/starters/starter-host.mjs",
+          "sha256": "ce84caf71468c837011da8c9d746e1e7cf0ae44e2ed4c2e4f7c9dce110c55ac6"
+        },
+        {
+          "path": "arcade/challenge-board.css",
+          "sha256": "42612c2a282671f516ed13bc0813138200d8024775e955a7a62850e49a1f4d50"
+        },
+        {
+          "path": "arcade/challenge-board.js",
+          "sha256": "b695db74dace58c9cbdf8534de34848fa7c3794f1cfd66fd250a141b6e90189b"
+        },
+        {
+          "path": "arcade/city/city-arcade-identity.mjs",
+          "sha256": "96bec249bdd7b0f46ba77ef90950a2ad5caa6cfc575ca69ed1beee16bcb54b74"
+        },
+        {
+          "path": "arcade/city/city-battle-instance.mjs",
+          "sha256": "5f97c89d195f3361eecb4453c5e64b9efae909679403e41f0a1772a211da6e8a"
+        },
+        {
+          "path": "arcade/city/city-block-identity.mjs",
+          "sha256": "3d2d931183dbd38b3b28d3c588dc6cd53fc59fbf2fb778e1d64b489216f4da88"
+        },
+        {
+          "path": "arcade/city/city-block-mood-intake.mjs",
+          "sha256": "742afd08bcd6a57d16d4af3d1077a33900f4e57499517d0ccfa46974bbbc4885"
+        },
+        {
+          "path": "arcade/city/city-block-mood.mjs",
+          "sha256": "0270fbe20af356f53161e30e7fd01bc057a15519547da019c322560fc49e50cb"
+        },
+        {
+          "path": "arcade/city/city-block.mjs",
+          "sha256": "782e2ca46cbc92389d779aaf25264121bc1869f6fe13ff4471ff8dac71b8f9e9"
+        },
+        {
+          "path": "arcade/city/city-collision.mjs",
+          "sha256": "9da9dcb7e9bdb9d62878c5d0329da968b95b9fb5cf1c0440ed30063c1b0968d5"
+        },
+        {
+          "path": "arcade/city/city-district-activity.mjs",
+          "sha256": "58c1acee875e2f5dbcf1f36b0c2a8607ed3c8088100fc4500b271f7834b60bb3"
+        },
+        {
+          "path": "arcade/city/city-district-events.mjs",
+          "sha256": "4bd824c0f1129b3b02bbba76d1ef7c36e648a167a2e0743da04ae128fce5bf68"
+        },
+        {
+          "path": "arcade/city/city-district-flavor.mjs",
+          "sha256": "aecfbebc19c5104db6de0a6acb4d3d2d508b367ee3745d5553c81f0096c5699a"
+        },
+        {
+          "path": "arcade/city/city-district-graph.mjs",
+          "sha256": "b1bbe02d97cf5a1ead65e76d06a61ff96dda2e4b61c789eb933edaedb95a754a"
+        },
+        {
+          "path": "arcade/city/city-district-presence.mjs",
+          "sha256": "537b3e948a2116b7dcced0aab6983baab30138ad4ec06c88d0eac214aecf2f64"
+        },
+        {
+          "path": "arcade/city/city-district.mjs",
+          "sha256": "617ad49709304d467ee1b1e41e164c1ac76eb94671d092f02cb602a0a5d785bc"
+        },
+        {
+          "path": "arcade/city/city-events.mjs",
+          "sha256": "0346ba62b44bb1b0cc1646b30289335041a77969e5f6180aa99afc06f4a3bb17"
+        },
+        {
+          "path": "arcade/city/city-host-rank.mjs",
+          "sha256": "5fd89448c49435f554c01e386dafca3c5be45ab0af097e50b60f9f70eeceee50"
+        },
+        {
+          "path": "arcade/city/city-interaction-receipts.mjs",
+          "sha256": "a144c138e980432b17759ca908cf83590d3bc8a5495c79706f3cc778917c6326"
+        },
+        {
+          "path": "arcade/city/city-interactions.mjs",
+          "sha256": "4db83cb4fe6cb0bfe2f12e068c757ef4d9a9676176a15eacb3a2e58ff6c9abac"
+        },
+        {
+          "path": "arcade/city/city-minimap.js",
+          "sha256": "2d5cbab93d568ce04a3591468b65db17b585766fe516a7b35f6ec4a3eb898f4b"
+        },
+        {
+          "path": "arcade/city/city-net.js",
+          "sha256": "4e68646d48edb88742364b98eb34d9315a69c95f08b7488bfbf865bce0d0fd54"
+        },
+        {
+          "path": "arcade/city/city-objectives.mjs",
+          "sha256": "3ec43f54d944a993ddfb41394a45a626cb4b05270484eac310ba9389bbe1e0d4"
+        },
+        {
+          "path": "arcade/city/city-reconcile.mjs",
+          "sha256": "b4a18d455a8da3e1fb63770ebd4631c08de935bb714c7e1596cb70617fc66fc3"
+        },
+        {
+          "path": "arcade/city/city-render-canvas2d.js",
+          "sha256": "fb5eb317b0bcad3b222c7d49551f2cec82a498d7d371e60b9078f1ffefe5995b"
+        },
+        {
+          "path": "arcade/city/city-render-three.js",
+          "sha256": "c12621cf96ff4d25e02d9dd0f64c952c5f8ecf10c7ebfbb1866843c0e2a34fd2"
+        },
+        {
+          "path": "arcade/city/city-scene.js",
+          "sha256": "fd86d776f8366286fdab2003c810c8b929ca67f97894a86c0ff2f7fd5c42146e"
+        },
+        {
+          "path": "arcade/city/city-scheduler.mjs",
+          "sha256": "ef5dd8567f53319769da55b18fa02a7599ef288111112dd41e4ebffb9811d2a6"
+        },
+        {
+          "path": "arcade/city/city-snapshots.mjs",
+          "sha256": "fd6d93b052045dac778778530da58207306ad44ef50ec8393a68359db7322180"
+        },
+        {
+          "path": "arcade/city/city-stewardship.mjs",
+          "sha256": "c3fd2b1fcaadb870c2bfbfdd31cd21723ffeb881255448e74f8fa699fd80d855"
+        },
+        {
+          "path": "arcade/city/city-street-life.mjs",
+          "sha256": "e3243909351d075e9b2e062c15cc32e82b748d24251dfaab22d0cad1c9f5fca5"
+        },
+        {
+          "path": "arcade/city/city-world-map.mjs",
+          "sha256": "694894f16edf2aa667149d47114d2074ac9cdb86cd69c0e6d709d8e78918900c"
+        },
+        {
+          "path": "arcade/city/city.css",
+          "sha256": "aef953ec47f65a5e61136bd1108d5fb760a5112e6ac3a0f5c638345d1ded7307"
+        },
+        {
+          "path": "arcade/city/index.html",
+          "sha256": "74d2053d79b0db1d041e7dac4e34dbd6f7e8e2874f2bcd70fb10c6a9b5614f2b"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/arcade-builder.mjs",
+          "sha256": "aa818e699490b44fa6a9bef46834fa35ac8fe6dc93f2742f3aaf2fc1b495d9bf"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/cabinet-templates.mjs",
+          "sha256": "43c73ce2bf85089244946c899e1f90dbf631b0dc9b4365ecc2cf1f0f21a8251f"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/free-sandbox-editor.mjs",
+          "sha256": "eed1429264c5229397d86e35cdbd190be44d7f16993bd82691f89eddef1c771c"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/free-sandbox-interpreter.mjs",
+          "sha256": "5e55b66eab86391cc9335afb536135d4cd50a492d7b5c928459774d0fb37ba13"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/free-sandbox-templates.mjs",
+          "sha256": "36f4e8d305796b4e0c61ddea2457a9988c06aac026c1258d8d9c34f90be7f5a1"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/index.html",
+          "sha256": "c37118104dd51702732cd08b48ee265127ff49f87ee46ca47175032c20039503"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/rule-graph-templates.mjs",
+          "sha256": "b2f573e464c57e688dd08227d2baab2f8da68a08a62de861439cfc445cb7e271"
+        },
+        {
+          "path": "arcade/creator/arcade-importer/import-arcade-package.mjs",
+          "sha256": "e62ad72577ef6675ed07c5b498023c50a10cab30732183e2a9b12611121e3370"
+        },
+        {
+          "path": "arcade/creator/arcade-sandbox/free-sandbox-retention.mjs",
+          "sha256": "7761e970a9cc90c1670534364febee11e1fecc8e0cc4117bd6afc2f4e8181985"
+        },
+        {
+          "path": "arcade/creator/arcade-sandbox/index.html",
+          "sha256": "f9c034e49a65c1008aa8ecdf8abff453da9a071073b186bbb414270b875b1bb2"
+        },
+        {
+          "path": "arcade/creator/arcade-sandbox/sandbox-runner.mjs",
+          "sha256": "c15ff35a061c3b3b1d0f455ca24620ff2e04ae3b1c11c726edba36b012178b22"
+        },
+        {
+          "path": "arcade/creator/local-maker/index.html",
+          "sha256": "c76464d15f87b9c5a8baa36c12ed4df312a7a5cdd6334358c440b0ad7d9fe4ec"
+        },
+        {
+          "path": "arcade/creator/samples/arcade-sample/adapter.mjs",
+          "sha256": "2c5882c9fa5596f7116c61ee56e09f268f6bb5a99b97434069aaba9479d3cd79"
+        },
+        {
+          "path": "arcade/creator/samples/arcade-sample/game.mjs",
+          "sha256": "90d49da7dce9aacca00781ebff2cd2070ed7fa203ff1478187298f9aa8efdf66"
+        },
+        {
+          "path": "arcade/creator/samples/arcade-sample/manifest.json",
+          "sha256": "b2dcbe2a3094eebf6f37d1f34e80e406e1866ca6ef101401020b6ff88ab61586"
+        },
+        {
+          "path": "arcade/creator/schemas/arcade-game-package-schema.mjs",
+          "sha256": "eb7a7e1388afc67db00d4a0954a24eb5f07023247d3c87c42d2ad168acfe425e"
+        },
+        {
+          "path": "arcade/creator/schemas/free-sandbox-schema.mjs",
+          "sha256": "ce79947d77a9d863e6c8bce34354da6b13b12206dd41d5026dccc2132fe99b95"
+        },
+        {
+          "path": "arcade/creator/validator/issue-explainer.mjs",
+          "sha256": "d37b2d443ad59f05aa5640a85bdbf57424d3ed5ecb303b7945c7d05b023418e6"
+        },
+        {
+          "path": "arcade/creator/validator/package-hash.mjs",
+          "sha256": "7cf548b2a46ff73e1f5004581812057902565eb4222dbda2f816daed6a686ae9"
+        },
+        {
+          "path": "arcade/creator/validator/validate-arcade-package.mjs",
+          "sha256": "69b2e13d63c35eaf71e855dd9114f62bcd7a0287314ba773a9c1f05c39a9b49d"
+        },
+        {
+          "path": "arcade/creator/validator/validation-report.mjs",
+          "sha256": "04ad8907a11ff78a05979129e595e57542a500898df24fc3c8b1d7b11da462e9"
+        },
+        {
+          "path": "arcade/game-import-manifest.mjs",
+          "sha256": "aa8f44ebaef7c2aee72e17ed15c70527043540f5b55dba3099eb1e14f0ce9d74"
+        },
+        {
+          "path": "arcade/index.html",
+          "sha256": "0b67b4f0824313974762d9463e798d0b0faf3e9f776094376f9ceb877eaa7187"
+        },
+        {
+          "path": "arcade/neon-arcade-url.mjs",
+          "sha256": "79ab7fdbfe42c9a221fd95ba9ad711c9b91b0c9a041a57067d650676d9afc1be"
+        },
+        {
+          "path": "arcade/neon-circuit-floor.js",
+          "sha256": "ab93433d82dfc750cdd7331fb069bd4efd60e05a7d3a4a860d1948fa6ad5500e"
+        },
+        {
+          "path": "arcade/neon-circuit-room-client.js",
+          "sha256": "41f88e923692bf515db9408595a56b1cf2112a23ced38776c2f8644d37253486"
+        },
+        {
+          "path": "arcade/neon-circuit.css",
+          "sha256": "fc621e7680ca6967f516391f199a7391485ac73dc807b68e7b5b4674d03101f7"
+        },
+        {
+          "path": "arcade/prize-counter.css",
+          "sha256": "23cef236c6577a9efd7bd2d6a4b8dc515125ca15e2f0de85b33d1773fcf81044"
+        },
+        {
+          "path": "arcade/prize-counter.js",
+          "sha256": "0ff1ebd2884aa1c5ca792dee620fa49590834353c56322aacec38f8d9e9d9e26"
+        },
+        {
+          "path": "arcade/pulse-tap-game.css",
+          "sha256": "1de81465ff0a1e04d795c10c86d7112be1f24c5d3409c2b7c2c1144b45e092e2"
+        },
+        {
+          "path": "arcade/pulse-tap-game.js",
+          "sha256": "ef0edeb3a3498f4ad3600603c8aaecbf71a202f67f0c8bf8a3b5c432750572cc"
+        },
+        {
+          "path": "arcade/room-recommend.mjs",
+          "sha256": "af834adc1836c4316db04d4e6d535db68f8c7daa4002825fa624e7c4b85ab3db"
+        },
+        {
+          "path": "arcade/signal-sprint-game.css",
+          "sha256": "5aefb04067ce8f991ed67f8a382989b55c2620592e8ef1239654a5f56d82473e"
+        },
+        {
+          "path": "arcade/signal-sprint-game.js",
+          "sha256": "bf6be714a68b973c61bfe3cfc8afbe59faf067f4450c09041eb9c97655894c04"
+        },
+        {
+          "path": "articles/amygdala-hijack.html",
+          "sha256": "7f45733ceacad37b27e4e09f5915cbd63788c221a09578b7b26b576cd03435c4"
+        },
+        {
+          "path": "articles/cognitive-distortions.html",
+          "sha256": "a9c9b0c9189589737fce6eaed378e9cd10c111d513dc282a7e93eecd7d987e84"
+        },
+        {
+          "path": "articles/drift-detection-system.html",
+          "sha256": "91363fc2f273f52c0164e885887c11dc3154840424816689d5f03801c75dcbcc"
+        },
+        {
+          "path": "articles/emotional-numbness.html",
+          "sha256": "affe344c20ececbf3871079c1ec7436c7f47bb00efb2fe27af7e801f08dab061"
+        },
+        {
+          "path": "articles/failure-recovery.html",
+          "sha256": "89c2e9f81a16a19eaf0559853f684f1e935e105d09552995bfa1d37b262a25fa"
+        },
+        {
+          "path": "articles/freeze-response.html",
+          "sha256": "be7c42fef66330cdedb985347dcb997cb7f1816ba926c16f8131aa32b38acfe5"
+        },
+        {
+          "path": "articles/hero-victim-jester.html",
+          "sha256": "89504227b73367e2cdabe1acbfa792c9e3ec32fa3668f748bbefa3521cae5062"
+        },
+        {
+          "path": "articles/hypervigilance.html",
+          "sha256": "8dd10ecdcdb6036b3d20d5b5e878a9d63cce250be80bd1f92e7d4fe565eb039a"
+        },
+        {
+          "path": "articles/imposter-syndrome.html",
+          "sha256": "98d8c0483751d02d7c3b6a813f7f362be73c766decbdf6aef9208b25ee29e53d"
+        },
+        {
+          "path": "articles/index.html",
+          "sha256": "5f14719ef7b21db2ff5f94f12b2518acca8232362cea026476d1c2d2d149d274"
+        },
+        {
+          "path": "articles/intrusive-thoughts.html",
+          "sha256": "4a32e3b1063773987fdf44c04dac0ea41028c109b1b53e8bcb978a3b6a14cd3c"
+        },
+        {
+          "path": "articles/people-pleasing.html",
+          "sha256": "6747b5b078eabdc21d3c9e0cacdb15d33bf0c5ee11fb7d965380bc9a6326da86"
+        },
+        {
+          "path": "articles/rejection-sensitivity.html",
+          "sha256": "17367128b817bd2aa2b148d410eaaa8a3ad38b7f2d788ea87e8ae2d1d1d899dd"
+        },
+        {
+          "path": "articles/rumination.html",
+          "sha256": "98dec56c0db458b041199ee13bce36c76e808617991031fbdb509d3a68be8f4d"
+        },
+        {
+          "path": "articles/shame-spiral.html",
+          "sha256": "d218ad263b3368b0f7bea9e63426f57204cda679eb2ca9bd48da4eb146930dad"
+        },
+        {
+          "path": "articles/should-i-quit.html",
+          "sha256": "761aa2e96ac51f0afc0604dae292778ba0acd632104ec6a9c853039f7dbc2047"
+        },
+        {
+          "path": "articles/the-attraction-protocol.html",
+          "sha256": "2bc2b891469a29668620daf3bd93511f9ad83fa370000c54919da66018d4d9e1"
+        },
+        {
+          "path": "articles/the-failure-corridor.html",
+          "sha256": "a2a55ed87ad001ba4cbe1b6bb8736177033906915235d2fef5ebeed846c56a26"
+        },
+        {
+          "path": "articles/three-operating-systems.html",
+          "sha256": "bfc79ad7f540edf846b91004a59577f03b756c12112048e69448d64e679c62e2"
+        },
+        {
+          "path": "articles/why-do-i-self-sabotage.html",
+          "sha256": "6ea54cd90e457474690ece493945c119f53bcc91d088998778a6d766acbaced2"
+        },
+        {
+          "path": "author-shelf.html",
+          "sha256": "c7679c6c16edb39635dfc97167ba3c8c1dc0ebdd5b23eaa50064c8e23f2f917d"
+        },
+        {
+          "path": "be-yourself-full.html",
+          "sha256": "b3a2731e39283c57178a8aa11e9c659467315f4da573d396a6a1f0120af2d71c"
+        },
+        {
+          "path": "behavioral-activation.html",
+          "sha256": "ea89cf05e94204df82a4a4bc0484623197bfac50602587f1602ebad12a83ce2f"
+        },
+        {
+          "path": "body-double-ops.html",
+          "sha256": "784e9f424db53ec85ac88d4ba5de197718df3ced8aa2e26bc64624aaa71bbdc7"
+        },
+        {
+          "path": "candlebox-rebuild-full.html",
+          "sha256": "bbb168bbc9ce8c4a8925a1a3f46a854c6ca1968e1a7dccb709b12824b80657f0"
+        },
+        {
+          "path": "cbt-drill.html",
+          "sha256": "d2be818c5d5070db2d3b32fb5e92c596e0889fd60a3cd48801f423b3a1a86069"
+        },
+        {
+          "path": "cfhs-analyzer.html",
+          "sha256": "2826ee869fadce8697494094815509c04b5cb3204f179d1ea767fb76aaf9fb85"
+        },
+        {
+          "path": "chain-analysis-drill.html",
+          "sha256": "b354781664dbe495be9fe164117a51ad68914978ad43a5c54940c6e28f3cfa18"
+        },
+        {
+          "path": "changelog.html",
+          "sha256": "b6fa5ec00ee256edbe84ba7e9733c11784860c919fe0eee4684a708b1b2fc50b"
+        },
+        {
+          "path": "clinical-assessments.html",
+          "sha256": "d054ef874f3613cda0a21e537ae47a8364338cff5d04aea9d2914ac4ef398e08"
+        },
+        {
+          "path": "clinical-report.html",
+          "sha256": "ba719511825563bf799e11d7f1bcb510afe9db8aa8258e322d293c2e4d6f9d7b"
+        },
+        {
+          "path": "clove-16.png",
+          "sha256": "ceec59c62d12d189e0d3ad4220f9ee9b493b9348aee6dcb8bdfba1d9ab384592"
+        },
+        {
+          "path": "clove-180.png",
+          "sha256": "d996c434b6de05474077b67768fbc8385372144e1b553317487281e691212955"
+        },
+        {
+          "path": "clove-192.png",
+          "sha256": "6cc9b62ac3918001791ad1da4739ea4ad93996c603838f68e53296a1218b0e6c"
+        },
+        {
+          "path": "clove-32.png",
+          "sha256": "9cf21e0ef20ea6f7242c5ed650eb61c4bac57a43b4ad335dd4e932a5eaadb759"
+        },
+        {
+          "path": "clove-512.png",
+          "sha256": "eac25663a4532cee0613993d47e5b2c04acd13c15407bf6cab49b6ecc5b4c704"
+        },
+        {
+          "path": "clove-signals.js",
+          "sha256": "049ce475055644812542d6bb155007ddb2127a464e5754157badf7bbb89bc50e"
+        },
+        {
+          "path": "clove-syndicate-icon-brown.png",
+          "sha256": "67113d01f821930724141a1471e348f74c59ca1951d7e40346894c6826bb2267"
+        },
+        {
+          "path": "clovelearn-positioning-one-pager.html",
+          "sha256": "be3e54c0836fce27f67d481c791c249cf466d1da2bf1939be2ffb1311f0a0d84"
+        },
+        {
+          "path": "contact-protocol-drill.html",
+          "sha256": "0e3b66c940204a7035244106dd1312882001b141fe77efe2c1c5346f70dffbb9"
+        },
+        {
+          "path": "dear-man-drill.html",
+          "sha256": "eac7a9acb943312b8db55e1301c14d9e5692901a96a3a4c199920bb8c74373c4"
+        },
+        {
+          "path": "deck.html",
+          "sha256": "a13663f84eaec1ac35a975428e7e1d65a27a23afae0d83a91b3061ed9a8f6134"
+        },
+        {
+          "path": "dopamine-depot.html",
+          "sha256": "c49a13c6a0db9ef97f5c7e1db5b64f3ee224d170366abafd85fc6c1f5bf23e90"
+        },
+        {
+          "path": "downloads.html",
+          "sha256": "172ced4d2ee1f71d06aa685aae0e017ebdeaa02a011f569e41013e0022f2b418"
+        },
+        {
+          "path": "exposure-hierarchy.html",
+          "sha256": "4ffcc544d677841e1467e72faf7f9e3c50d95f2edb52eccc938a57f981898d75"
+        },
+        {
+          "path": "failure-autopsy-drill.html",
+          "sha256": "0578aaaee410af012f764900305ec7fb65b210742f5c14dd4f58040335a4a860"
+        },
+        {
+          "path": "favicon.ico",
+          "sha256": "ff654790ec11f5d4437ffdccdefe0303b5cb55c742aa664eb5b1952ba7ae2947"
+        },
+        {
+          "path": "feedback.html",
+          "sha256": "f136015e042fc99bb1ff9de93ba5c2cd959ccee8ad8a2d43877bd870cc17b2aa"
+        },
+        {
+          "path": "feedback.js",
+          "sha256": "e97490b9dd6919560829284a167fefb51b5a0a9a2d54e570159f651852969426"
+        },
+        {
+          "path": "field-manual.html",
+          "sha256": "0d9d0ece3add4854d308566ac33de4ea0b79fe9c8c94058758cc5bcfdf042976"
+        },
+        {
+          "path": "field-ops.html",
+          "sha256": "ed708d3dd7cedf54b59fcc60e1d7358946a63998962edd88080307ba23a2bd4e"
+        },
+        {
+          "path": "fonts/bebasneue-v16-JTUSjIg69CK48gW7PXoo9Wdhyzbi.woff2",
+          "sha256": "16c95ce45a2922f52551d38d565d14c92cf257b8f219c89613407d81fdd21a39"
+        },
+        {
+          "path": "fonts/bebasneue-v16-JTUSjIg69CK48gW7PXoo9Wlhyw.woff2",
+          "sha256": "a7c90c89240c134f7fdd33d40c000ec90b79d675ea53e8cc5a6d423c073de412"
+        },
+        {
+          "path": "fonts/bungee-400.woff2",
+          "sha256": "126eec706b7931682dbcf6c6efc274132c603f181fbf912678e6cfeb341e721b"
+        },
+        {
+          "path": "fonts/chakra-petch-400.woff2",
+          "sha256": "7d75be85dd1627e27ec151e9a3701e661bc4f8c2a93611bdd92f3a05d6bbd942"
+        },
+        {
+          "path": "fonts/chakra-petch-500.woff2",
+          "sha256": "36ad966cb653de70ba37355c41003b02de8940b2df6cbcd46480a6ad8cadd65d"
+        },
+        {
+          "path": "fonts/chakra-petch-600.woff2",
+          "sha256": "a5888696e9eb1b4bbbecc8eb3922b8369f49d4bddb72263e033cbd17f399be76"
+        },
+        {
+          "path": "fonts/chakra-petch-700.woff2",
+          "sha256": "ce5095dc1cb200aaa939e38067a0677018d10e9f26ec38cdcf1557ac524fc775"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvrGyEY2tbZX9.woff2",
+          "sha256": "f83e7a31075106e71e83dbad864fcad190e63f7ae2466b1b48103ddd08c51be6"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvrGyEYOtbQ.woff2",
+          "sha256": "501783994f7dff0aa75b820bdeee9f4d1a0a2f04c51be17b278c3d339d98f3e7"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvumzEY2tbZX9.woff2",
+          "sha256": "8711f938c3f04f91e35ae64ebc7f2eecd800d2ae1c3542f6c837c758a50422f5"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2",
+          "sha256": "9964608a849396bd00c4bfd7034afe03486469dcf20b4f6b8cbdfdd310369951"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTU7PB1QTsUX8KYthSQBLyM.woff2",
+          "sha256": "a52e19ebe0398c9c0f8fa28a0c5e9a6bc324f35d9f0881c9aa407d10af447175"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTU7PB1QTsUX8KYthqQBA.woff2",
+          "sha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTW7PB1QTsUX8KYth-gBqSI.woff2",
+          "sha256": "350b68680c016cf06d06516eeaebf341979b250cd023b0d35a795e62f6f471fd"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTW7PB1QTsUX8KYth-gCKSIUKw.woff2",
+          "sha256": "58f35f8c336e13598f5614df3c9c4b8531e7aa5844f791de0f48b34e18d60cf2"
+        },
+        {
+          "path": "fonts/dmsans-v17-rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+          "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+        },
+        {
+          "path": "fonts/dmsans-v17-rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6h9Q.woff2",
+          "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFhOHM81r4j6k0gjAW3mujVU2B2G_VB0PD2.woff2",
+          "sha256": "ed8b291611e32fa2d2900488dd48fc95faf0957b2ef7ddf1527e8d21dd9cf2df"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFhOHM81r4j6k0gjAW3mujVU2B2G_VB3vD212k.woff2",
+          "sha256": "e026521e59b7b3e5d3257cc76069916111683b97c24e75f0c7a9f07621aa9460"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFnOHM81r4j6k0gjAW3mujVU2B2G_5x0ujy.woff2",
+          "sha256": "3af47815d6183efcee27a5717970acfe31153365e9b842e62d30c04e86c0613a"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2",
+          "sha256": "fdf61e20fd2c0108e0ea28da4daca0035205b4b7fc031a3974b865b704de160a"
+        },
+        {
+          "path": "fonts/fonts.css",
+          "sha256": "6511c36dcc0580c15c09ba8d29c7284cf697706dd861527d1159b2283a63575f"
+        },
+        {
+          "path": "fr-atip-analyzer.html",
+          "sha256": "d49ba779377701831c20f2fe9e9b9ff0f62738e0cbbc7126f28672e6ee6c0812"
+        },
+        {
+          "path": "fr-master-policy.json",
+          "sha256": "c554058971eb35a538c51f0e9e30f01d1a0cc948beb28d3e5c5c0fd33dde1feb"
+        },
+        {
+          "path": "fr-navigator.html",
+          "sha256": "e2fab67ba0aecb57a3642d12e53747aebeab2cbe17005a2d80029db9d7657d86"
+        },
+        {
+          "path": "fr-policies.json",
+          "sha256": "d3d3f9b66f6e50f35cfa873c2a911afb198da8fbce9eedabd55f1c229728231d"
+        },
+        {
+          "path": "game/Arcade/index.html",
+          "sha256": "f8642ddb6b00ae958276f04da084ec1d4f8c7e6b362f2d20dc25af0d57237da5"
+        },
+        {
+          "path": "game/SINGULARITY-RELEASE.json",
+          "sha256": "40190b44c65b8f3a3f4cfcd03d0d86fabb7286004017261d264440f7c3d7d00e"
+        },
+        {
+          "path": "game/assets/index-Bl4zKkBe.js",
+          "sha256": "fdf8866a1fcc4e71e49279e247953f17204aac9091c0f59b8171f7ecd2168a4d"
+        },
+        {
+          "path": "game/assets/index-DMeKxGW6.css",
+          "sha256": "7aaf073bc6ca87e3cae31338b04b0afc30b8ccb49f6b1880c43e685ddd2cde95"
+        },
+        {
+          "path": "game/assets/jetbrains-mono-latin-400-normal-V6pRDFza.woff2",
+          "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb"
+        },
+        {
+          "path": "game/assets/jetbrains-mono-latin-600-normal-C8RAYTDA.woff2",
+          "sha256": "400c6bfda18d5d14acad1c15d6dcb9f8e13c015e7286317e0b9a482539bef147"
+        },
+        {
+          "path": "game/assets/jetbrains-mono-latin-700-normal-BYuf6tUa.woff2",
+          "sha256": "d0d4e818808f2a0ba39b2b09d1989366f63494e295f003c7ef436697378507e8"
+        },
+        {
+          "path": "game/index.html",
+          "sha256": "9f82dde53e58f43724b78609e995a5a4de1ddb82953fef1dbfd1b262c60a92d2"
+        },
+        {
+          "path": "game/nodehopper/Node Hopper.html",
+          "sha256": "3385775bb7b4f67a457b4bcac9c7cdc8a4ac4e0fe718ffc42075fce382e516e0"
+        },
+        {
+          "path": "game/nodehopper/audio.js",
+          "sha256": "b75706c7088770cff62be9531ba13752754299b0e82e79601077319bfa792cab"
+        },
+        {
+          "path": "game/nodehopper/chambers.js",
+          "sha256": "6df20e1a36932384824ca8355e172ceaa1b1832d6df31fea0d7f4fe4f1dd16fb"
+        },
+        {
+          "path": "game/nodehopper/game.js",
+          "sha256": "94352fc47006109429ee6910331498a5bf41dd72405bf7d424dbe058bd0eff69"
+        },
+        {
+          "path": "game/nodehopper/render-helpers.js",
+          "sha256": "0b3033900ca76f475dfec9b96837c3e3f8382c81e105e56161499f03ed67ce80"
+        },
+        {
+          "path": "game/theincrediblemindmachine/index.html",
+          "sha256": "ce20d656c4159dfaac0d33f08265576e51273650c43929af6acdc1636a8eb5d7"
+        },
+        {
+          "path": "game/vendor/cannon-es/cannon-es-0.20.0.js",
+          "sha256": "f0700cbd3a482954949b9d58c1b0f76dcc74767750297647a39d8c40dd63d37c"
+        },
+        {
+          "path": "game/vendor/three/three.min-0.160.0.js",
+          "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
+        },
+        {
+          "path": "game/vendor/three/three.module-0.152.2.js",
+          "sha256": "4d01ed1c468372b16732fcecfeb2f463ac1b29b0fc296b2d64ec084e32876b39"
+        },
+        {
+          "path": "games/echo-bloom/echo-bloom-og.png",
+          "sha256": "e010fae176c3e02d5572516bba37722dd50b517797457af1f0be33d3561b5873"
+        },
+        {
+          "path": "games/echo-bloom/game.js",
+          "sha256": "56027d9fb5e692c2d0905386be758dce51566a2d2c76ddb939599db88cfc2ff4"
+        },
+        {
+          "path": "games/echo-bloom/index.html",
+          "sha256": "f012a123985e2ba9453bbdb32878fdd29efc7da741f0a8ab9fb33eee4411b3eb"
+        },
+        {
+          "path": "games/echo-bloom/style.css",
+          "sha256": "5b5ffb281d1d4c7e6524f536cc913abe925d0b3d1106c581cc5460f27e1423ad"
+        },
+        {
+          "path": "games/games.js",
+          "sha256": "376ccb2a8df70068fa78ef56c4ae89254c591e8cb66bbf1281b6d49b7a3f3331"
+        },
+        {
+          "path": "games/index.html",
+          "sha256": "af05a9bbfd2ee0533b52d54c241299fa1abdd98a742d1b475a444cc08844e11e"
+        },
+        {
+          "path": "grind-ops.html",
+          "sha256": "2187f3883a527d09af8387a08b90599e246347dd6ba5b15e9e1bc4a23f1ba553"
+        },
+        {
+          "path": "grove-ops.html",
+          "sha256": "278ab6145061ea3119195c2b58ed09418a05c12d270ce27faeea65655240bb97"
+        },
+        {
+          "path": "growth-plan.html",
+          "sha256": "3c5f0442077f28c9ceb68868328c52fd4129f661f683cf2cce42955121279fec"
+        },
+        {
+          "path": "home.js",
+          "sha256": "495dc9f4968225f66a3a7ebfba2008a07627ce56c6f1b379cccbceb72a397839"
+        },
+        {
+          "path": "hub.css",
+          "sha256": "b63347ae242bf4137029d1132243337af764448b29852fb25778291f9c985543"
+        },
+        {
+          "path": "icon-180x180.png",
+          "sha256": "282108d5f0c48ea24c1e2d54761f7e33870b11b5e63390c4e93de866dd2b5a4c"
+        },
+        {
+          "path": "icon-32x32.png",
+          "sha256": "66130072cf682c130c040e937a973e90f22b0b0608e865df505ac25391f220a8"
+        },
+        {
+          "path": "improve-drill-full.html",
+          "sha256": "0443113d081e8cb32ccc3ea56596f39856b3a350d963e0abac0ba2980ec2c0c6"
+        },
+        {
+          "path": "index.html",
+          "sha256": "dbd4909507f349c54ad637d498031227fadac0f09d08657f401d58feb3d16c16"
+        },
+        {
+          "path": "intel-engine.js",
+          "sha256": "cda73e3b45d4d0ef5473614063e33215b68a8e1185259520a9787d7683fa828b"
+        },
+        {
+          "path": "intelligence-ops.html",
+          "sha256": "6af65f98fce7e7ba7f95546fe09bd467b07803de7050c153ab10875b610fcceb"
+        },
+        {
+          "path": "journal-ops.html",
+          "sha256": "e44308b4afc42754349c308e2f20855c7a21d2be97de986946045e2417f7aa52"
+        },
+        {
+          "path": "kanban-ops.html",
+          "sha256": "3bbef349635c5750623d9bdc43b064e1a6067d2661680713fca89029ec5a3370"
+        },
+        {
+          "path": "like-a-stone-full.html",
+          "sha256": "2e23ecf95c0284815d04b8605801a1ffc7113d1687bbec5a20bfea66e621e6cf"
+        },
+        {
+          "path": "manifest.json",
+          "sha256": "c2ac410e815598a9d42cbf9d077df14e6b27f7a544ce4c336c6f7e6161435dd7"
+        },
+        {
+          "path": "meditation-ops.html",
+          "sha256": "c537ba4a98856a30512c34078b43b6172488b5dc2cd22970f379ba1630168f6b"
+        },
+        {
+          "path": "micro-ops.html",
+          "sha256": "aa5afa87db10aae1907e4edcf3166f7577ac06212dfab0596a0d2d9caf11ae5f"
+        },
+        {
+          "path": "mindfulness-drill-full.html",
+          "sha256": "90cb3b78a3f8b5449fd777cfc2f1b8be30e3e3279c50a37d37c701ad1d317c5e"
+        },
+        {
+          "path": "mission-001-app.js",
+          "sha256": "c2340aa81642f14b252a11e2502f7a04e3dedcac5d76e516df672ff96ed876a4"
+        },
+        {
+          "path": "mission-001.html",
+          "sha256": "ae018fb6000d604e9ebf9851bfae79d7294b88ec8bef2a78ebcfce3ee1d79e00"
+        },
+        {
+          "path": "mission-brief.html",
+          "sha256": "f2b6033be77aed44a64dcd82c957abc5b5e39182716cbfa9c44afd49818e9104"
+        },
+        {
+          "path": "mission-private-store.js",
+          "sha256": "0ab3a325b30243c27b6aaaa0a021b34ede3b570b2da9fbc553c930534b8f9081"
+        },
+        {
+          "path": "mood-trends.html",
+          "sha256": "5fb7819141710f4247fff2e37ed39f87ee34e29043540a304754e04aa1828027"
+        },
+        {
+          "path": "music-ops.html",
+          "sha256": "3514425ef060ac2fc2f60ffd98d96984ea528c52b1b9a7239427772770cbb49b"
+        },
+        {
+          "path": "no-excuses.html",
+          "sha256": "2155397c23037859fdeeb2d2f7bc7b1184ddfee03b3fa908c1840d1e8cdcaac1"
+        },
+        {
+          "path": "od-core.js",
+          "sha256": "25ac896e0fb5638ac0016b1b226d22e8558bb7a32f3b4d62e8cb78613e6b5e3e"
+        },
+        {
+          "path": "og-image.jpg",
+          "sha256": "e4b21220dedccc360f900ce89d6952ed6e9ddd183f83f80e3c9a72168ab67c15"
+        },
+        {
+          "path": "onboarding/onboarding.html",
+          "sha256": "2c2abd007079db9c93ef9971ca1abb3bcd8410b246fee704ec1009df4631dcd7"
+        },
+        {
+          "path": "op-brain.js",
+          "sha256": "7852e744ffed35eda80b3e544b41d620ee8d30471bd59abd5835cc4e56d46e27"
+        },
+        {
+          "path": "operators-playbook.html",
+          "sha256": "93bbfc76aa1202df7c420ed5c02008ee671c6faea73b5030a3db4e8e165b2e9c"
+        },
+        {
+          "path": "opposite-action-drill.html",
+          "sha256": "6379aeb16429513f366316800c1739ac0cb4d69b849acba4867e8721a345c3eb"
+        },
+        {
+          "path": "particle-bg.js",
+          "sha256": "d1f8f2c96b9ccb2912a6472868f0e5db8b8d026ddfc715c79b6dd99b8fe67bf0"
+        },
+        {
+          "path": "parts-mapping-drill.html",
+          "sha256": "1e6cba8d338ccbb57f84c29406d1e2cb35369e4a629b19d1cd0c9cd15f7e858e"
+        },
+        {
+          "path": "pattern-intelligence.html",
+          "sha256": "ff33c77e3f3ec41792aab19ff9b166b208876101cb68f1328a473bde0fd4875a"
+        },
+        {
+          "path": "pattern-recon.html",
+          "sha256": "e6d5cc6988937e94ee8b78c69a5e5f2f9dd73f17f9cb4f9f57a96345e3f3bf35"
+        },
+        {
+          "path": "privacy-signals.html",
+          "sha256": "123e3d8f6e24aeda36c30f41d1c1caabc11f0e70a13b377fcf55271182644ace"
+        },
+        {
+          "path": "privacy-signals.js",
+          "sha256": "bceb6c2db356a40eea0de017cc0138bf2cc92953feea653ad4b8a3b8a28e56aa"
+        },
+        {
+          "path": "progress-dashboard.html",
+          "sha256": "f72479877e2727e421c7e82c445fd2a1c16470fa13e43cf4f001f2fc9fc31467"
+        },
+        {
+          "path": "progress-report.html",
+          "sha256": "5ee4d766bfa0201193ac4984c9131b412e7bf80d3391ce3a4a9be5c587782170"
+        },
+        {
+          "path": "prompt-depot.html",
+          "sha256": "76a2489d9bae9438a5adf5475f3716e182453f8dc0605362eb702daa6f07a1df"
+        },
+        {
+          "path": "quest-forge.html",
+          "sha256": "ade729bc112eef2cdf0b959855214be31267e4eef4529dcbaad93eb5c8b0cd4f"
+        },
+        {
+          "path": "quick-start.html",
+          "sha256": "018b5ead01ebef03253988fbc42b462b218ac8a497355bbac784c192b079f830"
+        },
+        {
+          "path": "quit-stay-drill.html",
+          "sha256": "3e832186b3610b082c65474e1b1e8f7758d2e9487a8821e045c898e8952c9948"
+        },
+        {
+          "path": "red-protocol.html",
+          "sha256": "bc23f903df4531f1cfc40dcfb8e815063ff4a756609f0bb54b516057ab32db19"
+        },
+        {
+          "path": "relapse-prevention.html",
+          "sha256": "61d9230925d52e463079063dd9493b2dfef2df5047bda5141bd2400d176d1bf9"
+        },
+        {
+          "path": "research/index.html",
+          "sha256": "2a507cf1d64cde66105a484011363e4f62e7c321b79a502dfa2c822ae48e77ec"
+        },
+        {
+          "path": "research/research.css",
+          "sha256": "407b584209954fb2ef9a52cac3a34afe312a997e2f09a53f701b7dd219e15e01"
+        },
+        {
+          "path": "research/research.js",
+          "sha256": "d53c1cde2d46e25424108a45ccbe111cf75585cdcdde52e08061ee35a345af43"
+        },
+        {
+          "path": "review.html",
+          "sha256": "307c8c6c85e4d66413b9c9cd87cd1d91aacedb1ef9146f65c5739eea844d6065"
+        },
+        {
+          "path": "robots.txt",
+          "sha256": "52a672b0ca8e3704f016f01003882c6f0f2189179fc0f1f3ebdc887d43273046"
+        },
+        {
+          "path": "rosa-checkin.html",
+          "sha256": "2e3c430fde19c9806b234d64f57e2fe3a70bb530a70ca72b3d0a48756c1ea4c1"
+        },
+        {
+          "path": "routine-builder.html",
+          "sha256": "df83ce187cf8cde702f2b5703a902dfccc814207d33ac3b36591b41464e99547"
+        },
+        {
+          "path": "routine-heatmap.html",
+          "sha256": "a5af7127d7b962f81cd93e630842e51a109ef0e84ea758676661ab82289b30f4"
+        },
+        {
+          "path": "rsd-shield-drill.html",
+          "sha256": "0703b2f090c4c437c5a76bf8cde636c8c883286989ee773700c55d224672e171"
+        },
+        {
+          "path": "safety-plan-drill.html",
+          "sha256": "9b830901c546691884f10d9ba02cffb422783fbd45b215cc8abf5158b5c17946"
+        },
+        {
+          "path": "scripts/build-production-upload.mjs",
+          "sha256": "f49403c90594f146edf324a5d7ab6de1d27dbcbaa8840693585a635e3ecb1db2"
+        },
+        {
+          "path": "scripts/pdf.min.js",
+          "sha256": "5b5799e6f8c680663207ac5b42ee14eed2a406fa7af48f50c154f0c0b1566946"
+        },
+        {
+          "path": "scripts/pdf.worker.min.js",
+          "sha256": "feabdf309770ed24bba31a5467836cdc8cf639c705af27d52b585b041bb8527b"
+        },
+        {
+          "path": "scripts/tesseract-core/tesseract-core-lstm.wasm.js",
+          "sha256": "50ec33088c93e69135b09917072c1b2c8cb77eb256946f16723cf6a83c7f8e49"
+        },
+        {
+          "path": "scripts/tesseract-core/tesseract-core-simd-lstm.wasm.js",
+          "sha256": "18797eef96bab787636c40b53efaa445cf5ca1c97abd735c4fd8dc3d03652959"
+        },
+        {
+          "path": "scripts/tesseract-worker.min.js",
+          "sha256": "aca1229639fc9907d86f96e825955a2b7c5716d17f3bc3acd71f9c7ab66181fc"
+        },
+        {
+          "path": "scripts/tesseract.min.js",
+          "sha256": "a8e29918d098b2b06e1012bdaeffb4aec0445c5d5654709023e0bd1f442a80e8"
+        },
+        {
+          "path": "scripts/three.min.js",
+          "sha256": "74782bdbcf6518f7745ed77035968fcae95ed4ab5c9a0f90cf646a69c20785ec"
+        },
+        {
+          "path": "semantic/benefit-embeddings.json",
+          "sha256": "fcd012b301267b6ae090034ab834eb418690d89d961b70cd55aa703729c8c9e3"
+        },
+        {
+          "path": "semantic/transformers.min.js",
+          "sha256": "bcf7cf304e51f470ed59409622b9d6ffbad80dfcf5baf6a40c919e4b9c4ff812"
+        },
+        {
+          "path": "sitemap.xml",
+          "sha256": "e345a8a86dfe2109f81ad1ab0de26f549817eb44f82ca6c53efd9f404b2696d7"
+        },
+        {
+          "path": "smoke-test.html",
+          "sha256": "64c61f87bfa8cfcc6a668b4d56da2805be7f7cc8f672f598ccc8be291dfc76fc"
+        },
+        {
+          "path": "stt-worker.js",
+          "sha256": "9d1b39dcf3e5870204b7653318e7629b2e5294eba65b7fef8776f25b91a3f580"
+        },
+        {
+          "path": "stuck-points-drill.html",
+          "sha256": "1737cb70d8a9fbcb5c7fedf24910e9256f1e6339d70e6e927f8b21171befcc3c"
+        },
+        {
+          "path": "sw.js",
+          "sha256": "becea87e7f51a949112ac89b4203de176ba686243ee4f90251aa424e0ce97129"
+        },
+        {
+          "path": "system-check.html",
+          "sha256": "0bc2f6d0d2b791006d923680092da400dcd37c7a4a109417c78060bfb1c2f3ad"
+        },
+        {
+          "path": "thought-interceptor.html",
+          "sha256": "a717d49495d36eadcaad41ab237d9922550536a4245fb2b3b43c2f644aff8100"
+        },
+        {
+          "path": "tipp-drill-full.html",
+          "sha256": "fab59554690b8d8533de6caeeabd4d366b0a1483dcba3a3e782ce13194ae167a"
+        },
+        {
+          "path": "toolshed.html",
+          "sha256": "f66b7dbc2d24babc5f47c429049c8399be4200803cf53fe1e2b6f0dccafc38fd"
+        },
+        {
+          "path": "vac-master-policy.json",
+          "sha256": "188204f564c7c43efe33724ea5c6c8fd1fb62209c9267d843d418b5247ddd8e7"
+        },
+        {
+          "path": "vac-navigator.html",
+          "sha256": "2b033a6071a96949946cd49a0f0822542ffb08c62ca44b97bb24d87ef06a6f11"
+        },
+        {
+          "path": "vac-policies.json",
+          "sha256": "ebb5993c94b780815c8c827dde30183f9f7c55c6d2268c027b894d01b88ea95f"
+        },
+        {
+          "path": "values-drill.html",
+          "sha256": "9dac2dc4bd8273443d3093e1692c6e9ac81878e4510185d78209e9f83e4e7a43"
+        },
+        {
+          "path": "visual-planner.html",
+          "sha256": "dcdfe44bf6d95cc4a15e3cd0c0cc5c443e784ce385c09b392209be279bd37ff4"
+        },
+        {
+          "path": "voice-engine.js",
+          "sha256": "bdd3f55e0f8fbaed72bf2229d5dc1e0a7d3bc2cb777a9d1d3ed5c6edc9dc6f94"
+        },
+        {
+          "path": "warroom.html",
+          "sha256": "4b7de889e083d7d2f240a417f4ff6c3a79635f83635da5da97fdc7bdd9d9ab41"
+        },
+        {
+          "path": "weekly-ops.html",
+          "sha256": "882b0b24c35052f77b1b8ca9522e3ed3a9674cffebf2eb7e6584bf4e68593de4"
+        },
+        {
+          "path": "wellbeing/index.html",
+          "sha256": "2001ed982662e01f6045496269a211929dd88ae02fb8fb18f1dfa0bf818b9993"
+        },
+        {
+          "path": "whats-going-on.html",
+          "sha256": "c9e3b5a73ed463c9528970897a098083d016202395e0d4b187b4640bd638f87a"
+        },
+        {
+          "path": "whats-live.html",
+          "sha256": "d0fdbfeaf36ba7fc72a915f459e4e75cf2181ca8c2678a3f45db8db1d4f545b6"
+        }
+      ],
+      "artifact_sha256": "6221cb59c694ce0fc9261ba1f38975fbb8dcdd282bceb78bce967d48ae74c794"
+    },
+    "predecessor": {
+      "file_count": 302,
+      "manifest_file_present": true,
+      "ds00_files_present": [],
+      "entries": [
+        {
+          "path": "_headers",
+          "sha256": "9870f6f75f72176e878694346f9dc78a8a97afc5224a7b88b8c8f8734c161b44"
+        },
+        {
+          "path": "_redirects",
+          "sha256": "3195a5db13b2610703e06724125c5bbd9a9f52c27ed5f5d4ab53bc48bf8e3120"
+        },
+        {
+          "path": "about-clovelearn.html",
+          "sha256": "cda72860e437761a8d0c9d96b4d06e87df4281d7f7ca85f54e0fe61b88cc29e7"
+        },
+        {
+          "path": "act-drill.html",
+          "sha256": "6a696f3ec24e69570de05a40b1a92957970dcb1956c31faa1b8532435c0a2c73"
+        },
+        {
+          "path": "after-action-review.html",
+          "sha256": "d5b4f2f7687c1df332312aba66d0c503725454ceff108f872fd132be1600fbb2"
+        },
+        {
+          "path": "anchor/anchor-ratio.js",
+          "sha256": "149a8798fb821d79fe01794b3f02a6261caf8f85f39f7a2681f8f5e07cb44168"
+        },
+        {
+          "path": "anchor/anchor-step.js",
+          "sha256": "0d8ead858b0f8fe2529fb39f3c285480cdf34d2e01747c7a979ade04fe134b69"
+        },
+        {
+          "path": "anchor/db.js",
+          "sha256": "8f74ff42b6710c29780d36cb3ac391c47168309a47d27b24090263bdccc3a518"
+        },
+        {
+          "path": "anchor/entropy.js",
+          "sha256": "50b12eaed07b1cf7fb283ad7ea78e164368e2589aa9dfed735c51b45390b05de"
+        },
+        {
+          "path": "anchor/ics.js",
+          "sha256": "ea62e23716e859e251e6e6f6431299e9b43ed9950008156b2c6c40414a096b5b"
+        },
+        {
+          "path": "anchor/tension-meter.js",
+          "sha256": "dcef55c29a4c37daac4938ec3f8fdb700707a750f4b921d8f5faf9a9ae107876"
+        },
+        {
+          "path": "arcade/adapters/pulse-tap-adapter.mjs",
+          "sha256": "051852f0f9f4d6623b6bfb72d521659400e245fe5ea78f7e651877c31f67bce0"
+        },
+        {
+          "path": "arcade/adapters/signal-sprint-adapter.mjs",
+          "sha256": "100f0768925e94156bdb0e0917661f1fd1bcf76fa30c8e6ec6a097093a75b0ac"
+        },
+        {
+          "path": "arcade/arcade-lobby.css",
+          "sha256": "d59ef9915def2653b73d9e90101fb9dd6a92068213a4c9d7ed81e597f2fe6a82"
+        },
+        {
+          "path": "arcade/arcade-lobby.js",
+          "sha256": "3bf36d6c0edb11373ff84943f5e647be5a95bcc6ba35da2f0f2a41fe2c8e142a"
+        },
+        {
+          "path": "arcade/cabinet-adapter-registry.mjs",
+          "sha256": "5e71b245145594bc7ac85a42660b4ae0cb3e1c3bc3d1a37f43f63bcb1b436f33"
+        },
+        {
+          "path": "arcade/cabinet-adapter-runtime.js",
+          "sha256": "7bb0864d2af4a78fa8d20c1e1f81cafb5f493966c1422ebca09e13c2e0ba8160"
+        },
+        {
+          "path": "arcade/cabinet-adapter-sdk.mjs",
+          "sha256": "0e5014fed0fcf449f86bd63579be912c6c147bd08ae1d858fde6f255909a8311"
+        },
+        {
+          "path": "arcade/cabinet-adapter.css",
+          "sha256": "f8260ec4bd43258420bb80e87ea6de0fb74ddc93ffbd29103f7872d5ff0412ea"
+        },
+        {
+          "path": "arcade/cabinet-catalog.mjs",
+          "sha256": "f0d1487a44949855422e9a9b76d06512901a61f8758c207acea09011732ef3e3"
+        },
+        {
+          "path": "arcade/cabinet-frame-contract.mjs",
+          "sha256": "7dd2342d46b538cdc7ffc7e9d5db2f4993814b7aea764122ab8e1bb66f735201"
+        },
+        {
+          "path": "arcade/cabinet-frame.css",
+          "sha256": "32d3f833492ac48c0ade27152004ae80ba93020731f0d92dafa72e9fe5e9989e"
+        },
+        {
+          "path": "arcade/cabinet-frame.js",
+          "sha256": "6c01c5e009eb07f7b5d3f47a5e1d951b6510426c70626a82a691bbc60abb654b"
+        },
+        {
+          "path": "arcade/cabinet-import-loader.mjs",
+          "sha256": "f1baaa48babf3a46d5faf7f43dcb74985036e9efe794ec965bccb3b5ea6f8e33"
+        },
+        {
+          "path": "arcade/cabinet-juice.mjs",
+          "sha256": "23c547c21a339a3da1063c15daa1f41ed099f468bde90a36b849438096ac5cb3"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/adapter.mjs",
+          "sha256": "68530f7e3aa59c627e9ec864b7e271fe6bfe7fb793a41d702d6c8478095f97ea"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/manifest.mjs",
+          "sha256": "b1abe4c4d11df91c6af0aa759bf86144b32032ce9da45752537813ebf67d2f14"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/neon-grid-game.mjs",
+          "sha256": "2f340f9a425969f81c3cf21504739acd9ca9d1c8058328a37261688d16b4f626"
+        },
+        {
+          "path": "arcade/cabinets/neon-grid/neon-grid.css",
+          "sha256": "4e3e04f6daea6517d9c17650435abec9ce4c129280a43190e5144fbd84d8b880"
+        },
+        {
+          "path": "arcade/cabinets/sample-import-game/adapter.mjs",
+          "sha256": "c7ea7b5f563ab42aafdebe9d1d8a2903a2e4fdf583e8c853bff7a34f99e2efb4"
+        },
+        {
+          "path": "arcade/cabinets/sample-import-game/manifest.mjs",
+          "sha256": "f0688f8bbda6b922d4b43c9d64b7da37f6abb0a069aff3a41bd67308ef340421"
+        },
+        {
+          "path": "arcade/cabinets/sample-import-game/sample-game.mjs",
+          "sha256": "cf170465aa4f9a8d0579daaed63d9df51911cf9db2c8d98ff566c4cb3425ea26"
+        },
+        {
+          "path": "arcade/cabinets/starters/arbor-bloom/adapter.mjs",
+          "sha256": "873e8209936208fa8e40584c0e156baec6c9b57e5aaef0222670e735ab3065de"
+        },
+        {
+          "path": "arcade/cabinets/starters/arbor-bloom/game.mjs",
+          "sha256": "5441da38bc79b4065138d5a15084e2c7b05c981c0684bc14227d3bebf18faa5a"
+        },
+        {
+          "path": "arcade/cabinets/starters/beacon-climb/adapter.mjs",
+          "sha256": "c176480123663f29122252163e512237b48a66d626885e7785a0411e49891414"
+        },
+        {
+          "path": "arcade/cabinets/starters/beacon-climb/game.mjs",
+          "sha256": "d3e524f23867044c794c569dfa5edff3053e4f7c2485dbcc620bf47008c587de"
+        },
+        {
+          "path": "arcade/cabinets/starters/crane-gate/adapter.mjs",
+          "sha256": "0827b67299de010aa187095e4a03828f77beb4c9c0bf6104091276f229af6568"
+        },
+        {
+          "path": "arcade/cabinets/starters/crane-gate/game.mjs",
+          "sha256": "ab32b3f3d5d3a94d0c21d713e4036528e5a44f9a3acba485fac6701c1877c0d4"
+        },
+        {
+          "path": "arcade/cabinets/starters/crosswalk-window/adapter.mjs",
+          "sha256": "aa822503fbde09e3c88a2677d2d7200dbe6e46c0f9c582dc0de844fd704ce315"
+        },
+        {
+          "path": "arcade/cabinets/starters/crosswalk-window/game.mjs",
+          "sha256": "48a386dbe8f8bfc23705640634c0890e7b8f0fbfe975653b8e6f9e88cead0dad"
+        },
+        {
+          "path": "arcade/cabinets/starters/curated-floor.mjs",
+          "sha256": "64434f5dee6de289bef762ec5bb6420a10f15ba9a6f2ca5ec5dca06a0d67d68d"
+        },
+        {
+          "path": "arcade/cabinets/starters/ember-sync/adapter.mjs",
+          "sha256": "c184274617caeb0c538b5f1efb53c2b5d4a671d5a9dbd86f75f8025245510d05"
+        },
+        {
+          "path": "arcade/cabinets/starters/ember-sync/game.mjs",
+          "sha256": "c94fb5681859ac9bca2da1ad662751a2f627892eb744e83c96c610afbaf81bec"
+        },
+        {
+          "path": "arcade/cabinets/starters/flash-three/adapter.mjs",
+          "sha256": "bfca7a90942a4de3d23f86baf9e898f65193c06d33c15ec37f26098dff286536"
+        },
+        {
+          "path": "arcade/cabinets/starters/flash-three/game.mjs",
+          "sha256": "76310d082bb7f791c74f9e761e753521ea5f4e33110983c861a77d9c98c2a31b"
+        },
+        {
+          "path": "arcade/cabinets/starters/phase-lock/adapter.mjs",
+          "sha256": "ecc66a5a428e378b698aee35937bc1eba3d4f6ccef3f2b98a834393b5d311b69"
+        },
+        {
+          "path": "arcade/cabinets/starters/phase-lock/game.mjs",
+          "sha256": "8f26e3bc59fece504835c88a6132a33cba719f1527d004f64e7060c11fadfb14"
+        },
+        {
+          "path": "arcade/cabinets/starters/spire-pulse/adapter.mjs",
+          "sha256": "c11f8ea3655c89818662fbef7fc8b12dd75f911698dadf1998e8b6437bd7c0bd"
+        },
+        {
+          "path": "arcade/cabinets/starters/spire-pulse/game.mjs",
+          "sha256": "7204caa7f7e0d9cbacdc9cfd017fc9c99cda66211e6803dac8f644cf17ff9cba"
+        },
+        {
+          "path": "arcade/cabinets/starters/starter-host.mjs",
+          "sha256": "ce84caf71468c837011da8c9d746e1e7cf0ae44e2ed4c2e4f7c9dce110c55ac6"
+        },
+        {
+          "path": "arcade/challenge-board.css",
+          "sha256": "42612c2a282671f516ed13bc0813138200d8024775e955a7a62850e49a1f4d50"
+        },
+        {
+          "path": "arcade/challenge-board.js",
+          "sha256": "b695db74dace58c9cbdf8534de34848fa7c3794f1cfd66fd250a141b6e90189b"
+        },
+        {
+          "path": "arcade/city/city-arcade-identity.mjs",
+          "sha256": "96bec249bdd7b0f46ba77ef90950a2ad5caa6cfc575ca69ed1beee16bcb54b74"
+        },
+        {
+          "path": "arcade/city/city-battle-instance.mjs",
+          "sha256": "5f97c89d195f3361eecb4453c5e64b9efae909679403e41f0a1772a211da6e8a"
+        },
+        {
+          "path": "arcade/city/city-block-identity.mjs",
+          "sha256": "3d2d931183dbd38b3b28d3c588dc6cd53fc59fbf2fb778e1d64b489216f4da88"
+        },
+        {
+          "path": "arcade/city/city-block-mood-intake.mjs",
+          "sha256": "742afd08bcd6a57d16d4af3d1077a33900f4e57499517d0ccfa46974bbbc4885"
+        },
+        {
+          "path": "arcade/city/city-block-mood.mjs",
+          "sha256": "0270fbe20af356f53161e30e7fd01bc057a15519547da019c322560fc49e50cb"
+        },
+        {
+          "path": "arcade/city/city-block.mjs",
+          "sha256": "782e2ca46cbc92389d779aaf25264121bc1869f6fe13ff4471ff8dac71b8f9e9"
+        },
+        {
+          "path": "arcade/city/city-collision.mjs",
+          "sha256": "9da9dcb7e9bdb9d62878c5d0329da968b95b9fb5cf1c0440ed30063c1b0968d5"
+        },
+        {
+          "path": "arcade/city/city-district-activity.mjs",
+          "sha256": "58c1acee875e2f5dbcf1f36b0c2a8607ed3c8088100fc4500b271f7834b60bb3"
+        },
+        {
+          "path": "arcade/city/city-district-events.mjs",
+          "sha256": "4bd824c0f1129b3b02bbba76d1ef7c36e648a167a2e0743da04ae128fce5bf68"
+        },
+        {
+          "path": "arcade/city/city-district-flavor.mjs",
+          "sha256": "aecfbebc19c5104db6de0a6acb4d3d2d508b367ee3745d5553c81f0096c5699a"
+        },
+        {
+          "path": "arcade/city/city-district-graph.mjs",
+          "sha256": "b1bbe02d97cf5a1ead65e76d06a61ff96dda2e4b61c789eb933edaedb95a754a"
+        },
+        {
+          "path": "arcade/city/city-district-presence.mjs",
+          "sha256": "537b3e948a2116b7dcced0aab6983baab30138ad4ec06c88d0eac214aecf2f64"
+        },
+        {
+          "path": "arcade/city/city-district.mjs",
+          "sha256": "617ad49709304d467ee1b1e41e164c1ac76eb94671d092f02cb602a0a5d785bc"
+        },
+        {
+          "path": "arcade/city/city-events.mjs",
+          "sha256": "0346ba62b44bb1b0cc1646b30289335041a77969e5f6180aa99afc06f4a3bb17"
+        },
+        {
+          "path": "arcade/city/city-host-rank.mjs",
+          "sha256": "5fd89448c49435f554c01e386dafca3c5be45ab0af097e50b60f9f70eeceee50"
+        },
+        {
+          "path": "arcade/city/city-interaction-receipts.mjs",
+          "sha256": "a144c138e980432b17759ca908cf83590d3bc8a5495c79706f3cc778917c6326"
+        },
+        {
+          "path": "arcade/city/city-interactions.mjs",
+          "sha256": "4db83cb4fe6cb0bfe2f12e068c757ef4d9a9676176a15eacb3a2e58ff6c9abac"
+        },
+        {
+          "path": "arcade/city/city-minimap.js",
+          "sha256": "2d5cbab93d568ce04a3591468b65db17b585766fe516a7b35f6ec4a3eb898f4b"
+        },
+        {
+          "path": "arcade/city/city-net.js",
+          "sha256": "4e68646d48edb88742364b98eb34d9315a69c95f08b7488bfbf865bce0d0fd54"
+        },
+        {
+          "path": "arcade/city/city-objectives.mjs",
+          "sha256": "3ec43f54d944a993ddfb41394a45a626cb4b05270484eac310ba9389bbe1e0d4"
+        },
+        {
+          "path": "arcade/city/city-reconcile.mjs",
+          "sha256": "b4a18d455a8da3e1fb63770ebd4631c08de935bb714c7e1596cb70617fc66fc3"
+        },
+        {
+          "path": "arcade/city/city-render-canvas2d.js",
+          "sha256": "fb5eb317b0bcad3b222c7d49551f2cec82a498d7d371e60b9078f1ffefe5995b"
+        },
+        {
+          "path": "arcade/city/city-render-three.js",
+          "sha256": "c12621cf96ff4d25e02d9dd0f64c952c5f8ecf10c7ebfbb1866843c0e2a34fd2"
+        },
+        {
+          "path": "arcade/city/city-scene.js",
+          "sha256": "fd86d776f8366286fdab2003c810c8b929ca67f97894a86c0ff2f7fd5c42146e"
+        },
+        {
+          "path": "arcade/city/city-scheduler.mjs",
+          "sha256": "ef5dd8567f53319769da55b18fa02a7599ef288111112dd41e4ebffb9811d2a6"
+        },
+        {
+          "path": "arcade/city/city-snapshots.mjs",
+          "sha256": "fd6d93b052045dac778778530da58207306ad44ef50ec8393a68359db7322180"
+        },
+        {
+          "path": "arcade/city/city-stewardship.mjs",
+          "sha256": "c3fd2b1fcaadb870c2bfbfdd31cd21723ffeb881255448e74f8fa699fd80d855"
+        },
+        {
+          "path": "arcade/city/city-street-life.mjs",
+          "sha256": "e3243909351d075e9b2e062c15cc32e82b748d24251dfaab22d0cad1c9f5fca5"
+        },
+        {
+          "path": "arcade/city/city-world-map.mjs",
+          "sha256": "694894f16edf2aa667149d47114d2074ac9cdb86cd69c0e6d709d8e78918900c"
+        },
+        {
+          "path": "arcade/city/city.css",
+          "sha256": "aef953ec47f65a5e61136bd1108d5fb760a5112e6ac3a0f5c638345d1ded7307"
+        },
+        {
+          "path": "arcade/city/index.html",
+          "sha256": "74d2053d79b0db1d041e7dac4e34dbd6f7e8e2874f2bcd70fb10c6a9b5614f2b"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/arcade-builder.mjs",
+          "sha256": "aa818e699490b44fa6a9bef46834fa35ac8fe6dc93f2742f3aaf2fc1b495d9bf"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/cabinet-templates.mjs",
+          "sha256": "43c73ce2bf85089244946c899e1f90dbf631b0dc9b4365ecc2cf1f0f21a8251f"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/free-sandbox-editor.mjs",
+          "sha256": "eed1429264c5229397d86e35cdbd190be44d7f16993bd82691f89eddef1c771c"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/free-sandbox-interpreter.mjs",
+          "sha256": "5e55b66eab86391cc9335afb536135d4cd50a492d7b5c928459774d0fb37ba13"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/free-sandbox-templates.mjs",
+          "sha256": "36f4e8d305796b4e0c61ddea2457a9988c06aac026c1258d8d9c34f90be7f5a1"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/index.html",
+          "sha256": "c37118104dd51702732cd08b48ee265127ff49f87ee46ca47175032c20039503"
+        },
+        {
+          "path": "arcade/creator/arcade-builder/rule-graph-templates.mjs",
+          "sha256": "b2f573e464c57e688dd08227d2baab2f8da68a08a62de861439cfc445cb7e271"
+        },
+        {
+          "path": "arcade/creator/arcade-importer/import-arcade-package.mjs",
+          "sha256": "e62ad72577ef6675ed07c5b498023c50a10cab30732183e2a9b12611121e3370"
+        },
+        {
+          "path": "arcade/creator/arcade-sandbox/free-sandbox-retention.mjs",
+          "sha256": "7761e970a9cc90c1670534364febee11e1fecc8e0cc4117bd6afc2f4e8181985"
+        },
+        {
+          "path": "arcade/creator/arcade-sandbox/index.html",
+          "sha256": "f9c034e49a65c1008aa8ecdf8abff453da9a071073b186bbb414270b875b1bb2"
+        },
+        {
+          "path": "arcade/creator/arcade-sandbox/sandbox-runner.mjs",
+          "sha256": "c15ff35a061c3b3b1d0f455ca24620ff2e04ae3b1c11c726edba36b012178b22"
+        },
+        {
+          "path": "arcade/creator/local-maker/index.html",
+          "sha256": "c76464d15f87b9c5a8baa36c12ed4df312a7a5cdd6334358c440b0ad7d9fe4ec"
+        },
+        {
+          "path": "arcade/creator/samples/arcade-sample/adapter.mjs",
+          "sha256": "2c5882c9fa5596f7116c61ee56e09f268f6bb5a99b97434069aaba9479d3cd79"
+        },
+        {
+          "path": "arcade/creator/samples/arcade-sample/game.mjs",
+          "sha256": "90d49da7dce9aacca00781ebff2cd2070ed7fa203ff1478187298f9aa8efdf66"
+        },
+        {
+          "path": "arcade/creator/samples/arcade-sample/manifest.json",
+          "sha256": "b2dcbe2a3094eebf6f37d1f34e80e406e1866ca6ef101401020b6ff88ab61586"
+        },
+        {
+          "path": "arcade/creator/schemas/arcade-game-package-schema.mjs",
+          "sha256": "eb7a7e1388afc67db00d4a0954a24eb5f07023247d3c87c42d2ad168acfe425e"
+        },
+        {
+          "path": "arcade/creator/schemas/free-sandbox-schema.mjs",
+          "sha256": "ce79947d77a9d863e6c8bce34354da6b13b12206dd41d5026dccc2132fe99b95"
+        },
+        {
+          "path": "arcade/creator/validator/issue-explainer.mjs",
+          "sha256": "d37b2d443ad59f05aa5640a85bdbf57424d3ed5ecb303b7945c7d05b023418e6"
+        },
+        {
+          "path": "arcade/creator/validator/package-hash.mjs",
+          "sha256": "7cf548b2a46ff73e1f5004581812057902565eb4222dbda2f816daed6a686ae9"
+        },
+        {
+          "path": "arcade/creator/validator/validate-arcade-package.mjs",
+          "sha256": "69b2e13d63c35eaf71e855dd9114f62bcd7a0287314ba773a9c1f05c39a9b49d"
+        },
+        {
+          "path": "arcade/creator/validator/validation-report.mjs",
+          "sha256": "04ad8907a11ff78a05979129e595e57542a500898df24fc3c8b1d7b11da462e9"
+        },
+        {
+          "path": "arcade/game-import-manifest.mjs",
+          "sha256": "aa8f44ebaef7c2aee72e17ed15c70527043540f5b55dba3099eb1e14f0ce9d74"
+        },
+        {
+          "path": "arcade/index.html",
+          "sha256": "0b67b4f0824313974762d9463e798d0b0faf3e9f776094376f9ceb877eaa7187"
+        },
+        {
+          "path": "arcade/neon-arcade-url.mjs",
+          "sha256": "79ab7fdbfe42c9a221fd95ba9ad711c9b91b0c9a041a57067d650676d9afc1be"
+        },
+        {
+          "path": "arcade/neon-circuit-floor.js",
+          "sha256": "ab93433d82dfc750cdd7331fb069bd4efd60e05a7d3a4a860d1948fa6ad5500e"
+        },
+        {
+          "path": "arcade/neon-circuit-room-client.js",
+          "sha256": "41f88e923692bf515db9408595a56b1cf2112a23ced38776c2f8644d37253486"
+        },
+        {
+          "path": "arcade/neon-circuit.css",
+          "sha256": "fc621e7680ca6967f516391f199a7391485ac73dc807b68e7b5b4674d03101f7"
+        },
+        {
+          "path": "arcade/prize-counter.css",
+          "sha256": "23cef236c6577a9efd7bd2d6a4b8dc515125ca15e2f0de85b33d1773fcf81044"
+        },
+        {
+          "path": "arcade/prize-counter.js",
+          "sha256": "0ff1ebd2884aa1c5ca792dee620fa49590834353c56322aacec38f8d9e9d9e26"
+        },
+        {
+          "path": "arcade/pulse-tap-game.css",
+          "sha256": "1de81465ff0a1e04d795c10c86d7112be1f24c5d3409c2b7c2c1144b45e092e2"
+        },
+        {
+          "path": "arcade/pulse-tap-game.js",
+          "sha256": "ef0edeb3a3498f4ad3600603c8aaecbf71a202f67f0c8bf8a3b5c432750572cc"
+        },
+        {
+          "path": "arcade/room-recommend.mjs",
+          "sha256": "af834adc1836c4316db04d4e6d535db68f8c7daa4002825fa624e7c4b85ab3db"
+        },
+        {
+          "path": "arcade/signal-sprint-game.css",
+          "sha256": "5aefb04067ce8f991ed67f8a382989b55c2620592e8ef1239654a5f56d82473e"
+        },
+        {
+          "path": "arcade/signal-sprint-game.js",
+          "sha256": "bf6be714a68b973c61bfe3cfc8afbe59faf067f4450c09041eb9c97655894c04"
+        },
+        {
+          "path": "articles/amygdala-hijack.html",
+          "sha256": "7f45733ceacad37b27e4e09f5915cbd63788c221a09578b7b26b576cd03435c4"
+        },
+        {
+          "path": "articles/cognitive-distortions.html",
+          "sha256": "a9c9b0c9189589737fce6eaed378e9cd10c111d513dc282a7e93eecd7d987e84"
+        },
+        {
+          "path": "articles/drift-detection-system.html",
+          "sha256": "91363fc2f273f52c0164e885887c11dc3154840424816689d5f03801c75dcbcc"
+        },
+        {
+          "path": "articles/emotional-numbness.html",
+          "sha256": "affe344c20ececbf3871079c1ec7436c7f47bb00efb2fe27af7e801f08dab061"
+        },
+        {
+          "path": "articles/failure-recovery.html",
+          "sha256": "89c2e9f81a16a19eaf0559853f684f1e935e105d09552995bfa1d37b262a25fa"
+        },
+        {
+          "path": "articles/freeze-response.html",
+          "sha256": "be7c42fef66330cdedb985347dcb997cb7f1816ba926c16f8131aa32b38acfe5"
+        },
+        {
+          "path": "articles/hero-victim-jester.html",
+          "sha256": "89504227b73367e2cdabe1acbfa792c9e3ec32fa3668f748bbefa3521cae5062"
+        },
+        {
+          "path": "articles/hypervigilance.html",
+          "sha256": "8dd10ecdcdb6036b3d20d5b5e878a9d63cce250be80bd1f92e7d4fe565eb039a"
+        },
+        {
+          "path": "articles/imposter-syndrome.html",
+          "sha256": "98d8c0483751d02d7c3b6a813f7f362be73c766decbdf6aef9208b25ee29e53d"
+        },
+        {
+          "path": "articles/index.html",
+          "sha256": "5f14719ef7b21db2ff5f94f12b2518acca8232362cea026476d1c2d2d149d274"
+        },
+        {
+          "path": "articles/intrusive-thoughts.html",
+          "sha256": "4a32e3b1063773987fdf44c04dac0ea41028c109b1b53e8bcb978a3b6a14cd3c"
+        },
+        {
+          "path": "articles/people-pleasing.html",
+          "sha256": "6747b5b078eabdc21d3c9e0cacdb15d33bf0c5ee11fb7d965380bc9a6326da86"
+        },
+        {
+          "path": "articles/rejection-sensitivity.html",
+          "sha256": "17367128b817bd2aa2b148d410eaaa8a3ad38b7f2d788ea87e8ae2d1d1d899dd"
+        },
+        {
+          "path": "articles/rumination.html",
+          "sha256": "98dec56c0db458b041199ee13bce36c76e808617991031fbdb509d3a68be8f4d"
+        },
+        {
+          "path": "articles/shame-spiral.html",
+          "sha256": "d218ad263b3368b0f7bea9e63426f57204cda679eb2ca9bd48da4eb146930dad"
+        },
+        {
+          "path": "articles/should-i-quit.html",
+          "sha256": "761aa2e96ac51f0afc0604dae292778ba0acd632104ec6a9c853039f7dbc2047"
+        },
+        {
+          "path": "articles/the-attraction-protocol.html",
+          "sha256": "2bc2b891469a29668620daf3bd93511f9ad83fa370000c54919da66018d4d9e1"
+        },
+        {
+          "path": "articles/the-failure-corridor.html",
+          "sha256": "a2a55ed87ad001ba4cbe1b6bb8736177033906915235d2fef5ebeed846c56a26"
+        },
+        {
+          "path": "articles/three-operating-systems.html",
+          "sha256": "bfc79ad7f540edf846b91004a59577f03b756c12112048e69448d64e679c62e2"
+        },
+        {
+          "path": "articles/why-do-i-self-sabotage.html",
+          "sha256": "6ea54cd90e457474690ece493945c119f53bcc91d088998778a6d766acbaced2"
+        },
+        {
+          "path": "author-shelf.html",
+          "sha256": "c7679c6c16edb39635dfc97167ba3c8c1dc0ebdd5b23eaa50064c8e23f2f917d"
+        },
+        {
+          "path": "be-yourself-full.html",
+          "sha256": "b3a2731e39283c57178a8aa11e9c659467315f4da573d396a6a1f0120af2d71c"
+        },
+        {
+          "path": "behavioral-activation.html",
+          "sha256": "ea89cf05e94204df82a4a4bc0484623197bfac50602587f1602ebad12a83ce2f"
+        },
+        {
+          "path": "body-double-ops.html",
+          "sha256": "784e9f424db53ec85ac88d4ba5de197718df3ced8aa2e26bc64624aaa71bbdc7"
+        },
+        {
+          "path": "candlebox-rebuild-full.html",
+          "sha256": "bbb168bbc9ce8c4a8925a1a3f46a854c6ca1968e1a7dccb709b12824b80657f0"
+        },
+        {
+          "path": "cbt-drill.html",
+          "sha256": "d2be818c5d5070db2d3b32fb5e92c596e0889fd60a3cd48801f423b3a1a86069"
+        },
+        {
+          "path": "cfhs-analyzer.html",
+          "sha256": "2826ee869fadce8697494094815509c04b5cb3204f179d1ea767fb76aaf9fb85"
+        },
+        {
+          "path": "chain-analysis-drill.html",
+          "sha256": "b354781664dbe495be9fe164117a51ad68914978ad43a5c54940c6e28f3cfa18"
+        },
+        {
+          "path": "changelog.html",
+          "sha256": "b6fa5ec00ee256edbe84ba7e9733c11784860c919fe0eee4684a708b1b2fc50b"
+        },
+        {
+          "path": "clinical-assessments.html",
+          "sha256": "d054ef874f3613cda0a21e537ae47a8364338cff5d04aea9d2914ac4ef398e08"
+        },
+        {
+          "path": "clinical-report.html",
+          "sha256": "ba719511825563bf799e11d7f1bcb510afe9db8aa8258e322d293c2e4d6f9d7b"
+        },
+        {
+          "path": "clove-16.png",
+          "sha256": "ceec59c62d12d189e0d3ad4220f9ee9b493b9348aee6dcb8bdfba1d9ab384592"
+        },
+        {
+          "path": "clove-180.png",
+          "sha256": "d996c434b6de05474077b67768fbc8385372144e1b553317487281e691212955"
+        },
+        {
+          "path": "clove-192.png",
+          "sha256": "6cc9b62ac3918001791ad1da4739ea4ad93996c603838f68e53296a1218b0e6c"
+        },
+        {
+          "path": "clove-32.png",
+          "sha256": "9cf21e0ef20ea6f7242c5ed650eb61c4bac57a43b4ad335dd4e932a5eaadb759"
+        },
+        {
+          "path": "clove-512.png",
+          "sha256": "eac25663a4532cee0613993d47e5b2c04acd13c15407bf6cab49b6ecc5b4c704"
+        },
+        {
+          "path": "clove-signals.js",
+          "sha256": "049ce475055644812542d6bb155007ddb2127a464e5754157badf7bbb89bc50e"
+        },
+        {
+          "path": "clove-syndicate-icon-brown.png",
+          "sha256": "67113d01f821930724141a1471e348f74c59ca1951d7e40346894c6826bb2267"
+        },
+        {
+          "path": "clovelearn-positioning-one-pager.html",
+          "sha256": "be3e54c0836fce27f67d481c791c249cf466d1da2bf1939be2ffb1311f0a0d84"
+        },
+        {
+          "path": "contact-protocol-drill.html",
+          "sha256": "0e3b66c940204a7035244106dd1312882001b141fe77efe2c1c5346f70dffbb9"
+        },
+        {
+          "path": "dear-man-drill.html",
+          "sha256": "eac7a9acb943312b8db55e1301c14d9e5692901a96a3a4c199920bb8c74373c4"
+        },
+        {
+          "path": "deck.html",
+          "sha256": "a13663f84eaec1ac35a975428e7e1d65a27a23afae0d83a91b3061ed9a8f6134"
+        },
+        {
+          "path": "dopamine-depot.html",
+          "sha256": "c49a13c6a0db9ef97f5c7e1db5b64f3ee224d170366abafd85fc6c1f5bf23e90"
+        },
+        {
+          "path": "downloads.html",
+          "sha256": "172ced4d2ee1f71d06aa685aae0e017ebdeaa02a011f569e41013e0022f2b418"
+        },
+        {
+          "path": "exposure-hierarchy.html",
+          "sha256": "4ffcc544d677841e1467e72faf7f9e3c50d95f2edb52eccc938a57f981898d75"
+        },
+        {
+          "path": "failure-autopsy-drill.html",
+          "sha256": "0578aaaee410af012f764900305ec7fb65b210742f5c14dd4f58040335a4a860"
+        },
+        {
+          "path": "favicon.ico",
+          "sha256": "ff654790ec11f5d4437ffdccdefe0303b5cb55c742aa664eb5b1952ba7ae2947"
+        },
+        {
+          "path": "feedback.html",
+          "sha256": "f136015e042fc99bb1ff9de93ba5c2cd959ccee8ad8a2d43877bd870cc17b2aa"
+        },
+        {
+          "path": "feedback.js",
+          "sha256": "e97490b9dd6919560829284a167fefb51b5a0a9a2d54e570159f651852969426"
+        },
+        {
+          "path": "field-manual.html",
+          "sha256": "0d9d0ece3add4854d308566ac33de4ea0b79fe9c8c94058758cc5bcfdf042976"
+        },
+        {
+          "path": "field-ops.html",
+          "sha256": "ed708d3dd7cedf54b59fcc60e1d7358946a63998962edd88080307ba23a2bd4e"
+        },
+        {
+          "path": "fonts/bebasneue-v16-JTUSjIg69CK48gW7PXoo9Wdhyzbi.woff2",
+          "sha256": "16c95ce45a2922f52551d38d565d14c92cf257b8f219c89613407d81fdd21a39"
+        },
+        {
+          "path": "fonts/bebasneue-v16-JTUSjIg69CK48gW7PXoo9Wlhyw.woff2",
+          "sha256": "a7c90c89240c134f7fdd33d40c000ec90b79d675ea53e8cc5a6d423c073de412"
+        },
+        {
+          "path": "fonts/bungee-400.woff2",
+          "sha256": "126eec706b7931682dbcf6c6efc274132c603f181fbf912678e6cfeb341e721b"
+        },
+        {
+          "path": "fonts/chakra-petch-400.woff2",
+          "sha256": "7d75be85dd1627e27ec151e9a3701e661bc4f8c2a93611bdd92f3a05d6bbd942"
+        },
+        {
+          "path": "fonts/chakra-petch-500.woff2",
+          "sha256": "36ad966cb653de70ba37355c41003b02de8940b2df6cbcd46480a6ad8cadd65d"
+        },
+        {
+          "path": "fonts/chakra-petch-600.woff2",
+          "sha256": "a5888696e9eb1b4bbbecc8eb3922b8369f49d4bddb72263e033cbd17f399be76"
+        },
+        {
+          "path": "fonts/chakra-petch-700.woff2",
+          "sha256": "ce5095dc1cb200aaa939e38067a0677018d10e9f26ec38cdcf1557ac524fc775"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvrGyEY2tbZX9.woff2",
+          "sha256": "f83e7a31075106e71e83dbad864fcad190e63f7ae2466b1b48103ddd08c51be6"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvrGyEYOtbQ.woff2",
+          "sha256": "501783994f7dff0aa75b820bdeee9f4d1a0a2f04c51be17b278c3d339d98f3e7"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvumzEY2tbZX9.woff2",
+          "sha256": "8711f938c3f04f91e35ae64ebc7f2eecd800d2ae1c3542f6c837c758a50422f5"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2",
+          "sha256": "9964608a849396bd00c4bfd7034afe03486469dcf20b4f6b8cbdfdd310369951"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTU7PB1QTsUX8KYthSQBLyM.woff2",
+          "sha256": "a52e19ebe0398c9c0f8fa28a0c5e9a6bc324f35d9f0881c9aa407d10af447175"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTU7PB1QTsUX8KYthqQBA.woff2",
+          "sha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTW7PB1QTsUX8KYth-gBqSI.woff2",
+          "sha256": "350b68680c016cf06d06516eeaebf341979b250cd023b0d35a795e62f6f471fd"
+        },
+        {
+          "path": "fonts/dmmono-v16-aFTW7PB1QTsUX8KYth-gCKSIUKw.woff2",
+          "sha256": "58f35f8c336e13598f5614df3c9c4b8531e7aa5844f791de0f48b34e18d60cf2"
+        },
+        {
+          "path": "fonts/dmsans-v17-rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+          "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+        },
+        {
+          "path": "fonts/dmsans-v17-rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6h9Q.woff2",
+          "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFhOHM81r4j6k0gjAW3mujVU2B2G_VB0PD2.woff2",
+          "sha256": "ed8b291611e32fa2d2900488dd48fc95faf0957b2ef7ddf1527e8d21dd9cf2df"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFhOHM81r4j6k0gjAW3mujVU2B2G_VB3vD212k.woff2",
+          "sha256": "e026521e59b7b3e5d3257cc76069916111683b97c24e75f0c7a9f07621aa9460"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFnOHM81r4j6k0gjAW3mujVU2B2G_5x0ujy.woff2",
+          "sha256": "3af47815d6183efcee27a5717970acfe31153365e9b842e62d30c04e86c0613a"
+        },
+        {
+          "path": "fonts/dmserifdisplay-v17--nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2",
+          "sha256": "fdf61e20fd2c0108e0ea28da4daca0035205b4b7fc031a3974b865b704de160a"
+        },
+        {
+          "path": "fonts/fonts.css",
+          "sha256": "6511c36dcc0580c15c09ba8d29c7284cf697706dd861527d1159b2283a63575f"
+        },
+        {
+          "path": "fr-atip-analyzer.html",
+          "sha256": "d49ba779377701831c20f2fe9e9b9ff0f62738e0cbbc7126f28672e6ee6c0812"
+        },
+        {
+          "path": "fr-master-policy.json",
+          "sha256": "c554058971eb35a538c51f0e9e30f01d1a0cc948beb28d3e5c5c0fd33dde1feb"
+        },
+        {
+          "path": "fr-navigator.html",
+          "sha256": "e2fab67ba0aecb57a3642d12e53747aebeab2cbe17005a2d80029db9d7657d86"
+        },
+        {
+          "path": "fr-policies.json",
+          "sha256": "d3d3f9b66f6e50f35cfa873c2a911afb198da8fbce9eedabd55f1c229728231d"
+        },
+        {
+          "path": "game/Arcade/index.html",
+          "sha256": "f8642ddb6b00ae958276f04da084ec1d4f8c7e6b362f2d20dc25af0d57237da5"
+        },
+        {
+          "path": "game/SINGULARITY-RELEASE.json",
+          "sha256": "40190b44c65b8f3a3f4cfcd03d0d86fabb7286004017261d264440f7c3d7d00e"
+        },
+        {
+          "path": "game/assets/index-Bl4zKkBe.js",
+          "sha256": "fdf8866a1fcc4e71e49279e247953f17204aac9091c0f59b8171f7ecd2168a4d"
+        },
+        {
+          "path": "game/assets/index-DMeKxGW6.css",
+          "sha256": "7aaf073bc6ca87e3cae31338b04b0afc30b8ccb49f6b1880c43e685ddd2cde95"
+        },
+        {
+          "path": "game/assets/jetbrains-mono-latin-400-normal-V6pRDFza.woff2",
+          "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb"
+        },
+        {
+          "path": "game/assets/jetbrains-mono-latin-600-normal-C8RAYTDA.woff2",
+          "sha256": "400c6bfda18d5d14acad1c15d6dcb9f8e13c015e7286317e0b9a482539bef147"
+        },
+        {
+          "path": "game/assets/jetbrains-mono-latin-700-normal-BYuf6tUa.woff2",
+          "sha256": "d0d4e818808f2a0ba39b2b09d1989366f63494e295f003c7ef436697378507e8"
+        },
+        {
+          "path": "game/index.html",
+          "sha256": "9f82dde53e58f43724b78609e995a5a4de1ddb82953fef1dbfd1b262c60a92d2"
+        },
+        {
+          "path": "game/nodehopper/Node Hopper.html",
+          "sha256": "3385775bb7b4f67a457b4bcac9c7cdc8a4ac4e0fe718ffc42075fce382e516e0"
+        },
+        {
+          "path": "game/nodehopper/audio.js",
+          "sha256": "b75706c7088770cff62be9531ba13752754299b0e82e79601077319bfa792cab"
+        },
+        {
+          "path": "game/nodehopper/chambers.js",
+          "sha256": "6df20e1a36932384824ca8355e172ceaa1b1832d6df31fea0d7f4fe4f1dd16fb"
+        },
+        {
+          "path": "game/nodehopper/game.js",
+          "sha256": "94352fc47006109429ee6910331498a5bf41dd72405bf7d424dbe058bd0eff69"
+        },
+        {
+          "path": "game/nodehopper/render-helpers.js",
+          "sha256": "0b3033900ca76f475dfec9b96837c3e3f8382c81e105e56161499f03ed67ce80"
+        },
+        {
+          "path": "game/theincrediblemindmachine/index.html",
+          "sha256": "ce20d656c4159dfaac0d33f08265576e51273650c43929af6acdc1636a8eb5d7"
+        },
+        {
+          "path": "game/vendor/cannon-es/cannon-es-0.20.0.js",
+          "sha256": "f0700cbd3a482954949b9d58c1b0f76dcc74767750297647a39d8c40dd63d37c"
+        },
+        {
+          "path": "game/vendor/three/three.min-0.160.0.js",
+          "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
+        },
+        {
+          "path": "game/vendor/three/three.module-0.152.2.js",
+          "sha256": "4d01ed1c468372b16732fcecfeb2f463ac1b29b0fc296b2d64ec084e32876b39"
+        },
+        {
+          "path": "games/echo-bloom/echo-bloom-og.png",
+          "sha256": "e010fae176c3e02d5572516bba37722dd50b517797457af1f0be33d3561b5873"
+        },
+        {
+          "path": "games/echo-bloom/game.js",
+          "sha256": "56027d9fb5e692c2d0905386be758dce51566a2d2c76ddb939599db88cfc2ff4"
+        },
+        {
+          "path": "games/echo-bloom/index.html",
+          "sha256": "f012a123985e2ba9453bbdb32878fdd29efc7da741f0a8ab9fb33eee4411b3eb"
+        },
+        {
+          "path": "games/echo-bloom/style.css",
+          "sha256": "5b5ffb281d1d4c7e6524f536cc913abe925d0b3d1106c581cc5460f27e1423ad"
+        },
+        {
+          "path": "games/games.js",
+          "sha256": "376ccb2a8df70068fa78ef56c4ae89254c591e8cb66bbf1281b6d49b7a3f3331"
+        },
+        {
+          "path": "games/index.html",
+          "sha256": "af05a9bbfd2ee0533b52d54c241299fa1abdd98a742d1b475a444cc08844e11e"
+        },
+        {
+          "path": "grind-ops.html",
+          "sha256": "2187f3883a527d09af8387a08b90599e246347dd6ba5b15e9e1bc4a23f1ba553"
+        },
+        {
+          "path": "grove-ops.html",
+          "sha256": "278ab6145061ea3119195c2b58ed09418a05c12d270ce27faeea65655240bb97"
+        },
+        {
+          "path": "growth-plan.html",
+          "sha256": "3c5f0442077f28c9ceb68868328c52fd4129f661f683cf2cce42955121279fec"
+        },
+        {
+          "path": "home.js",
+          "sha256": "495dc9f4968225f66a3a7ebfba2008a07627ce56c6f1b379cccbceb72a397839"
+        },
+        {
+          "path": "hub.css",
+          "sha256": "b63347ae242bf4137029d1132243337af764448b29852fb25778291f9c985543"
+        },
+        {
+          "path": "icon-180x180.png",
+          "sha256": "282108d5f0c48ea24c1e2d54761f7e33870b11b5e63390c4e93de866dd2b5a4c"
+        },
+        {
+          "path": "icon-32x32.png",
+          "sha256": "66130072cf682c130c040e937a973e90f22b0b0608e865df505ac25391f220a8"
+        },
+        {
+          "path": "improve-drill-full.html",
+          "sha256": "0443113d081e8cb32ccc3ea56596f39856b3a350d963e0abac0ba2980ec2c0c6"
+        },
+        {
+          "path": "index.html",
+          "sha256": "dbd4909507f349c54ad637d498031227fadac0f09d08657f401d58feb3d16c16"
+        },
+        {
+          "path": "intel-engine.js",
+          "sha256": "cda73e3b45d4d0ef5473614063e33215b68a8e1185259520a9787d7683fa828b"
+        },
+        {
+          "path": "intelligence-ops.html",
+          "sha256": "6af65f98fce7e7ba7f95546fe09bd467b07803de7050c153ab10875b610fcceb"
+        },
+        {
+          "path": "journal-ops.html",
+          "sha256": "e44308b4afc42754349c308e2f20855c7a21d2be97de986946045e2417f7aa52"
+        },
+        {
+          "path": "kanban-ops.html",
+          "sha256": "3bbef349635c5750623d9bdc43b064e1a6067d2661680713fca89029ec5a3370"
+        },
+        {
+          "path": "like-a-stone-full.html",
+          "sha256": "2e23ecf95c0284815d04b8605801a1ffc7113d1687bbec5a20bfea66e621e6cf"
+        },
+        {
+          "path": "manifest.json",
+          "sha256": "c2ac410e815598a9d42cbf9d077df14e6b27f7a544ce4c336c6f7e6161435dd7"
+        },
+        {
+          "path": "meditation-ops.html",
+          "sha256": "c537ba4a98856a30512c34078b43b6172488b5dc2cd22970f379ba1630168f6b"
+        },
+        {
+          "path": "micro-ops.html",
+          "sha256": "aa5afa87db10aae1907e4edcf3166f7577ac06212dfab0596a0d2d9caf11ae5f"
+        },
+        {
+          "path": "mindfulness-drill-full.html",
+          "sha256": "90cb3b78a3f8b5449fd777cfc2f1b8be30e3e3279c50a37d37c701ad1d317c5e"
+        },
+        {
+          "path": "mission-001-app.js",
+          "sha256": "c2340aa81642f14b252a11e2502f7a04e3dedcac5d76e516df672ff96ed876a4"
+        },
+        {
+          "path": "mission-001.html",
+          "sha256": "ae018fb6000d604e9ebf9851bfae79d7294b88ec8bef2a78ebcfce3ee1d79e00"
+        },
+        {
+          "path": "mission-brief.html",
+          "sha256": "f2b6033be77aed44a64dcd82c957abc5b5e39182716cbfa9c44afd49818e9104"
+        },
+        {
+          "path": "mission-private-store.js",
+          "sha256": "0ab3a325b30243c27b6aaaa0a021b34ede3b570b2da9fbc553c930534b8f9081"
+        },
+        {
+          "path": "mood-trends.html",
+          "sha256": "5fb7819141710f4247fff2e37ed39f87ee34e29043540a304754e04aa1828027"
+        },
+        {
+          "path": "music-ops.html",
+          "sha256": "3514425ef060ac2fc2f60ffd98d96984ea528c52b1b9a7239427772770cbb49b"
+        },
+        {
+          "path": "no-excuses.html",
+          "sha256": "2155397c23037859fdeeb2d2f7bc7b1184ddfee03b3fa908c1840d1e8cdcaac1"
+        },
+        {
+          "path": "od-core.js",
+          "sha256": "25ac896e0fb5638ac0016b1b226d22e8558bb7a32f3b4d62e8cb78613e6b5e3e"
+        },
+        {
+          "path": "og-image.jpg",
+          "sha256": "e4b21220dedccc360f900ce89d6952ed6e9ddd183f83f80e3c9a72168ab67c15"
+        },
+        {
+          "path": "onboarding/onboarding.html",
+          "sha256": "2c2abd007079db9c93ef9971ca1abb3bcd8410b246fee704ec1009df4631dcd7"
+        },
+        {
+          "path": "op-brain.js",
+          "sha256": "7852e744ffed35eda80b3e544b41d620ee8d30471bd59abd5835cc4e56d46e27"
+        },
+        {
+          "path": "operators-playbook.html",
+          "sha256": "93bbfc76aa1202df7c420ed5c02008ee671c6faea73b5030a3db4e8e165b2e9c"
+        },
+        {
+          "path": "opposite-action-drill.html",
+          "sha256": "6379aeb16429513f366316800c1739ac0cb4d69b849acba4867e8721a345c3eb"
+        },
+        {
+          "path": "particle-bg.js",
+          "sha256": "d1f8f2c96b9ccb2912a6472868f0e5db8b8d026ddfc715c79b6dd99b8fe67bf0"
+        },
+        {
+          "path": "parts-mapping-drill.html",
+          "sha256": "1e6cba8d338ccbb57f84c29406d1e2cb35369e4a629b19d1cd0c9cd15f7e858e"
+        },
+        {
+          "path": "pattern-intelligence.html",
+          "sha256": "ff33c77e3f3ec41792aab19ff9b166b208876101cb68f1328a473bde0fd4875a"
+        },
+        {
+          "path": "pattern-recon.html",
+          "sha256": "e6d5cc6988937e94ee8b78c69a5e5f2f9dd73f17f9cb4f9f57a96345e3f3bf35"
+        },
+        {
+          "path": "privacy-signals.html",
+          "sha256": "123e3d8f6e24aeda36c30f41d1c1caabc11f0e70a13b377fcf55271182644ace"
+        },
+        {
+          "path": "privacy-signals.js",
+          "sha256": "bceb6c2db356a40eea0de017cc0138bf2cc92953feea653ad4b8a3b8a28e56aa"
+        },
+        {
+          "path": "progress-dashboard.html",
+          "sha256": "f72479877e2727e421c7e82c445fd2a1c16470fa13e43cf4f001f2fc9fc31467"
+        },
+        {
+          "path": "progress-report.html",
+          "sha256": "5ee4d766bfa0201193ac4984c9131b412e7bf80d3391ce3a4a9be5c587782170"
+        },
+        {
+          "path": "prompt-depot.html",
+          "sha256": "76a2489d9bae9438a5adf5475f3716e182453f8dc0605362eb702daa6f07a1df"
+        },
+        {
+          "path": "quest-forge.html",
+          "sha256": "ade729bc112eef2cdf0b959855214be31267e4eef4529dcbaad93eb5c8b0cd4f"
+        },
+        {
+          "path": "quick-start.html",
+          "sha256": "018b5ead01ebef03253988fbc42b462b218ac8a497355bbac784c192b079f830"
+        },
+        {
+          "path": "quit-stay-drill.html",
+          "sha256": "3e832186b3610b082c65474e1b1e8f7758d2e9487a8821e045c898e8952c9948"
+        },
+        {
+          "path": "red-protocol.html",
+          "sha256": "bc23f903df4531f1cfc40dcfb8e815063ff4a756609f0bb54b516057ab32db19"
+        },
+        {
+          "path": "relapse-prevention.html",
+          "sha256": "61d9230925d52e463079063dd9493b2dfef2df5047bda5141bd2400d176d1bf9"
+        },
+        {
+          "path": "research/index.html",
+          "sha256": "2a507cf1d64cde66105a484011363e4f62e7c321b79a502dfa2c822ae48e77ec"
+        },
+        {
+          "path": "research/research.css",
+          "sha256": "407b584209954fb2ef9a52cac3a34afe312a997e2f09a53f701b7dd219e15e01"
+        },
+        {
+          "path": "research/research.js",
+          "sha256": "d53c1cde2d46e25424108a45ccbe111cf75585cdcdde52e08061ee35a345af43"
+        },
+        {
+          "path": "review.html",
+          "sha256": "307c8c6c85e4d66413b9c9cd87cd1d91aacedb1ef9146f65c5739eea844d6065"
+        },
+        {
+          "path": "robots.txt",
+          "sha256": "52a672b0ca8e3704f016f01003882c6f0f2189179fc0f1f3ebdc887d43273046"
+        },
+        {
+          "path": "rosa-checkin.html",
+          "sha256": "2e3c430fde19c9806b234d64f57e2fe3a70bb530a70ca72b3d0a48756c1ea4c1"
+        },
+        {
+          "path": "routine-builder.html",
+          "sha256": "df83ce187cf8cde702f2b5703a902dfccc814207d33ac3b36591b41464e99547"
+        },
+        {
+          "path": "routine-heatmap.html",
+          "sha256": "a5af7127d7b962f81cd93e630842e51a109ef0e84ea758676661ab82289b30f4"
+        },
+        {
+          "path": "rsd-shield-drill.html",
+          "sha256": "0703b2f090c4c437c5a76bf8cde636c8c883286989ee773700c55d224672e171"
+        },
+        {
+          "path": "safety-plan-drill.html",
+          "sha256": "9b830901c546691884f10d9ba02cffb422783fbd45b215cc8abf5158b5c17946"
+        },
+        {
+          "path": "scripts/build-production-upload.mjs",
+          "sha256": "f49403c90594f146edf324a5d7ab6de1d27dbcbaa8840693585a635e3ecb1db2"
+        },
+        {
+          "path": "scripts/pdf.min.js",
+          "sha256": "5b5799e6f8c680663207ac5b42ee14eed2a406fa7af48f50c154f0c0b1566946"
+        },
+        {
+          "path": "scripts/pdf.worker.min.js",
+          "sha256": "feabdf309770ed24bba31a5467836cdc8cf639c705af27d52b585b041bb8527b"
+        },
+        {
+          "path": "scripts/tesseract-core/tesseract-core-lstm.wasm.js",
+          "sha256": "50ec33088c93e69135b09917072c1b2c8cb77eb256946f16723cf6a83c7f8e49"
+        },
+        {
+          "path": "scripts/tesseract-core/tesseract-core-simd-lstm.wasm.js",
+          "sha256": "18797eef96bab787636c40b53efaa445cf5ca1c97abd735c4fd8dc3d03652959"
+        },
+        {
+          "path": "scripts/tesseract-worker.min.js",
+          "sha256": "aca1229639fc9907d86f96e825955a2b7c5716d17f3bc3acd71f9c7ab66181fc"
+        },
+        {
+          "path": "scripts/tesseract.min.js",
+          "sha256": "a8e29918d098b2b06e1012bdaeffb4aec0445c5d5654709023e0bd1f442a80e8"
+        },
+        {
+          "path": "scripts/three.min.js",
+          "sha256": "74782bdbcf6518f7745ed77035968fcae95ed4ab5c9a0f90cf646a69c20785ec"
+        },
+        {
+          "path": "semantic/benefit-embeddings.json",
+          "sha256": "fcd012b301267b6ae090034ab834eb418690d89d961b70cd55aa703729c8c9e3"
+        },
+        {
+          "path": "semantic/transformers.min.js",
+          "sha256": "bcf7cf304e51f470ed59409622b9d6ffbad80dfcf5baf6a40c919e4b9c4ff812"
+        },
+        {
+          "path": "sitemap.xml",
+          "sha256": "e345a8a86dfe2109f81ad1ab0de26f549817eb44f82ca6c53efd9f404b2696d7"
+        },
+        {
+          "path": "smoke-test.html",
+          "sha256": "64c61f87bfa8cfcc6a668b4d56da2805be7f7cc8f672f598ccc8be291dfc76fc"
+        },
+        {
+          "path": "stt-worker.js",
+          "sha256": "9d1b39dcf3e5870204b7653318e7629b2e5294eba65b7fef8776f25b91a3f580"
+        },
+        {
+          "path": "stuck-points-drill.html",
+          "sha256": "1737cb70d8a9fbcb5c7fedf24910e9256f1e6339d70e6e927f8b21171befcc3c"
+        },
+        {
+          "path": "sw.js",
+          "sha256": "becea87e7f51a949112ac89b4203de176ba686243ee4f90251aa424e0ce97129"
+        },
+        {
+          "path": "system-check.html",
+          "sha256": "0bc2f6d0d2b791006d923680092da400dcd37c7a4a109417c78060bfb1c2f3ad"
+        },
+        {
+          "path": "thought-interceptor.html",
+          "sha256": "a717d49495d36eadcaad41ab237d9922550536a4245fb2b3b43c2f644aff8100"
+        },
+        {
+          "path": "tipp-drill-full.html",
+          "sha256": "fab59554690b8d8533de6caeeabd4d366b0a1483dcba3a3e782ce13194ae167a"
+        },
+        {
+          "path": "toolshed.html",
+          "sha256": "f66b7dbc2d24babc5f47c429049c8399be4200803cf53fe1e2b6f0dccafc38fd"
+        },
+        {
+          "path": "vac-master-policy.json",
+          "sha256": "188204f564c7c43efe33724ea5c6c8fd1fb62209c9267d843d418b5247ddd8e7"
+        },
+        {
+          "path": "vac-navigator.html",
+          "sha256": "2b033a6071a96949946cd49a0f0822542ffb08c62ca44b97bb24d87ef06a6f11"
+        },
+        {
+          "path": "vac-policies.json",
+          "sha256": "ebb5993c94b780815c8c827dde30183f9f7c55c6d2268c027b894d01b88ea95f"
+        },
+        {
+          "path": "values-drill.html",
+          "sha256": "9dac2dc4bd8273443d3093e1692c6e9ac81878e4510185d78209e9f83e4e7a43"
+        },
+        {
+          "path": "visual-planner.html",
+          "sha256": "dcdfe44bf6d95cc4a15e3cd0c0cc5c443e784ce385c09b392209be279bd37ff4"
+        },
+        {
+          "path": "voice-engine.js",
+          "sha256": "bdd3f55e0f8fbaed72bf2229d5dc1e0a7d3bc2cb777a9d1d3ed5c6edc9dc6f94"
+        },
+        {
+          "path": "warroom.html",
+          "sha256": "4b7de889e083d7d2f240a417f4ff6c3a79635f83635da5da97fdc7bdd9d9ab41"
+        },
+        {
+          "path": "weekly-ops.html",
+          "sha256": "882b0b24c35052f77b1b8ca9522e3ed3a9674cffebf2eb7e6584bf4e68593de4"
+        },
+        {
+          "path": "wellbeing/index.html",
+          "sha256": "2001ed982662e01f6045496269a211929dd88ae02fb8fb18f1dfa0bf818b9993"
+        },
+        {
+          "path": "whats-going-on.html",
+          "sha256": "c9e3b5a73ed463c9528970897a098083d016202395e0d4b187b4640bd638f87a"
+        },
+        {
+          "path": "whats-live.html",
+          "sha256": "d0fdbfeaf36ba7fc72a915f459e4e75cf2181ca8c2678a3f45db8db1d4f545b6"
+        }
+      ],
+      "artifact_sha256": "6221cb59c694ce0fc9261ba1f38975fbb8dcdd282bceb78bce967d48ae74c794"
+    }
+  },
+  "smoke": {
+    "candidate": {
+      "role": "candidate",
+      "expected_source_sha": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+      "paths": {
+        "/": {
+          "status": 200,
+          "body_sha256": "dbd4909507f349c54ad637d498031227fadac0f09d08657f401d58feb3d16c16"
+        },
+        "/research/": {
+          "status": 200,
+          "body_sha256": "2a507cf1d64cde66105a484011363e4f62e7c321b79a502dfa2c822ae48e77ec"
+        },
+        "/_UPLOAD_MANIFEST.json": {
+          "status": 200,
+          "body_sha256": "d97efc86b8ba5992dd95bd6b3b990c42b58008386ccdbcaea7b7e23c31528c02"
+        },
+        "/digital-stewardship-00.html": {
+          "status": 404,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "/index.html": {
+          "status": 302,
+          "location": "/deck.html"
+        }
+      },
+      "manifest": {
+        "source_sha": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+        "policy": "legacy curated list plus production hardening exclusions",
+        "file_count": 302,
+        "excluded_count": 881,
+        "hardening_excluded_count": 112,
+        "required_files": [
+          "index.html",
+          "mission-001.html",
+          "mission-001-app.js",
+          "mission-private-store.js"
+        ],
+        "hard_exclude_prefixes": [
+          "agent/",
+          "new-work/"
+        ],
+        "hard_exclude_files": [
+          "master-map.md",
+          "digital-stewardship-00.html",
+          "digital-stewardship-00.js",
+          "digital-stewardship-01.html",
+          "digital-stewardship-01.js",
+          "digital-stewardship-02.html",
+          "digital-stewardship-02.js",
+          "digital-stewardship-03.html",
+          "digital-stewardship-03.js",
+          "digital-stewardship-04.html",
+          "digital-stewardship-04.js",
+          "digital-stewardship-05.html",
+          "digital-stewardship-05.js",
+          "digital-stewardship-06.html",
+          "digital-stewardship-06.js",
+          "arcade/README.md",
+          "arcade/cabinets/neon-grid/README.md",
+          "arcade/cabinets/sample-import-game/README.md",
+          "arcade/neon-arcade-config.example.js",
+          "arcade/pulse-occupancy-test.html",
+          "clovelearn-test-harness.html",
+          "scripts/build-curated-client-upload.mjs",
+          "scripts/check-city-build-size.mjs",
+          "scripts/embed-benefits.py",
+          "scripts/product-audit.mjs",
+          "scripts/release-preflight.mjs",
+          "scripts/setup-semantic.sh"
+        ]
+      },
+      "root_matches_artifact": true,
+      "research_matches_artifact": true,
+      "source_matches_expected": true,
+      "file_count_matches_expected": true,
+      "ds00_status_is_404": true
+    },
+    "predecessor": {
+      "role": "predecessor",
+      "expected_source_sha": "d8727e7d5946f48ada39199e77df9564a62e4203",
+      "paths": {
+        "/": {
+          "status": 200,
+          "body_sha256": "dbd4909507f349c54ad637d498031227fadac0f09d08657f401d58feb3d16c16"
+        },
+        "/research/": {
+          "status": 200,
+          "body_sha256": "2a507cf1d64cde66105a484011363e4f62e7c321b79a502dfa2c822ae48e77ec"
+        },
+        "/_UPLOAD_MANIFEST.json": {
+          "status": 200,
+          "body_sha256": "b12710036962292988c64a64a3acb285e969ef79fac195cb2c5300ed113a36df"
+        },
+        "/digital-stewardship-00.html": {
+          "status": 404,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "/index.html": {
+          "status": 302,
+          "location": "/deck.html"
+        }
+      },
+      "manifest": {
+        "source_sha": "d8727e7d5946f48ada39199e77df9564a62e4203",
+        "policy": "legacy curated list plus production hardening exclusions",
+        "file_count": 302,
+        "excluded_count": 881,
+        "hardening_excluded_count": 112,
+        "required_files": [
+          "index.html",
+          "mission-001.html",
+          "mission-001-app.js",
+          "mission-private-store.js"
+        ],
+        "hard_exclude_prefixes": [
+          "agent/",
+          "new-work/"
+        ],
+        "hard_exclude_files": [
+          "master-map.md",
+          "digital-stewardship-00.html",
+          "digital-stewardship-00.js",
+          "digital-stewardship-01.html",
+          "digital-stewardship-01.js",
+          "digital-stewardship-02.html",
+          "digital-stewardship-02.js",
+          "digital-stewardship-03.html",
+          "digital-stewardship-03.js",
+          "digital-stewardship-04.html",
+          "digital-stewardship-04.js",
+          "digital-stewardship-05.html",
+          "digital-stewardship-05.js",
+          "digital-stewardship-06.html",
+          "digital-stewardship-06.js",
+          "arcade/README.md",
+          "arcade/cabinets/neon-grid/README.md",
+          "arcade/cabinets/sample-import-game/README.md",
+          "arcade/neon-arcade-config.example.js",
+          "arcade/pulse-occupancy-test.html",
+          "clovelearn-test-harness.html",
+          "scripts/build-curated-client-upload.mjs",
+          "scripts/check-city-build-size.mjs",
+          "scripts/embed-benefits.py",
+          "scripts/product-audit.mjs",
+          "scripts/release-preflight.mjs",
+          "scripts/setup-semantic.sh"
+        ]
+      },
+      "root_matches_artifact": true,
+      "research_matches_artifact": true,
+      "source_matches_expected": true,
+      "file_count_matches_expected": true,
+      "ds00_status_is_404": true
+    }
+  },
+  "production_isolation": {
+    "versions_before_sha256": "33d05b9f78138b4811cbf7b0b8311ae78a1bbe2512d7adad6a4a9eeaa0e86972",
+    "versions_after_sha256": "33d05b9f78138b4811cbf7b0b8311ae78a1bbe2512d7adad6a4a9eeaa0e86972",
+    "deployments_before_sha256": "aebed491b6e1b23035d51d6a1b7525aeec2f49d3f137d106159a672db6e2c8b2",
+    "deployments_after_sha256": "aebed491b6e1b23035d51d6a1b7525aeec2f49d3f137d106159a672db6e2c8b2",
+    "byte_identical_before_after": true
+  },
+  "checks": {
+    "release_choice_B_explicit": true,
+    "candidate_source_exact": true,
+    "predecessor_source_exact": true,
+    "candidate_preflight_pass": true,
+    "predecessor_preflight_pass": true,
+    "candidate_artifact_file_count": true,
+    "predecessor_artifact_file_count": true,
+    "candidate_ds00_absent": true,
+    "predecessor_ds00_absent": true,
+    "candidate_worktree_clean": true,
+    "predecessor_worktree_clean": true,
+    "candidate_live_smoke": true,
+    "predecessor_live_smoke": true,
+    "staging_sequence_exact": true,
+    "production_versions_unchanged": true,
+    "production_deployments_unchanged": true,
+    "staging_cleanup_error_code_10007": true
+  },
+  "limitations": [
+    "The first upload attempt exited after a client retry, but Cloudflare completed the staging upload; the disposable Worker was deleted and recreated before final proof.",
+    "No production upload, route mutation, binding mutation, secret mutation, or production rollback was performed."
+  ]
+}

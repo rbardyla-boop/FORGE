@@ -1,0 +1,16 @@
+# Frozen 2026-08-13 DS-D2 public replay evidence; raw capture files are sealed by the external raw-evidence manifest.
+# SHA-256  path
+1fe41be5de309ae84c3b43bb52751b5b40da5084d321fe2755c3fab46623b51e  docs/ds/artifacts/DS_D2_2026-08-13/DS_D2_PUBLIC_REPLAY_RECORD.md
+c3d0e116aa3fbd2298f9bad5835840c4739b5e220e844892fb828c8741149063  docs/ds/artifacts/DS_D2_2026-08-13/DS_D2_PUBLIC_REPLAY_VERDICT.json
+8755bddb18fa0698dc7aa63bd6cba170c0b953456238684ab6d70767c58024e1  forge_core/ds_d2.py
+a46b59a97b28a3223c474f6a10c87dcd640087fe2743ce317c5d8f8e242ab450  tests/ds_d2_public_replay.mjs
+1cfca14b62ef123e19d8e618b709e71503793efefd3a9b1a23e57ba988cb210f  tests/test_ds_d2.py
+b40b42e768f1a1c7ea71e8626f6192f846402d2c200bc0bbd62a400f861b63b6  docs/ds/artifacts/DS_D1_2026-08-13/DS_D1_DEPLOYMENT_RECEIPT.json
+0b3e8fab1881ed7698ccb5bf55c8a49c7fe395dcc22fe4feff91630b5601730b  /tmp/clove-ds-d2-20260813-hGW3pH/RAW_EVIDENCE_SHA256SUMS.txt
+bf5c9c01a88457554109db78d23e9c5519f53b657d6e03d4602bc78d31d16f3d  /tmp/clove-ds-d2-20260813-hGW3pH/origin-all-files.json
+9ae1f76b45b7cc494a94830031b219f2f672474d94745d0380efa1443947757a  /tmp/clove-ds-d2-20260813-hGW3pH/browser-replay.json
+8bb838e2badc9d8ed661abbc1aa20289bf02506c565bcd2a868df931b52e5dc4  /tmp/clove-ds-d2-20260813-hGW3pH/metadata-before.json
+8bb838e2badc9d8ed661abbc1aa20289bf02506c565bcd2a868df931b52e5dc4  /tmp/clove-ds-d2-20260813-hGW3pH/metadata-after.json
+647fad5ab4f6ca49f8b0c97aef9cb5521739b61f0d1efcc079bfc49eff7ca223  /tmp/clove-ds-d2-20260813-hGW3pH/deployments-before.json
+647fad5ab4f6ca49f8b0c97aef9cb5521739b61f0d1efcc079bfc49eff7ca223  /tmp/clove-ds-d2-20260813-hGW3pH/deployments-after.json
+6b4ae081d024d7ab1a9523ee0ff390644f4f9a92cabdc676047753f0b7ee3fa0  /tmp/clove-ds-d2-20260813-hGW3pH/raw-response-index.tsv

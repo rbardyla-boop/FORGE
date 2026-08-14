@@ -1,0 +1,41 @@
+{
+  "blocking_reasons": [],
+  "bound_d0r_terminal": "DS_D0R_RELEASE_PATH_PROVEN",
+  "candidate": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+  "checks": {
+    "candidate_exact": true,
+    "d0r_hash_manifest_intact": true,
+    "d0r_live_sequence_checks": true,
+    "d0r_source_artifact_checks": true,
+    "d0r_terminal_pass": true,
+    "deployment_target_identified": true,
+    "ds_e1_packet_binding": true,
+    "ds_h2_intact": true,
+    "ds_x0_contract_intact": true,
+    "ds_x0_verdict_intact": true,
+    "human_usability_not_claimed": true,
+    "operator_checkout_clean": true,
+    "predecessor_exact": true,
+    "production_isolation_proven": true,
+    "public_surface_302": true,
+    "release_choice_B_explicit": true,
+    "staging_cleanup_proven": true,
+    "w2_w4_non_blocking": true
+  },
+  "deployment_target": {
+    "cloudflare_resource": "wild-hat-6257",
+    "host": "clovelearn.io",
+    "write_performed": false
+  },
+  "human_usability": "NOT_CLAIMED",
+  "limitations": [
+    "DS-D0R proved real Cloudflare upload/rollback/restore mechanics on disposable staging, not a production mutation or production rollback.",
+    "Authorization applies only to the frozen 302-file public subset; DS-00 remains excluded."
+  ],
+  "predecessor": "d8727e7d5946f48ada39199e77df9564a62e4203",
+  "recheck": true,
+  "release_choice": "B",
+  "schema": "forge.ds-d0.recheck.verdict.v1",
+  "terminal": "DS_D0_DEPLOYMENT_AUTHORIZED",
+  "unit": "DS-D0"
+}
