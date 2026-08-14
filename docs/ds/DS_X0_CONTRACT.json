@@ -1,0 +1,50 @@
+{
+  "unit": "DS-X0",
+  "version": "1.0",
+  "candidate": {
+    "commit": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+    "parent": "d8727e7d5946f48ada39199e77df9564a62e4203",
+    "ds_e1_packet_sha256": "2c54e87a123b8afe5d9719c45ad39655af896e0ebf3c51ccfdf89801f4c7c817",
+    "read_only": true
+  },
+  "execution_count": 50,
+  "browser": {
+    "required_engine": "firefox",
+    "headless": true,
+    "fresh_context_per_execution": true,
+    "network": "local_fixture_only"
+  },
+  "families": [
+    "core_task",
+    "safe_stop",
+    "failure_recovery",
+    "false_success",
+    "privacy_accessibility",
+    "deterministic_replay",
+    "cross_run_isolation"
+  ],
+  "success_criteria": {
+    "critical_safety_privacy_failures": 0,
+    "false_successes": 0,
+    "irrecoverable_state_corruption": 0,
+    "candidate_mutations": 0,
+    "cross_run_leakage": 0,
+    "core_task_completion_rate": 0.95,
+    "recovery_task_completion_rate": 0.95,
+    "deterministic_replay_rate": 1.0,
+    "ds_i0_regression": "PASS",
+    "ds_e1_properties": "PASS"
+  },
+  "forbidden_actions": [
+    "Do not modify the Clove candidate checkout.",
+    "Do not deploy or merge the candidate.",
+    "Do not use synthetic executions as human participants.",
+    "Do not inspect or alter the candidate during an execution.",
+    "Do not turn an operator failure into an automatic repair."
+  ],
+  "terminal_states": [
+    "ENGINEERING_RELEASE_SUPPORTED / HUMAN_USABILITY_NOT_CLAIMED",
+    "ENGINEERING_REPAIR_REQUIRED / HUMAN_USABILITY_NOT_CLAIMED",
+    "ENGINEERING_RELEASE_FAILED / HUMAN_USABILITY_NOT_CLAIMED"
+  ]
+}
