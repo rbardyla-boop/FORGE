@@ -1,0 +1,80 @@
+name: FORGE W4 Official Artifact Resolution
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Resolve exact official release assets and digests
+        shell: bash
+        env:
+          RELEASE_TAG: rust-v0.147.0
+          CLI_ASSET: codex-x86_64-unknown-linux-musl.tar.gz
+          CLI_ASSET_ID: '504450426'
+          CLI_ASSET_SIZE: '98970270'
+          CLI_DIGEST: sha256:0246e2e773834e07f0fb5249ed6ebad12e4591e608f8c7bb97dd6a9690544c36
+          PROXY_ASSET: codex-responses-api-proxy-x86_64-unknown-linux-musl.tar.gz
+          PROXY_ASSET_ID: '504450442'
+          PROXY_ASSET_SIZE: '4550399'
+          PROXY_DIGEST: sha256:1596d30264ec74837d5b805e06bf80abf7de01f17bf0bc79a63c9be45019c99c
+        run: |
+          set -euo pipefail
+          release_json="$(mktemp)"
+          work_dir="$(mktemp -d)"
+          curl --fail --silent --show-error \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/openai/codex/releases/tags/${RELEASE_TAG}" \
+            > "$release_json"
+          test "$(jq -r '.tag_name' "$release_json")" = "$RELEASE_TAG"
+          test "$(jq -r '.id' "$release_json")" = '366471016'
+          echo "release_id=$(jq -r '.id' "$release_json")"
+          echo "published_at=$(jq -r '.published_at' "$release_json")"
+          jq -e --arg name "$CLI_ASSET" --arg id "$CLI_ASSET_ID" --arg size "$CLI_ASSET_SIZE" --arg digest "$CLI_DIGEST" \
+            '.assets[] | select(.name == $name and (.id|tostring) == $id and (.size|tostring) == $size and .digest == $digest and .browser_download_url != null)' \
+            "$release_json" >/dev/null
+          jq -e --arg name "$PROXY_ASSET" --arg id "$PROXY_ASSET_ID" --arg size "$PROXY_ASSET_SIZE" --arg digest "$PROXY_DIGEST" \
+            '.assets[] | select(.name == $name and (.id|tostring) == $id and (.size|tostring) == $size and .digest == $digest and .browser_download_url != null)' \
+            "$release_json" >/dev/null
+          cli_url="$(jq -r --arg name "$CLI_ASSET" '.assets[] | select(.name == $name) | .browser_download_url' "$release_json")"
+          proxy_url="$(jq -r --arg name "$PROXY_ASSET" '.assets[] | select(.name == $name) | .browser_download_url' "$release_json")"
+          curl --fail --location --silent --show-error "$cli_url" -o "$work_dir/$CLI_ASSET"
+          curl --fail --location --silent --show-error "$proxy_url" -o "$work_dir/$PROXY_ASSET"
+          printf '%s  %s\n' "${CLI_DIGEST#sha256:}" "$work_dir/$CLI_ASSET" | sha256sum --check --strict
+          printf '%s  %s\n' "${PROXY_DIGEST#sha256:}" "$work_dir/$PROXY_ASSET" | sha256sum --check --strict
+          mkdir "$work_dir/extracted"
+          tar -xzf "$work_dir/$CLI_ASSET" -C "$work_dir/extracted"
+          tar -xzf "$work_dir/$PROXY_ASSET" -C "$work_dir/extracted"
+          test "$(tar -tzf "$work_dir/$CLI_ASSET")" = 'codex-x86_64-unknown-linux-musl'
+          test "$(tar -tzf "$work_dir/$PROXY_ASSET")" = 'codex-responses-api-proxy-x86_64-unknown-linux-musl'
+          chmod 0555 "$work_dir/extracted"/*
+          test "$("$work_dir/extracted/codex-x86_64-unknown-linux-musl" --version)" = 'codex-cli 0.147.0'
+          proxy_help="$($work_dir/extracted/codex-responses-api-proxy-x86_64-unknown-linux-musl --help 2>&1)"
+          grep -F -- '--upstream-url' <<<"$proxy_help"
+          grep -F -- 'https://api.openai.com/v1/responses' <<<"$proxy_help"
+          set +e
+          printf '\n' | "$work_dir/extracted/codex-responses-api-proxy-x86_64-unknown-linux-musl" --port 0 >"$work_dir/proxy.out" 2>"$work_dir/proxy.err"
+          proxy_status=$?
+          set -e
+          test "$proxy_status" -ne 0
+          grep -F -- 'API key must be provided via stdin' "$work_dir/proxy.err"
+          mkdir "$work_dir/codex-home"
+          test ! -e "$work_dir/codex-home/auth.json"
+          for forbidden in OPENAI_API_KEY CODEX_API_KEY CODEX_ACCESS_TOKEN GITHUB_TOKEN GH_TOKEN; do
+            test -z "${!forbidden-}"
+          done
+          echo "codex_asset_id=$CLI_ASSET_ID asset=$CLI_ASSET size=$CLI_ASSET_SIZE digest=$CLI_DIGEST"
+          echo "proxy_asset_id=$PROXY_ASSET_ID asset=$PROXY_ASSET size=$PROXY_ASSET_SIZE digest=$PROXY_DIGEST"
+      - name: No secrets used
+        run: echo OFFICIAL_ARTIFACT_RESOLUTION_NO_SECRET_PASS

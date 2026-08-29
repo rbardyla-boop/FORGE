@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/wrangler@4.115.0/config-schema.json",
+  "name": "clove-ds-d0r-staging-20260813-r1",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-08-13",
+  "assets": {
+    "directory": "./upload",
+    "binding": "ASSETS"
+  }
+}

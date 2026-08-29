@@ -1,0 +1,150 @@
+{
+  "blocking_reasons": [],
+  "candidate": "bd85378c9f40b11bfd9ea943e7f86a9bb1c392cc",
+  "checks": {
+    "active_version_exact": true,
+    "all_ds00_paths_404_empty": true,
+    "artifact_manifest_matches_frozen": true,
+    "browser_isolation_pass": true,
+    "browser_navigation_and_research_surface": true,
+    "browser_no_ds_runtime_marker": true,
+    "browser_privacy_safety_pass": true,
+    "browser_public_replay_pass": true,
+    "control_files_not_public": true,
+    "d1_receipt_binding_intact": true,
+    "deployment_identity_intact": true,
+    "deployments_unchanged_by_replay": true,
+    "ds_x0_private_runtime_claim_not_overstated": true,
+    "human_usability_not_claimed": true,
+    "index_redirect_exact": true,
+    "metadata_unchanged_by_replay": true,
+    "origin_all_asset_files_exact": true,
+    "origin_representative_surface_exact": true,
+    "public_exact_assets_match_origin": true,
+    "public_html_matches_after_edge_normalization": true,
+    "public_manifest_matches_frozen": true,
+    "public_robots_matches_after_edge_normalization": true,
+    "release_choice_B_and_public_boundary_intact": true
+  },
+  "ds_x0_scope": "NOT_APPLICABLE_AT_PUBLIC_BOUNDARY_DS00_EXCLUDED",
+  "human_usability": "NOT_CLAIMED",
+  "limitations": [
+    "DS-X0 private runtime task executions are not claimed through the public boundary because DS-00 is deliberately excluded; public safety, isolation, navigation, and non-exposure checks were run instead.",
+    "Cloudflare edge transformations were normalized only where already documented: challenge injection, hidden challenge link, font replacement, and managed robots content."
+  ],
+  "origin_representative": {
+    "arcade": {
+      "body_sha256": true,
+      "status": true
+    },
+    "arcade_js": {
+      "body_sha256": true,
+      "status": true
+    },
+    "manifest": {
+      "body_sha256": true,
+      "status": true
+    },
+    "research": {
+      "body_sha256": true,
+      "status": true
+    },
+    "research_css": {
+      "body_sha256": true,
+      "status": true
+    },
+    "research_js": {
+      "body_sha256": true,
+      "status": true
+    },
+    "robots": {
+      "body_sha256": true,
+      "status": true
+    },
+    "root": {
+      "body_sha256": true,
+      "status": true
+    },
+    "signals": {
+      "body_sha256": true,
+      "status": true
+    }
+  },
+  "production": {
+    "custom_domain": "clovelearn.io",
+    "deployment_id": "662f9820-b551-449e-9647-8f1961052436",
+    "origin": "https://wild-hat-6257.rbardyla.workers.dev",
+    "traffic_percent": 100,
+    "version_id": "53c7c021-96a5-495b-b622-16bd1b368967",
+    "worker": "wild-hat-6257"
+  },
+  "public_exact_assets": {
+    "arcade_js": {
+      "matches_origin": true,
+      "status": true
+    },
+    "manifest": {
+      "matches_origin": true,
+      "status": true
+    },
+    "research_css": {
+      "matches_origin": true,
+      "status": true
+    },
+    "research_js": {
+      "matches_origin": true,
+      "status": true
+    },
+    "signals": {
+      "matches_origin": true,
+      "status": true
+    }
+  },
+  "public_html_normalized": {
+    "arcade": {
+      "normalization": [
+        "Cloudflare challenge script",
+        "Cloudflare hidden challenge link",
+        "Cloudflare font transform"
+      ],
+      "normalized_matches_origin": true,
+      "status": true
+    },
+    "research": {
+      "normalization": [
+        "Cloudflare challenge script",
+        "Cloudflare hidden challenge link",
+        "Cloudflare font transform"
+      ],
+      "normalized_matches_origin": true,
+      "status": true
+    },
+    "root": {
+      "normalization": [
+        "Cloudflare challenge script",
+        "Cloudflare hidden challenge link",
+        "Cloudflare font transform"
+      ],
+      "normalized_matches_origin": true,
+      "status": true
+    }
+  },
+  "public_robots_normalized": {
+    "normalization": [
+      "Cloudflare managed content block"
+    ],
+    "normalized_matches_origin": true,
+    "status": true
+  },
+  "raw_evidence_root": "/tmp/clove-ds-d2-20260813-hGW3pH",
+  "release": {
+    "artifact_sha256": "6221cb59c694ce0fc9261ba1f38975fbb8dcdd282bceb78bce967d48ae74c794",
+    "choice": "B",
+    "ds00_public": false,
+    "public_file_count": 302,
+    "upload_manifest_sha256": "d97efc86b8ba5992dd95bd6b3b990c42b58008386ccdbcaea7b7e23c31528c02"
+  },
+  "schema": "forge.ds-d2.public-replay.verdict.v1",
+  "terminal": "DS_D2_PUBLIC_REPLAY_PASS",
+  "unit": "DS-D2"
+}
