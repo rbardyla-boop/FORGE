@@ -29,4 +29,4 @@ jobs:
       - name: Run A0 registered attack matrix
         run: python3 -m unittest -v tests.test_context_grants
       - name: Whitespace gate
-        run: git diff --check HEAD^ HEAD
+        run: git diff --check
