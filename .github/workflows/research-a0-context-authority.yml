@@ -1,0 +1,32 @@
+name: FORGE Research A0 Context Authority
+
+on:
+  push:
+    branches:
+      - research/authority-lifecycle-gauntlet
+  pull_request:
+    paths:
+      - 'docs/research/A0_DYNAMIC_CONTEXT_STATIC_ACTION_AUTHORITY.md'
+      - 'docs/research/A0_VERDICT.md'
+      - 'forge_core/context_grants.py'
+      - 'tests/test_context_grants.py'
+      - '.github/workflows/research-a0-context-authority.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  a0:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile A0
+        run: python3 -m compileall -q forge_core/context_grants.py tests/test_context_grants.py
+      - name: Run A0 registered attack matrix
+        run: python3 -m unittest -v tests.test_context_grants
+      - name: Whitespace gate
+        run: git diff --check HEAD^ HEAD
