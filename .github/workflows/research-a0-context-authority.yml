@@ -10,9 +10,11 @@ on:
       - 'forge_core/context_grants.py'
       - 'forge_core/provenance_policy.py'
       - 'forge_core/approval_binding.py'
+      - 'forge_core/effect_journal.py'
       - 'tests/test_context_grants.py'
       - 'tests/test_provenance_policy.py'
       - 'tests/test_approval_binding.py'
+      - 'tests/test_effect_journal.py'
       - '.github/workflows/research-a0-context-authority.yml'
 
 permissions:
@@ -33,14 +35,18 @@ jobs:
           forge_core/context_grants.py
           forge_core/provenance_policy.py
           forge_core/approval_binding.py
+          forge_core/effect_journal.py
           tests/test_context_grants.py
           tests/test_provenance_policy.py
           tests/test_approval_binding.py
+          tests/test_effect_journal.py
       - name: Run A0 dynamic-context matrix
         run: python3 -m unittest -v tests.test_context_grants
       - name: Run A1 provenance-composition matrix
         run: python3 -m unittest -v tests.test_provenance_policy
       - name: Run A2 exact-action approval matrix
         run: python3 -m unittest -v tests.test_approval_binding
+      - name: Run A3 crash-after-effect matrix
+        run: python3 -m unittest -v tests.test_effect_journal
       - name: Whitespace gate
         run: git diff --check
