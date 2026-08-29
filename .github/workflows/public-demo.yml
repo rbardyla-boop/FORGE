@@ -1,0 +1,65 @@
+name: FORGE Public Demo
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'demo.py'
+      - 'README.md'
+      - 'docs/PRODUCT_BRIEF.md'
+      - 'forge_core/context_grants.py'
+      - 'forge_core/provenance_policy.py'
+      - 'forge_core/approval_binding.py'
+      - 'forge_core/effect_journal.py'
+      - 'tests/test_context_grants.py'
+      - 'tests/test_provenance_policy.py'
+      - 'tests/test_approval_binding.py'
+      - 'tests/test_effect_journal.py'
+      - '.github/workflows/public-demo.yml'
+  pull_request:
+    paths:
+      - 'demo.py'
+      - 'README.md'
+      - 'docs/PRODUCT_BRIEF.md'
+      - 'forge_core/context_grants.py'
+      - 'forge_core/provenance_policy.py'
+      - 'forge_core/approval_binding.py'
+      - 'forge_core/effect_journal.py'
+      - 'tests/test_context_grants.py'
+      - 'tests/test_provenance_policy.py'
+      - 'tests/test_approval_binding.py'
+      - 'tests/test_effect_journal.py'
+      - '.github/workflows/public-demo.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  public-demo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile public demo and authority kernels
+        run: >-
+          python3 -m compileall -q
+          demo.py
+          forge_core/context_grants.py
+          forge_core/provenance_policy.py
+          forge_core/approval_binding.py
+          forge_core/effect_journal.py
+      - name: Run public demo
+        run: python3 demo.py
+      - name: Replay authority lifecycle research
+        run: >-
+          python3 -m unittest -q
+          tests.test_context_grants
+          tests.test_provenance_policy
+          tests.test_approval_binding
+          tests.test_effect_journal
+      - name: Whitespace gate
+        run: git diff --check
